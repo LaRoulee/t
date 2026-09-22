@@ -156,9 +156,9 @@ if (!reduceMotion) {
 
   /* manifesto: words light up as they are read */
   const words = splitWords($('[data-words]'));
-  gsap.fromTo(words, { opacity: 0.14 }, {
+  gsap.fromTo(words, { opacity: 0.35 }, {
     opacity: 1, ease: 'none', stagger: 0.05,
-    scrollTrigger: { trigger: '.manifesto', start: 'top 65%', end: 'bottom 70%', scrub: true },
+    scrollTrigger: { trigger: '.manifesto__text', start: 'top 85%', end: 'bottom 55%', scrub: true },
   });
 
   /* the contact sheet */
@@ -170,10 +170,22 @@ if (!reduceMotion) {
     .to(f.state, { develop: 1, duration: 2.2, ease: 'power2.out', onUpdate: () => applyFrame(f) }, 0.5);
 
   // the film counter: scrolling the sheet runs through the 1,900 contacts
+  const stepLabel = $('[data-step-label]');
+  const marks = frames.map((f) => $('.frame__mark', f.root));
+  let marked = -1;
+  // the china-marker: a coral loop drawn around the frame being read, as on a real contact sheet
+  const markFrame = (i) => {
+    if (i === marked) return;
+    if (marked >= 0) gsap.to(marks[marked], { strokeDashoffset: -1, duration: 0.5, ease: 'power2.in', overwrite: true, onComplete() { gsap.set(this.targets(), { autoAlpha: 0 }); } });
+    marked = i;
+    gsap.fromTo(marks[i], { strokeDashoffset: 1, autoAlpha: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', delay: 0.15, overwrite: true });
+  };
   const setStep = (p) => {
     counter.textContent = String(Math.round(1 + p * 1899)).padStart(4, '0');
     const active = Math.min(steps.length - 1, Math.floor(p * steps.length));
     steps.forEach((s, i) => s.classList.toggle('is-active', i === active));
+    stepLabel.textContent = steps[active].textContent.trim();
+    if (p > 0.001) markFrame(active);
   };
 
   const mm = gsap.matchMedia();
