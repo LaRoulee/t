@@ -235,6 +235,7 @@ if (!reduceMotion) {
   })
     .fromTo('[data-horizon-img]', { clipPath: 'inset(49.6% 0% 49.6% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'power2.inOut', duration: 0.6 }, 0)
     .fromTo('[data-horizon-img] img', { scale: 1.35 }, { scale: 1, ease: 'power2.out', duration: 0.8 }, 0)
+    .fromTo('[data-horizon-scrim]', { autoAlpha: 0 }, { autoAlpha: 1, ease: 'none', duration: 0.3 }, 0.45)
     .fromTo('[data-horizon-line]', { autoAlpha: 0, y: 40, letterSpacing: '0.02em' }, { autoAlpha: 1, y: 0, letterSpacing: '-0.04em', ease: 'expo.out', duration: 0.35 }, 0.5)
     .to({}, { duration: 0.2 });
 
