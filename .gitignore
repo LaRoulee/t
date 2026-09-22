@@ -1,0 +1,6 @@
+.impeccable/review/
+.impeccable/build/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
+node_modules/
+__pycache__/
