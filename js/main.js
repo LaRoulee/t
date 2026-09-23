@@ -169,7 +169,7 @@ if (!reduceMotion) {
     .to(f.state, { reveal: 1, duration: 1.4, ease: 'expo.inOut', onUpdate: () => applyFrame(f) }, 0)
     .to(f.state, { develop: 1, duration: 2.2, ease: 'power2.out', onUpdate: () => applyFrame(f) }, 0.5);
 
-  // the film counter: scrolling the sheet runs through the 1,900 contacts
+  // the film counter: scrolling the sheet runs through the 2,303 contacts
   const stepLabel = $('[data-step-label]');
   const marks = frames.map((f) => $('.frame__mark', f.root));
   let marked = -1;
@@ -181,7 +181,7 @@ if (!reduceMotion) {
     gsap.fromTo(marks[i], { strokeDashoffset: 1, autoAlpha: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', delay: 0.15, overwrite: true });
   };
   const setStep = (p) => {
-    counter.textContent = String(Math.round(1 + p * 1899)).padStart(4, '0');
+    counter.textContent = String(Math.round(1 + p * 2302)).padStart(4, '0');
     const active = Math.min(steps.length - 1, Math.floor(p * steps.length));
     steps.forEach((s, i) => s.classList.toggle('is-active', i === active));
     stepLabel.textContent = steps[active].textContent.trim();
@@ -275,6 +275,34 @@ if (!reduceMotion) {
     scrollTrigger: { trigger: '.cta__panel', start: 'top 75%' },
   });
 
+}
+
+/* ---------- calendar: hover tooltip and a month-by-month sweep ---------- */
+
+const heat = $('[data-heat]');
+const tip = $('[data-heat-tip]');
+heat.addEventListener('pointerover', (e) => {
+  const td = e.target.closest('td[data-tip]');
+  if (!td) return;
+  tip.innerHTML = td.dataset.tip;
+  tip.classList.add('is-on');
+});
+heat.addEventListener('pointermove', (e) => { tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px'; });
+heat.addEventListener('pointerleave', () => tip.classList.remove('is-on'));
+
+if (!reduceMotion) {
+  // the year sweeps across the table, January to December, like a season arriving
+  const cols = [...Array(12).keys()].map((m) => $$(`tbody tr td:nth-of-type(${m + 1})`, heat));
+  const target = new Map(cols.flat().map((td) => [td, parseFloat(td.style.getPropertyValue('--v'))]));
+  gsap.set(cols.flat(), { '--v': 0 });
+  ScrollTrigger.create({
+    trigger: heat, start: 'top 75%', once: true,
+    onEnter: () => cols.forEach((col, m) => {
+      col.forEach((td) => {
+        gsap.to(td, { '--v': target.get(td), duration: 0.9, delay: m * 0.07, ease: 'power2.out' });
+      });
+    }),
+  });
 }
 
 /* ---------- WebGL frames ---------- */

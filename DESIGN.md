@@ -1,6 +1,6 @@
 ---
 name: AUSSIEWAY
-description: A photo-agency picture essay printed from a contact sheet; 1,900 contacts become frames on a roll.
+description: A photo-agency picture essay printed from a contact sheet; 2,303 contacts become frames on a roll.
 colors:
   charcoal: "#444642"
   ink: "#2a2b29"
@@ -120,7 +120,7 @@ The system is a photo agency's picture essay printed from a contact sheet. The p
 
 Colour is committed by region, not sprinkled. Charcoal ink grounds every photographic section, bone paper carries the reading passages, Istanbul Twilight drenches a single pause, and Rio Carnivale coral is the one action colour. Type is a single variable family, Archivo, working across its width axis: heavy and expanded (wdth 125) for display, normal width for reading, with intermediate widths for titles and controls.
 
-Motion follows darkroom logic. Prints arrive pale and silvery, then develop into colour. Images open through slits and insets (clip-path) rather than fading, lines of display type rise out of their own line box, and a film counter runs 0001 to 1900 as the sheet scrolls. WebGL is used sparingly, only for the hero displacement sequence and the contact-sheet frames, and the DOM images always carry the full meaning without it.
+Motion follows darkroom logic. Prints arrive pale and silvery, then develop into colour. Images open through slits and insets (clip-path) rather than fading, lines of display type rise out of their own line box, and a film counter runs 0001 to 2303 as the sheet scrolls. WebGL is used sparingly, only for the hero displacement sequence and the contact-sheet frames, and the DOM images always carry the full meaning without it.
 
 **Key Characteristics:**
 - Full-bleed documentary photography, square-cut and uncarded.
@@ -227,7 +227,7 @@ Buttons are solid coral labels that feel tactile and decisive.
 
 ### Steps & Sheet Edge
 - Steps are caption-size tabs with a line icon and a 1px top rule at 18% bone. The active step turns bone and its rule turns coral.
-- The sheet edge is a hairline-topped strip that reads "Planche 01 · [step]" on the left and "Contact 0001 / 1900" on the right. The counter is bone at weight 500 in tabular numerals.
+- The sheet edge is a hairline-topped strip that reads "Planche 01 · [step]" on the left and "Contact 0001 / 2303" on the right. The counter is bone at weight 500 in tabular numerals.
 
 ### Ruled Lists
 - Service items and the offer row are separated by full-width hairlines, not boxes, with 28–32px vertical padding.

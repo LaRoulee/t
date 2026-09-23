@@ -295,6 +295,45 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   font-size: var(--step--1); color: var(--bone);
 }
 
+/* ---------- calendar (real data from the file) ---------- */
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.calendar {
+  position: relative; background: var(--bone); color: var(--ink);
+  padding: clamp(96px, 16vh, 180px) var(--gutter);
+}
+.calendar__head {
+  display: grid; grid-template-columns: 1fr minmax(0, 36ch); gap: 24px 64px; align-items: end;
+  max-width: 1400px; margin: 0 auto clamp(40px, 7vh, 72px);
+}
+.calendar__lede { color: #55564f; }
+.calendar__scroll { max-width: 1400px; margin: 0 auto; overflow-x: auto; }
+.heat { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 2px; font-variant-numeric: tabular-nums; }
+.heat th { font-weight: 500; font-size: var(--step--1); color: #55564f; }
+.heat thead th { padding-bottom: 10px; text-align: center; }
+.heat tbody th { text-align: left; padding-right: 16px; width: 1%; white-space: nowrap; }
+.heat abbr { text-decoration: none; letter-spacing: .06em; }
+.heat td {
+  height: clamp(40px, 6.2vh, 60px); text-align: center; font-size: 0.8125rem; color: var(--ink);
+  background: color-mix(in oklab, var(--coral) calc(var(--v) * 100%), #e4e2db);
+  border-radius: 2px; cursor: default;
+  transition: box-shadow .25s var(--ease-out);
+}
+.heat td:hover { box-shadow: inset 0 0 0 2px var(--ink); }
+.calendar__foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 40px;
+  max-width: 1400px; margin: 20px auto 0; font-size: var(--step--1); color: #55564f;
+}
+.heat-scale { display: inline-flex; align-items: center; gap: 10px; }
+.heat-scale i { width: 140px; height: 8px; border-radius: 2px; background: linear-gradient(90deg, #e4e2db, var(--coral)); }
+.heat-tip {
+  position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none;
+  padding: 8px 12px; background: var(--ink); color: var(--bone); font-size: 0.8125rem; border-radius: 2px;
+  opacity: 0; transform: translate(-50%, calc(-100% - 12px)); transition: opacity .2s; white-space: nowrap;
+}
+.heat-tip.is-on { opacity: 1; }
+
 /* ---------- services ---------- */
 
 .services {
@@ -341,6 +380,7 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 .offer__name { font-weight: 600; font-variation-settings: "wdth" 112; }
 .offer__price { font-size: var(--step-3); font-weight: 500; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .offer__detail { font-size: 0.9375rem; color: var(--bone-dim); }
+.offer__note { font-size: var(--step--1); color: var(--bone-dim); }
 .offer .btn { justify-content: center; margin-top: 8px; }
 
 /* ---------- footer ---------- */
@@ -373,6 +413,7 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
     background: rgba(42, 43, 41, .94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   }
 
+  .calendar__head { grid-template-columns: 1fr; }
   .services__grid { grid-template-columns: 1fr; }
   .services__img { position: relative; top: 0; max-width: 520px; }
   .services__list li { grid-template-columns: 1fr; }

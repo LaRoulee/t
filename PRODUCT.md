@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS/JS (user choice). GSAP + ScrollTrigger, Lenis smooth scroll and Three.js loaded from CDN. No build step.
+Static HTML/CSS/JS (user choice). GSAP + ScrollTrigger, Lenis smooth scroll and Three.js vendored in vendor/. No build step.
 
 ## Users
 
@@ -16,18 +16,23 @@ French-speaking young adults (roughly 18–35) preparing a Working Holiday Visa 
 
 ## Product Purpose
 
-AUSSIEWAY sells a digital guide containing 1,900+ employer contacts for working in Australia. The guide shortens the path from "I have my visa" to "I have a job, an income and a place to sleep". Success = a visitor understands the offer in seconds and buys the guide.
+AUSSIEWAY sells an Excel file, « JOBS AUSTRALIE — Répertoire PVT », listing 2,303 contacts (1,970 direct employers, 333 agencies/recruiters) that hire backpackers across Australia. The guide shortens the path from "I have my visa" to "I have a job, an income and a place to sleep". Success = a visitor understands the offer in seconds and buys the guide.
 
 ## Positioning
 
-A single, ready-to-use directory of 1,900+ contacts, organised around the journey the visitor already has in mind: Australia → Job → Money → Housing → PVT.
+A single, filterable directory of 2,303 contacts, organised around the journey the visitor already has in mind: Australia → Job → Money → Housing → PVT.
 
 ## Capabilities and Constraints
 
-- Product: digital guide, 1,900+ contacts (confirmed by user).
+- Product: Excel file (.xlsx) supplied by the user, 4 tabs besides the home tab:
+  - Contacts: 2,303 rows (1,970 direct employers, 333 agencies); 2,078 with phone, 1,540 with e-mail, 1,901 with website; 1,003 towns; by state QLD 617, NSW 493, WA 289, VIC 236, SA 212, TAS 152, NT 143, national 114. Filterable by state, category (19, e.g. hospitality 510, fruit picking 469, livestock & stations 277), pay type (piece rate 604, salary 316, hourly 310) and hiring month (1,249 rows with a season).
+  - Calendrier: heatmap of direct employers hiring per month, by state and by sector.
+  - Sites d'emploi: 19 job sites.
+  - Guide PVT: 88 days / 2nd-3rd visa, rights and scams (working hostels), papers (TFN, bank, ABN, RSA, White Card, forklift), English application e-mail and phone script, Australian-style CV, tips.
+  - The file itself warns that needs change yearly and contacts may have changed: call before travelling.
+- The file does not list housing per employer (one mention only); do not claim it does.
 - Price: not provided — displayed as a placeholder to replace. Do not invent.
 - Checkout link: to be connected later (button points to `#`).
-- Guide contents beyond the contact count (exact categories, regions, bonuses) are not confirmed; any breakdown shown on the page is illustrative and must be labelled/replaced.
 
 ## Brand Commitments
 
@@ -43,6 +48,6 @@ A single, ready-to-use directory of 1,900+ contacts, organised around the journe
 ## Product Principles
 
 1. The photograph carries the promise; the interface stays out of its way.
-2. Say the number (1,900+) plainly; never inflate it.
+2. Say the number (2,303) plainly; never inflate it.
 3. Follow the visitor's own journey order: country, job, money, housing, visa.
 4. One action: buy the guide.
