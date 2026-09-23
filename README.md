@@ -15,7 +15,7 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 1. **Photos.** The GitHub Action `.github/workflows/optimize-images.yml` downloads the photos from the Higgsfield CDN, converts them to responsive WebP (800/1600/2400 px + srcset) and commits them. To run it by hand: `npm i --no-save sharp && node scripts/fetch-images.mjs`.
 2. **Legal pages.** Fill every `[à compléter]` in `mentions-legales.html`, `cgv.html`, `cgu.html` and `confidentialite.html` (seller identity, SIRET, VAT status, consumer mediator).
-3. **Checkout.** Price 249,99 € and the Payhip link (`https://payhip.com/b/JxquT`) are in the `#acheter` section; the button only works once the terms checkbox is ticked.
+3. **Checkout.** Price 27 € and the Payhip link (`https://payhip.com/b/JxquT`) are in the `#acheter` section; the button only works once the terms checkbox is ticked.
 4. **HTTPS.** In GitHub → Settings → Pages, tick "Enforce HTTPS".
 5. **Figures.** Every number on the page comes from `JOBS_AUSTRALIE_PVT.xlsx` (2,303 contacts). Update them if the file changes.
 
