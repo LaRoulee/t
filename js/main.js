@@ -122,9 +122,8 @@ if (!reduceMotion) {
   const heroLines = $$('.hero__title .line > span');
   gsap.set(heroLines, { yPercent: 110 });
   gsap.set('.journey li, .hero__actions > *, .hero__meta', { autoAlpha: 0, y: 12 });
-  gsap.timeline({ delay: 0.2 })
-    .fromTo('[data-hero-frame]', { clipPath: 'inset(12% 18% 12% 18%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.8, ease: 'expo.inOut' })
-    .to(heroLines, { yPercent: 0, duration: 1.3, stagger: 0.09, ease: 'expo.out' }, '-=0.7')
+  gsap.timeline({ delay: 0.3 })
+    .to(heroLines, { yPercent: 0, duration: 1.3, stagger: 0.09, ease: 'expo.out' })
     .to('.journey li', { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.07, ease: 'expo.out' }, '-=0.9')
     .to('.hero__actions > *, .hero__meta', { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'expo.out' }, '-=0.7');
 
