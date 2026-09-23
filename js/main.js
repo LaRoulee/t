@@ -179,15 +179,15 @@ if (!reduceMotion) {
     });
   });
 
-  /* horizon: the photograph opens from a slit on the horizon line */
-  gsap.timeline({
-    scrollTrigger: { trigger: '[data-horizon]', start: 'top top', end: '+=140%', pin: '.horizon__pin', scrub: true },
-  })
-    .fromTo('[data-horizon-img]', { clipPath: 'inset(49.6% 0% 49.6% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'power2.inOut', duration: 0.6 }, 0)
-    .fromTo('[data-horizon-img] img', { scale: 1.35 }, { scale: 1, ease: 'power2.out', duration: 0.8 }, 0)
-    .fromTo('[data-horizon-scrim]', { autoAlpha: 0 }, { autoAlpha: 1, ease: 'none', duration: 0.3 }, 0.45)
-    .fromTo('[data-horizon-line]', { autoAlpha: 0, y: 40, letterSpacing: '0.02em' }, { autoAlpha: 1, y: 0, letterSpacing: '-0.04em', ease: 'expo.out', duration: 0.35 }, 0.5)
-    .to({}, { duration: 0.2 });
+  /* horizon: the photograph is there from the start; it drifts gently and the line arrives */
+  gsap.fromTo('[data-horizon-img] img', { scale: 1.12, yPercent: -3 }, {
+    scale: 1, yPercent: 3, ease: 'none',
+    scrollTrigger: { trigger: '[data-horizon]', start: 'top bottom', end: 'bottom top', scrub: true },
+  });
+  gsap.from('[data-horizon-line]', {
+    autoAlpha: 0, y: 40, duration: 1.3, ease: 'expo.out',
+    scrollTrigger: { trigger: '[data-horizon]', start: 'top 60%' },
+  });
 
   /* services: portrait unveiled, then parallax inside its mask */
   const portrait = $('[data-parallax-mask] img');

@@ -26,7 +26,7 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 | Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift), pinned exit where the photo shrinks into a print |
 | Manifeste | Words light up as you scroll |
 | Le fichier (produits) | Contact-sheet grid, photos always visible with a gentle drift; scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
-| Horizon | Pinned: the photo opens from a slit on the horizon line |
+| Horizon | Full-bleed photo shown at once, gentle parallax, the line fades in |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
 | Services | Violet section, portrait revealed then parallax inside its mask |
 | CTA | Parallax aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button |
