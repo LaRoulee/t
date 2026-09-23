@@ -1,4 +1,4 @@
-import { HeroGL, GalleryGL, webglAvailable } from './gl.js';
+import { HeroGL, webglAvailable } from './gl.js';
 
 const { gsap, ScrollTrigger, Lenis } = window;
 gsap.registerPlugin(ScrollTrigger);
@@ -9,7 +9,6 @@ const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const canGL = !reduceMotion && webglAvailable();
 document.documentElement.classList.toggle('reduce-motion', reduceMotion);
-const isDesktop = () => window.matchMedia('(min-width: 901px)').matches;
 
 /* ---------- smooth scroll with inertia ---------- */
 
@@ -24,7 +23,6 @@ if (!reduceMotion) {
 $$('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
-    if (id === '#') { e.preventDefault(); return; } // checkout link not connected yet
     const target = id === '#top' ? 0 : $(id);
     if (target === null) return;
     e.preventDefault();
@@ -117,20 +115,7 @@ function splitWords(el) {
 
 /* ---------- motion ---------- */
 
-const frames = $$('[data-frame]').map((root) => ({
-  root,
-  figure: $('[data-gl-frame]', root),
-  img: $('img', root),
-  state: { reveal: 1, develop: 1 },
-}));
-
-function applyFrame(f) {
-  // DOM mirror of the WebGL reveal, so the effect holds without WebGL too
-  f.figure.style.clipPath = `inset(${(1 - f.state.reveal) * 100}% 0 0 0)`;
-  if (!f.root.classList.contains('gl-on')) {
-    f.img.style.filter = `grayscale(${1 - f.state.develop}) brightness(${1 + (1 - f.state.develop) * 0.35})`;
-  }
-}
+const frames = $$('[data-frame]');
 
 if (!reduceMotion) {
   /* hero intro */
@@ -161,17 +146,11 @@ if (!reduceMotion) {
     scrollTrigger: { trigger: '.manifesto__text', start: 'top 85%', end: 'bottom 55%', scrub: true },
   });
 
-  /* the contact sheet */
-  frames.forEach((f) => { f.state.reveal = 0; f.state.develop = 0; applyFrame(f); });
+  /* the contact sheet: every print stays visible; scrolling runs the counter and the marker */
   const counter = $('[data-counter]');
   const steps = $$('[data-steps] li');
-  const revealFrame = (f, extra = {}) => gsap.timeline(extra)
-    .to(f.state, { reveal: 1, duration: 1.4, ease: 'expo.inOut', onUpdate: () => applyFrame(f) }, 0)
-    .to(f.state, { develop: 1, duration: 2.2, ease: 'power2.out', onUpdate: () => applyFrame(f) }, 0.5);
-
-  // the film counter: scrolling the sheet runs through the 2,303 contacts
   const stepLabel = $('[data-step-label]');
-  const marks = frames.map((f) => $('.frame__mark', f.root));
+  const marks = frames.map((f) => $('.frame__mark', f));
   let marked = -1;
   // the china-marker: a coral loop drawn around the frame being read, as on a real contact sheet
   const markFrame = (i) => {
@@ -187,45 +166,16 @@ if (!reduceMotion) {
     stepLabel.textContent = steps[active].textContent.trim();
     if (p > 0.001) markFrame(active);
   };
-
-  const mm = gsap.matchMedia();
-
-  mm.add('(min-width: 901px)', () => {
-    const track = $('[data-sheet-track]');
-    const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
-    setStep(0);
-
-    const scrollTween = gsap.to(track, {
-      x: () => -distance(), ease: 'none',
-      scrollTrigger: {
-        trigger: '[data-sheet]', start: 'top top', end: () => '+=' + distance() * 1.1,
-        pin: '[data-sheet-pin]', scrub: 0.6, invalidateOnRefresh: true,
-        onUpdate: (st) => setStep(st.progress),
-      },
-    });
-
-    // prints already on the sheet develop together as it arrives; the rest as they slide in
-    const inView = frames.filter((f) => f.root.offsetLeft < window.innerWidth * 0.92);
-    const later = frames.filter((f) => !inView.includes(f));
-    ScrollTrigger.create({
-      trigger: '[data-sheet]', start: 'top 55%', once: true,
-      onEnter: () => inView.forEach((f, i) => revealFrame(f, { delay: i * 0.14 })),
-    });
-    later.forEach((f) => {
-      ScrollTrigger.create({
-        trigger: f.root, containerAnimation: scrollTween, start: 'left 88%', once: true,
-        onEnter: () => revealFrame(f),
-      });
-    });
+  setStep(0);
+  ScrollTrigger.create({
+    trigger: '[data-sheet-track]', start: 'top 75%', end: 'bottom 45%',
+    onUpdate: (st) => setStep(st.progress),
   });
-
-  mm.add('(max-width: 900px)', () => {
-    ScrollTrigger.create({
-      trigger: '[data-sheet]', start: 'top 60%', end: 'bottom bottom',
-      onUpdate: (st) => setStep(st.progress),
-    });
-    frames.forEach((f) => {
-      ScrollTrigger.create({ trigger: f.root, start: 'top 82%', once: true, onEnter: () => revealFrame(f) });
+  // a gentle drift inside each print; the photograph itself never leaves the frame
+  frames.forEach((f) => {
+    gsap.fromTo($('img', f), { yPercent: -4, scale: 1.1 }, {
+      yPercent: 4, ease: 'none',
+      scrollTrigger: { trigger: f, start: 'top bottom', end: 'bottom top', scrub: true },
     });
   });
 
@@ -305,15 +255,28 @@ if (!reduceMotion) {
   });
 }
 
-/* ---------- WebGL frames ---------- */
+/* ---------- checkout: the terms must be accepted before leaving for Payhip ---------- */
 
-if (canGL) {
-  const gallery = new GalleryGL(frames, { axis: isDesktop() ? 'x' : 'y' }).init();
-  gsap.ticker.add((t) => {
-    gallery.axis = isDesktop() ? 'x' : 'y';
-    gallery.setVelocity(lenis ? lenis.velocity : 0);
-    gallery.render(t);
-  });
-}
+const consentForm = $('[data-consent]');
+const consentBox = $('#consent');
+const checkout = $('[data-checkout]');
+const consentError = $('#consent-error');
+const syncCheckout = () => {
+  checkout.setAttribute('aria-disabled', String(!consentBox.checked));
+  if (consentBox.checked) {
+    consentError.hidden = true;
+    consentForm.classList.remove('is-invalid');
+  }
+};
+consentBox.addEventListener('change', syncCheckout);
+consentForm.addEventListener('submit', (e) => e.preventDefault());
+checkout.addEventListener('click', (e) => {
+  if (consentBox.checked) return;
+  e.preventDefault();
+  consentError.hidden = false;
+  consentForm.classList.add('is-invalid');
+  consentBox.focus();
+});
+syncCheckout();
 
 window.addEventListener('load', () => ScrollTrigger.refresh());

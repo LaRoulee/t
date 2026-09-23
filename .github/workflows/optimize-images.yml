@@ -1,0 +1,53 @@
+# Downloads the photos from the Higgsfield CDN, converts them to responsive WebP files in
+# assets/img/ and points the pages at them. Runs whenever a page still references the CDN.
+name: Optimise images
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - '404.html'
+      - 'scripts/fetch-images.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: optimise-images-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  optimise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for remote images
+        id: check
+        run: |
+          if grep -qE 'cloudfront\.net/[^"]+\.png' index.html 404.html; then
+            echo "remote=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No remote images, nothing to do."
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.remote == 'true'
+        with:
+          node-version: 20
+
+      - name: Download and convert
+        if: steps.check.outputs.remote == 'true'
+        run: |
+          npm install --no-save --no-package-lock sharp
+          node scripts/fetch-images.mjs
+
+      - name: Commit optimised images
+        if: steps.check.outputs.remote == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898900+github-actions[bot]@users.noreply.github.com"
+          git add assets/img index.html 404.html
+          git commit -m "Self-host photos as responsive WebP"
+          git push

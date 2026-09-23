@@ -13,15 +13,11 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 ## Before going live
 
-1. **Photos.** The page currently loads the photos from the Higgsfield CDN. Self-host them:
-   ```bash
-   npm i -D sharp                 # optional, enables WebP conversion (strongly recommended)
-   node scripts/fetch-images.mjs  # downloads into assets/img/ and rewrites index.html
-   ```
-   The raw PNGs weigh several MB each, so WebP conversion matters for load time.
-2. **Price.** Replace `[Prix]` in `index.html` (section `#acheter`).
-3. **Checkout.** Set the `href` of the button marked `data-checkout` (Stripe, Gumroad, Lemon Squeezy…).
-4. **Figures.** Every number on the page comes from `JOBS_AUSTRALIE_PVT.xlsx` (2,303 contacts). Update them if the file changes.
+1. **Photos.** The GitHub Action `.github/workflows/optimize-images.yml` downloads the photos from the Higgsfield CDN, converts them to responsive WebP (800/1600/2400 px + srcset) and commits them. To run it by hand: `npm i --no-save sharp && node scripts/fetch-images.mjs`.
+2. **Legal pages.** Fill every `[à compléter]` in `mentions-legales.html`, `cgv.html`, `cgu.html` and `confidentialite.html` (seller identity, SIRET, VAT status, consumer mediator).
+3. **Checkout.** Price 349,99 € and the Payhip link (`https://payhip.com/b/JxquT`) are in the `#acheter` section; the button only works once the terms checkbox is ticked.
+4. **HTTPS.** In GitHub → Settings → Pages, tick "Enforce HTTPS".
+5. **Figures.** Every number on the page comes from `JOBS_AUSTRALIE_PVT.xlsx` (2,303 contacts). Update them if the file changes.
 
 ## Structure
 
@@ -29,11 +25,12 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 | --- | --- |
 | Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift), pinned exit where the photo shrinks into a print |
 | Manifeste | Words light up as you scroll |
-| Le guide (produits) | Pinned horizontal "contact sheet": the frames develop from pale to colour, ripple under the cursor, bend with scroll speed; a film counter runs 0001 → 2303 |
+| Le fichier (produits) | Contact-sheet grid, photos always visible with a gentle drift; scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
 | Horizon | Pinned: the photo opens from a slit on the horizon line |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
 | Services | Violet section, portrait revealed then parallax inside its mask |
-| CTA | Parallax aerial photo, offer and buy button |
+| CTA | Parallax aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button |
+| Legal | `mentions-legales.html`, `cgv.html`, `cgu.html`, `confidentialite.html`, `404.html`, `robots.txt`, `sitemap.xml` |
 
 Motion respects `prefers-reduced-motion` (no smooth scroll, no pins, static grid). WebGL is progressive: without it, or if a texture cannot load, the DOM images and CSS reveals take over.
 
