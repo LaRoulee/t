@@ -23,7 +23,7 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 | Section | Effect |
 | --- | --- |
-| Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift), pinned exit where the photo shrinks into a print |
+| Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift); stays full-bleed and scrolls away with a slight parallax |
 | Manifeste | Words light up as you scroll |
 | Le fichier (produits) | Contact-sheet grid, photos always visible with a gentle drift; scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
 | Horizon | Full-bleed photo shown at once, gentle parallax, the line fades in |

@@ -128,15 +128,15 @@ if (!reduceMotion) {
     .to('.journey li', { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.07, ease: 'expo.out' }, '-=0.9')
     .to('.hero__actions > *, .hero__meta', { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'expo.out' }, '-=0.7');
 
-  /* hero out: pinned, the photograph recedes into a print */
+  /* hero out: the photograph stays full size and scrolls away with a slight parallax */
   gsap.timeline({
     scrollTrigger: {
-      trigger: '[data-hero]', start: 'top top', end: '+=70%', pin: true, scrub: true,
+      trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true,
       onUpdate: (st) => heroGL?.setScroll(st.progress),
     },
   })
-    .to('[data-hero-frame]', { clipPath: 'inset(9% 7% 9% 7%)', ease: 'none' }, 0)
-    .to('.hero__content', { yPercent: -18, autoAlpha: 0, ease: 'power1.in' }, 0)
+    .to('[data-hero-frame]', { yPercent: 18, ease: 'none' }, 0)
+    .to('.hero__content', { yPercent: -12, autoAlpha: 0, ease: 'power1.in' }, 0)
     .to('.hero__meta', { autoAlpha: 0, ease: 'none' }, 0);
 
   /* manifesto: words light up as they are read */
