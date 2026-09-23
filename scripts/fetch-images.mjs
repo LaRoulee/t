@@ -13,17 +13,17 @@ const htmlPath = path.join(root, 'index.html');
 const outDir = path.join(root, 'assets', 'img');
 
 const NAMES = {
-  eb1d05c9: 'hero-champ-queensland',
-  '01907884': 'hero-vignoble-barossa',
-  f9133abb: 'hero-ble-australie-occidentale',
-  e37caec1: 'australie-piste-outback',
-  b0efe7db: 'job-cueillette-fraises',
-  e2d81ade: 'argent-fin-de-journee',
-  b4b94869: 'logement-maison-de-ferme',
-  '2d5ec233': 'pvt-arret-de-bus',
-  '75c19797': 'portrait-verger-manguiers',
-  ec96eb3f: 'hangar-conditionnement',
-  fe04d259: 'bananeraie-vue-aerienne',
+  'bb9f6218': 'hero-champ-queensland',
+  'ae621eaf': 'hero-vignoble-barossa',
+  '24c31534': 'hero-ble-australie-occidentale',
+  'd6e30755': 'australie-piste-outback',
+  '0209fbb4': 'job-cueillette-fraises',
+  'a882b58d': 'argent-fin-de-journee',
+  'f5f4a962': 'logement-maison-de-ferme',
+  '32dff9e0': 'pvt-great-ocean-road',
+  'afea47c2': 'portrait-verger-manguiers',
+  'd6b88605': 'hangar-conditionnement',
+  'd1289af9': 'bananeraie-vue-aerienne',
 };
 
 let sharp = null;

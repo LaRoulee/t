@@ -39,7 +39,7 @@ Motion respects `prefers-reduced-motion` (no smooth scroll, no pins, static grid
 
 ## Photo provenance
 
-All photographs are AI-generated (Higgsfield, GPT Image 2.5, September 2026) and credited as such in the footer. Each image's generation prompt is summarised in its `alt` text.
+All photographs are AI-generated (Higgsfield, GPT Image 2.5 at xhigh quality, September 2026) and credited as such in the footer. Each image's generation prompt is summarised in its `alt` text.
 
 ## Brand
 
