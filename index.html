@@ -21,8 +21,9 @@
   <meta property="og:image:alt" content="Des backpackers cueillent dans une ferme du Queensland au coucher du soleil.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero-champ-queensland-1600.webp">
+  <link rel="preload" as="image" href="assets/img/hero-champ-queensland-1600.webp" imagesrcset="assets/img/hero-champ-queensland-800.webp 800w, assets/img/hero-champ-queensland-1600.webp 1600w, assets/img/hero-champ-queensland-2400.webp 2400w" imagesizes="100vw">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est quoi, exactement, ce que j'achète ?", "acceptedAnswer": {"@type": "Answer", "text": "Un fichier Excel (.xlsx) avec 2 303 contacts d'employeurs et d'agences qui embauchent des backpackers en Australie, un calendrier des embauches par État et par mois, 19 sites d'emploi et un guide PVT (88 jours, droits, papiers, modèle d'e-mail en anglais, CV)."}}, {"@type": "Question", "name": "Est-ce que ça marche sur téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le fichier s'ouvre avec Excel, Google Sheets ou Numbers, y compris sur téléphone avec leurs applications gratuites. Pour filtrer confortablement par État, catégorie ou mois, un ordinateur reste plus pratique."}}, {"@type": "Question", "name": "Comment et quand je reçois le fichier ?", "acceptedAnswer": {"@type": "Answer", "text": "Immédiatement après le paiement : un lien de téléchargement s'affiche à l'écran et vous est envoyé par e-mail."}}, {"@type": "Question", "name": "Comment je peux payer ?", "acceptedAnswer": {"@type": "Answer", "text": "Le paiement se fait sur la page sécurisée Payhip, par carte bancaire, ou avec Apple Pay et Google Pay selon votre appareil. C'est un paiement unique, sans abonnement."}}, {"@type": "Question", "name": "Les contacts sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les coordonnées proviennent de sources publiques. Les besoins de recrutement changent d'une saison à l'autre et certaines coordonnées ont pu évoluer : appelez toujours avant de vous déplacer. Environ 90 % des contacts ont un numéro de téléphone."}}, {"@type": "Question", "name": "Est-ce que ça garantit un job ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, et personne ne peut vous le garantir honnêtement. Le fichier vous fait gagner le temps de la recherche : savoir qui appeler, où et à quelle saison. Le reste, c'est votre appel."}}, {"@type": "Question", "name": "Puis-je être remboursé ?", "acceptedAnswer": {"@type": "Answer", "text": "Comme pour tout contenu numérique livré immédiatement, le droit de rétractation ne s'applique plus une fois le fichier téléchargé (vous l'acceptez avant le paiement). En revanche, si le fichier est illisible ou incomplet, écrivez-nous : nous le remplaçons ou vous remboursons."}}]}</script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -47,6 +48,7 @@
     <nav class="nav__links" aria-label="Sections">
       <a href="#guide">Le guide</a>
       <a href="#services">Contenu</a>
+      <a href="#faq">FAQ</a>
       <a href="#acheter">Prix</a>
     </nav>
     <a class="btn btn--sm" href="#acheter" aria-label="Acheter Le Guide Opérationnel"><span class="btn__full">Acheter Le Guide Opérationnel</span><span class="btn__short" aria-hidden="true">Acheter</span></a>
@@ -79,9 +81,10 @@
           <li><svg aria-hidden="true"><use href="#i-plane"/></svg>PVT</li>
         </ol>
         <div class="hero__actions">
-          <a class="btn" href="#acheter">Acheter Le Guide Opérationnel<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="link" href="#guide">Voir ce qu'il contient</a>
+          <a class="btn" href="#acheter">Acheter Le Guide Opérationnel · 27&nbsp;€<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="link" href="#apercu">Voir un extrait du fichier</a>
         </div>
+        <p class="hero__reassure">Paiement unique · Fichier envoyé immédiatement par e-mail · Carte, Apple Pay, Google Pay</p>
       </div>
 
       <div class="hero__meta" aria-hidden="true">
@@ -197,6 +200,38 @@
       </div>
     </section>
 
+    <!-- APERÇU : extrait réel du fichier -->
+    <section class="preview" id="apercu" aria-labelledby="preview-title">
+      <div class="preview__head">
+        <h2 id="preview-title" class="h2">Un aperçu<br>du fichier.</h2>
+        <p class="preview__lede">Six lignes réelles sur 2&nbsp;303, telles qu'elles apparaissent dans l'onglet Contacts. Les coordonnées sont masquées ici&nbsp;: dans le fichier, le téléphone, l'e-mail et le site web sont cliquables.</p>
+      </div>
+      <div class="xl" data-xl>
+        <div class="xl__bar" aria-hidden="true">
+          <span class="xl__file">JOBS_AUSTRALIE_PVT.xlsx</span>
+          <span class="xl__tabs"><b>Contacts</b><span>Calendrier</span><span>Sites d'emploi</span><span>Guide PVT</span></span>
+        </div>
+        <div class="xl__filters" aria-hidden="true">
+          <span>Filtrer&nbsp;:</span><span class="chip">État ▾</span><span class="chip">Catégorie ▾</span><span class="chip">Paie ▾</span><span class="chip">Mois d'embauche ▾</span>
+        </div>
+        <div class="xl__scroll">
+          <table class="xl__table">
+            <caption class="sr-only">Extrait de six contacts du fichier, coordonnées masquées</caption>
+            <thead><tr><th scope="col">Nom</th><th scope="col">Poste / culture</th><th scope="col">État</th><th scope="col">Ville</th><th scope="col">Saison</th><th scope="col">Paie</th><th scope="col">Catégorie</th><th scope="col">Téléphone</th><th scope="col">E-mail</th></tr></thead>
+            <tbody>
+              <tr><td class="xl__name">888 Citrus</td><td>Citrus</td><td>QLD</td><td>Gayndah</td><td>Toute l'année</td><td>Au rendement</td><td>Fruits &amp; cueillette</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+              <tr><td class="xl__name">Grand Burg Vineyard</td><td>Vineyard</td><td>SA</td><td>Tanunda</td><td>Fév → Avr</td><td>Au rendement</td><td>Vignes &amp; vin</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+              <tr><td class="xl__name">Alexandria Station</td><td>Cattle</td><td>NT</td><td>Camoweal</td><td>Toute l'année</td><td>Salaire</td><td>Élevage &amp; stations</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+              <tr><td class="xl__name">Croc Cafe &amp; Bakery</td><td>Shop Assistant</td><td>WA</td><td>Wyndham</td><td>Toute l'année</td><td>À l'heure</td><td>Hôtellerie &amp; restauration</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+              <tr><td class="xl__name">Packsaddle Roadhouse</td><td>Roadhouse</td><td>NSW</td><td>Broken Hill</td><td>Toute l'année</td><td>À l'heure</td><td>Roadhouse</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+              <tr><td class="xl__name">3rd Rock Agriculture</td><td>Pear and Apples</td><td>TAS</td><td>Judbury</td><td>Nov → Fév</td><td>Au rendement</td><td>Fruits &amp; cueillette</td><td><span class="mask" aria-label="masqué">04•• ••• •••</span></td><td><span class="mask" aria-label="masqué">••••••@•••••.com.au</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="xl__more"><span>+ 2&nbsp;297 autres contacts dans le fichier</span><a class="btn btn--sm" href="#acheter">Obtenir le fichier · 27&nbsp;€</a></div>
+      </div>
+    </section>
+
     <!-- HORIZON : image révélée par une fente -->
     <section class="horizon" data-horizon aria-label="Sur le terrain">
       <div class="horizon__pin">
@@ -268,6 +303,20 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="h2">Vos questions,<br>nos réponses.</h2>
+      <div class="faq__list">
+        <details class="faq__item"><summary>C'est quoi, exactement, ce que j'achète&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Un fichier Excel (.xlsx) avec 2&nbsp;303 contacts d'employeurs et d'agences qui embauchent des backpackers en Australie, un calendrier des embauches par État et par mois, 19 sites d'emploi et un guide PVT (88 jours, droits, papiers, modèle d'e-mail en anglais, CV).</p></details>
+        <details class="faq__item"><summary>Est-ce que ça marche sur téléphone&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Oui. Le fichier s'ouvre avec Excel, Google Sheets ou Numbers, y compris sur téléphone avec leurs applications gratuites. Pour filtrer confortablement par État, catégorie ou mois, un ordinateur reste plus pratique.</p></details>
+        <details class="faq__item"><summary>Comment et quand je reçois le fichier&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Immédiatement après le paiement&nbsp;: un lien de téléchargement s'affiche à l'écran et vous est envoyé par e-mail.</p></details>
+        <details class="faq__item"><summary>Comment je peux payer&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Le paiement se fait sur la page sécurisée Payhip, par carte bancaire, ou avec Apple Pay et Google Pay selon votre appareil. C'est un paiement unique, sans abonnement.</p></details>
+        <details class="faq__item"><summary>Les contacts sont-ils à jour&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Les coordonnées proviennent de sources publiques. Les besoins de recrutement changent d'une saison à l'autre et certaines coordonnées ont pu évoluer&nbsp;: appelez toujours avant de vous déplacer. Environ 90&nbsp;% des contacts ont un numéro de téléphone.</p></details>
+        <details class="faq__item"><summary>Est-ce que ça garantit un job&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Non, et personne ne peut vous le garantir honnêtement. Le fichier vous fait gagner le temps de la recherche&nbsp;: savoir qui appeler, où et à quelle saison. Le reste, c'est votre appel.</p></details>
+        <details class="faq__item"><summary>Puis-je être remboursé&nbsp;?<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>Comme pour tout contenu numérique livré immédiatement, le droit de rétractation ne s'applique plus une fois le fichier téléchargé (vous l'acceptez avant le paiement). En revanche, si le fichier est illisible ou incomplet, écrivez-nous&nbsp;: nous le remplaçons ou vous remboursons.</p></details>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta" id="acheter" data-cta aria-labelledby="cta-title">
       <figure class="cta__img" data-cta-img>
@@ -293,12 +342,18 @@
             </label>
             <p class="consent__error" id="consent-error" role="alert" hidden>Cochez la case pour accepter les conditions avant de passer au paiement.</p>
             <a class="btn btn--lg" href="https://payhip.com/b/JxquT" data-checkout data-goatcounter-click="clic-achat-payhip" data-goatcounter-title="Clic vers Payhip" aria-disabled="true" rel="noopener">Acheter Le Guide Opérationnel · 27&nbsp;€<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <p class="consent__secure">Paiement sécurisé sur Payhip.</p>
+            <ul class="pay" aria-label="Moyens de paiement acceptés"><li>Carte bancaire</li><li>Apple&nbsp;Pay</li><li>Google&nbsp;Pay</li></ul>
+            <p class="consent__secure">Paiement sécurisé via Payhip et Stripe · Fichier envoyé immédiatement par e-mail</p>
           </form>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="buybar" data-buybar aria-hidden="true">
+    <span class="buybar__label">Le Guide Opérationnel <b>27&nbsp;€</b></span>
+    <a class="btn btn--sm" href="#acheter" tabindex="-1">Acheter</a>
+  </div>
 
   <footer class="footer">
     <a class="brand" href="#top" aria-label="AUSSIEWAY, retour en haut">

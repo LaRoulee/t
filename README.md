@@ -26,10 +26,12 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 | Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift); stays full-bleed and scrolls away with a slight parallax |
 | Manifeste | Words light up as you scroll; departure checklist (visa ✓, billet ✓, 2 303 contacts) beside an arrival photo revealed and in parallax |
 | Le fichier (produits) | Contact-sheet grid, photos always visible with a gentle drift; scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
+| Aperçu | Real extract of 6 rows from the file (contacts masked), spreadsheet-styled, link to checkout |
 | Horizon | Full-bleed photo shown at once, gentle parallax, the line fades in |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
 | Services | Violet section, portrait revealed then parallax inside its mask |
-| CTA | Parallax aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button |
+| FAQ | 7 questions (format, phone, delivery, payment, freshness, no job guarantee, refunds) + FAQPage JSON-LD |
+| CTA | Parallax aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button, payment badges; on phones a sticky buy bar appears after the hero |
 | Legal | `mentions-legales.html`, `cgv.html`, `cgu.html`, `confidentialite.html`, `404.html`, `robots.txt`, `sitemap.xml` |
 
 Motion respects `prefers-reduced-motion` (no smooth scroll, no pins, static grid). WebGL is progressive: without it, or if a texture cannot load, the DOM images and CSS reveals take over.

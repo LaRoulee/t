@@ -7,7 +7,8 @@ const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const canGL = !reduceMotion && webglAvailable();
+// WebGL only on larger screens with a fine pointer: phones get the lighter photo crossfade
+const canGL = !reduceMotion && webglAvailable() && window.matchMedia('(min-width: 901px) and (pointer: fine)').matches;
 document.documentElement.classList.toggle('reduce-motion', reduceMotion);
 
 /* ---------- smooth scroll with inertia ---------- */
@@ -299,5 +300,19 @@ checkout.addEventListener('click', (e) => {
   consentBox.focus();
 });
 syncCheckout();
+
+/* ---------- mobile buy bar: shown after the hero, hidden once the offer is on screen ---------- */
+
+const buybar = $('[data-buybar]');
+let pastHero = false;
+let offerInView = false; // true once the offer is on screen or scrolled past
+const syncBuybar = () => {
+  const on = pastHero && !offerInView;
+  buybar.classList.toggle('is-on', on);
+  buybar.setAttribute('aria-hidden', String(!on));
+  $('a', buybar).tabIndex = on ? 0 : -1;
+};
+new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; syncBuybar(); }).observe($('[data-hero]'));
+new IntersectionObserver(([e]) => { offerInView = e.isIntersecting || e.boundingClientRect.top < 0; syncBuybar(); }, { threshold: 0.15 }).observe($('#acheter'));
 
 window.addEventListener('load', () => ScrollTrigger.refresh());
