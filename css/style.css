@@ -447,7 +447,7 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 /* ---------- CTA ---------- */
 
 .cta { position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden; display: grid; align-items: end; }
-.cta__img { position: absolute; inset: -12% 0; }
+.cta__img { position: absolute; inset: 0; }
 .cta__img img { width: 100%; height: 100%; object-fit: cover; }
 .cta::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;

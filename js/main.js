@@ -11,6 +11,12 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const canGL = !reduceMotion && webglAvailable() && window.matchMedia('(min-width: 901px) and (pointer: fine)').matches;
 document.documentElement.classList.toggle('reduce-motion', reduceMotion);
 
+/* ---------- always open on the first screen ---------- */
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+window.scrollTo(0, 0);
+
 /* ---------- smooth scroll with inertia ---------- */
 
 let lenis = null;
@@ -66,19 +72,16 @@ let heroGL = null;
 const SLIDE_EVERY = 7;
 
 function startDomSequence() {
-  // fallback: crossfade the DOM photographs with a slow drift
+  // fallback: a plain crossfade of the DOM photographs (no zoom, so they stay sharp)
   let i = 0;
-  gsap.set(heroImgs, { scale: 1.08 });
-  gsap.to(heroImgs[0], { scale: 1, duration: 12, ease: 'none' });
   if (reduceMotion) return;
   gsap.delayedCall(SLIDE_EVERY, function step() {
     const prev = heroImgs[i];
     i = (i + 1) % heroImgs.length;
     const next = heroImgs[i];
-    gsap.set(next, { zIndex: 2, scale: 1.08 });
+    gsap.set(next, { zIndex: 2 });
     gsap.set(prev, { zIndex: 1 });
     gsap.to(next, { opacity: 1, duration: 2.4, ease: 'power2.inOut', onComplete: () => gsap.set(prev, { opacity: 0 }) });
-    gsap.to(next, { scale: 1, duration: 12, ease: 'none' });
     gsap.delayedCall(1.2, () => setHeroMeta(i));
     gsap.delayedCall(SLIDE_EVERY, step);
   });
@@ -135,7 +138,6 @@ if (!reduceMotion) {
       onUpdate: (st) => heroGL?.setScroll(st.progress),
     },
   })
-    .to('[data-hero-frame]', { yPercent: 18, ease: 'none' }, 0)
     .to('.hero__content', { yPercent: -12, autoAlpha: 0, ease: 'power1.in' }, 0)
     .to('.hero__meta', { autoAlpha: 0, ease: 'none' }, 0);
 
@@ -146,7 +148,7 @@ if (!reduceMotion) {
     scrollTrigger: { trigger: '.manifesto__text', start: 'top 85%', end: 'bottom 55%', scrub: true },
   });
 
-  // the arrival photo opens from the bottom, then drifts inside its frame
+  // the arrival photo opens from the bottom (no transform on the photo itself, so it stays sharp)
   const arrival = $('[data-manifesto-photo] img');
   const arrivalMask = document.createElement('div');
   arrivalMask.className = 'mask';
@@ -155,10 +157,6 @@ if (!reduceMotion) {
   gsap.fromTo(arrivalMask, { clipPath: 'inset(100% 0 0 0)' }, {
     clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'expo.inOut',
     scrollTrigger: { trigger: '.manifesto', start: 'top 70%' },
-  });
-  gsap.fromTo(arrival, { scale: 1.15, yPercent: -5 }, {
-    yPercent: 5, ease: 'none',
-    scrollTrigger: { trigger: '.manifesto', start: 'top bottom', end: 'bottom top', scrub: true },
   });
 
   // the departure checklist: two boxes already ticked, the last one is the guide
@@ -193,25 +191,15 @@ if (!reduceMotion) {
     trigger: '[data-sheet-track]', start: 'top 75%', end: 'bottom 45%',
     onUpdate: (st) => setStep(st.progress),
   });
-  // a gentle drift inside each print; the photograph itself never leaves the frame
-  frames.forEach((f) => {
-    gsap.fromTo($('img', f), { yPercent: -4, scale: 1.1 }, {
-      yPercent: 4, ease: 'none',
-      scrollTrigger: { trigger: f, start: 'top bottom', end: 'bottom top', scrub: true },
-    });
-  });
 
-  /* horizon: the photograph is there from the start; it drifts gently and the line arrives */
-  gsap.fromTo('[data-horizon-img] img', { scale: 1.12, yPercent: -3 }, {
-    scale: 1, yPercent: 3, ease: 'none',
-    scrollTrigger: { trigger: '[data-horizon]', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
+
+  /* horizon: the photograph is there from the start and the line arrives */
   gsap.from('[data-horizon-line]', {
     autoAlpha: 0, y: 40, duration: 1.3, ease: 'expo.out',
     scrollTrigger: { trigger: '[data-horizon]', start: 'top 60%' },
   });
 
-  /* services: portrait unveiled, then parallax inside its mask */
+  /* services: portrait unveiled */
   const portrait = $('[data-parallax-mask] img');
   const mask = document.createElement('div');
   mask.className = 'mask';
@@ -221,10 +209,6 @@ if (!reduceMotion) {
     clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'expo.inOut',
     scrollTrigger: { trigger: '.services', start: 'top 70%' },
   });
-  gsap.fromTo(portrait, { scale: 1.22, yPercent: -7 }, {
-    yPercent: 7, ease: 'none',
-    scrollTrigger: { trigger: '.services', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
   $$('.services__list [data-reveal]').forEach((li) => {
     gsap.from(li.children, {
       y: 22, autoAlpha: 0, duration: 1.1, stagger: 0.08, ease: 'expo.out',
@@ -232,11 +216,7 @@ if (!reduceMotion) {
     });
   });
 
-  /* CTA: parallax and a quiet arrival */
-  gsap.fromTo('[data-cta-img]', { yPercent: -8 }, {
-    yPercent: 8, ease: 'none',
-    scrollTrigger: { trigger: '[data-cta]', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
+  /* CTA: a quiet arrival */
   const ctaLines = $$('.cta__title .line > span');
   gsap.from(ctaLines, {
     yPercent: 110, duration: 1.3, stagger: 0.1, ease: 'expo.out',
@@ -330,4 +310,9 @@ const syncBuybar = () => {
 new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; syncBuybar(); }).observe($('[data-hero]'));
 new IntersectionObserver(([e]) => { offerInView = e.isIntersecting || e.boundingClientRect.top < 0; syncBuybar(); }, { threshold: 0.15 }).observe($('#acheter'));
 
-window.addEventListener('load', () => ScrollTrigger.refresh());
+window.addEventListener('load', () => {
+  // some browsers restore the old position after load: bring the visitor back to the first screen
+  if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+  window.scrollTo(0, 0);
+  ScrollTrigger.refresh();
+});

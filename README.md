@@ -23,15 +23,15 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 | Section | Effect |
 | --- | --- |
-| Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift); stays full-bleed and scrolls away with a slight parallax |
-| Manifeste | Words light up as you scroll; departure checklist (visa ✓, billet ✓, 2 303 contacts) beside an arrival photo revealed and in parallax |
-| Le fichier (produits) | Contact-sheet grid, photos always visible with a gentle drift; scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
+| Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift); full-bleed, loads the 2400 px version on desktop |
+| Manifeste | Words light up as you scroll; departure checklist (visa ✓, billet ✓, 2 303 contacts) beside an arrival photo revealed from the bottom |
+| Le fichier (produits) | Contact-sheet grid, photos always visible and static (sharp); scrolling runs a film counter 0001 → 2303 and draws a coral loop around the active step |
 | Aperçu | Centred spreadsheet (column letters, row numbers, gridlines) with 6 real rows, numbers masked |
-| Horizon | Full-bleed photo shown at once, gentle parallax, the line fades in |
+| Horizon | Full-bleed photo shown at once, the line fades in |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
-| Services | Violet section, portrait revealed then parallax inside its mask |
+| Services | Violet section, portrait revealed |
 | FAQ | 5 questions in a centred accordion (one answer open at a time) + FAQPage JSON-LD |
-| CTA | Parallax aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button, payment badges; on phones a sticky buy bar appears after the hero |
+| CTA | Aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button, payment badges; on phones a sticky buy bar appears after the hero |
 | Legal | `mentions-legales.html`, `cgv.html`, `cgu.html`, `confidentialite.html`, `404.html`, `robots.txt`, `sitemap.xml` |
 
 Motion respects `prefers-reduced-motion` (no smooth scroll, no pins, static grid). WebGL is progressive: without it, or if a texture cannot load, the DOM images and CSS reveals take over.
