@@ -73,7 +73,7 @@ for (const url of urls) {
   for (const [page, prefix] of Object.entries(PAGES)) {
     let h = html[page];
     const srcset = variants.map((v) => `${prefix}${v.file} ${v.width}w`).join(', ');
-    const sizes = portrait ? '(min-width: 1201px) 22vw, (min-width: 901px) 34vw, (min-width: 521px) 50vw, 100vw' : '100vw';
+    const sizes = portrait ? '(min-width: 1201px) 28vw, (min-width: 901px) 42vw, (min-width: 521px) 60vw, 100vw' : '100vw';
     // <img src="URL"> → local file + responsive srcset
     h = h.split(`src="${url}"`).join(sharp ? `src="${prefix}${main.file}" srcset="${srcset}" sizes="${sizes}"` : `src="${prefix}${main.file}"`);
     // social previews need an absolute URL
