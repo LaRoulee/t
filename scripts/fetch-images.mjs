@@ -29,6 +29,7 @@ const NAMES = {
   'afea47c2': 'portrait-verger-manguiers',
   'd6b88605': 'hangar-conditionnement',
   'd1289af9': 'bananeraie-vue-aerienne',
+  'c04f7266': 'arrivee-aeroport-sydney',
 };
 
 let sharp = null;

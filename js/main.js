@@ -145,6 +145,28 @@ if (!reduceMotion) {
     scrollTrigger: { trigger: '.manifesto__text', start: 'top 85%', end: 'bottom 55%', scrub: true },
   });
 
+  // the arrival photo opens from the bottom, then drifts inside its frame
+  const arrival = $('[data-manifesto-photo] img');
+  const arrivalMask = document.createElement('div');
+  arrivalMask.className = 'mask';
+  arrival.before(arrivalMask);
+  arrivalMask.append(arrival);
+  gsap.fromTo(arrivalMask, { clipPath: 'inset(100% 0 0 0)' }, {
+    clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'expo.inOut',
+    scrollTrigger: { trigger: '.manifesto', start: 'top 70%' },
+  });
+  gsap.fromTo(arrival, { scale: 1.15, yPercent: -5 }, {
+    yPercent: 5, ease: 'none',
+    scrollTrigger: { trigger: '.manifesto', start: 'top bottom', end: 'bottom top', scrub: true },
+  });
+
+  // the departure checklist: two boxes already ticked, the last one is the guide
+  const items = $$('[data-checklist] .checklist__item');
+  gsap.set($$('[data-checklist] .checklist__tick'), { strokeDashoffset: 1 });
+  gsap.timeline({ scrollTrigger: { trigger: '[data-checklist]', start: 'top 85%' } })
+    .from(items, { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.15, ease: 'expo.out' })
+    .to($$('[data-checklist] .checklist__tick'), { strokeDashoffset: 0, duration: 0.5, stagger: 0.2, ease: 'power2.out' }, 0.3);
+
   /* the contact sheet: every print stays visible; scrolling runs the counter and the marker */
   const counter = $('[data-counter]');
   const steps = $$('[data-steps] li');
