@@ -301,6 +301,21 @@ checkout.addEventListener('click', (e) => {
 });
 syncCheckout();
 
+/* ---------- FAQ accordion: one answer open at a time ---------- */
+
+$$('[data-faq] .faq__q').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq__item');
+    const open = !item.classList.contains('is-open');
+    $$('[data-faq] .faq__item.is-open').forEach((other) => {
+      other.classList.remove('is-open');
+      $('.faq__q', other).setAttribute('aria-expanded', 'false');
+    });
+    item.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+
 /* ---------- mobile buy bar: shown after the hero, hidden once the offer is on screen ---------- */
 
 const buybar = $('[data-buybar]');
