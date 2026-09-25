@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>AUSSIEWAY · vidéo</title>
+<style>
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; }
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-ext-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+  :root { --ink: #2a2b29; --bone: #eeede8; --dim: #b9b8b1; --twilight: #61398b; --tint: #ddd3ea; --coral: #de5346; --coral-text: #ef7a6e; --charcoal: #444642; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  body { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; color: var(--bone); -webkit-font-smoothing: antialiased; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+  .scene { position: absolute; inset: 0; overflow: hidden; background: var(--ink); visibility: hidden; }
+  .scene.violet { background: var(--twilight); }
+  .scene.bone { background: var(--bone); color: var(--ink); }
+
+  /* photos */
+  .bg { position: absolute; inset: 0; overflow: hidden; }
+  .bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 45%; }
+  .bg.band { bottom: auto; height: 1080px; }
+  .bg.full::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,19,.55) 0%, rgba(20,20,19,0) 22%, rgba(20,20,19,0) 42%, rgba(20,20,19,.86) 72%, rgba(20,20,19,.94) 100%); }
+  .bg.band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,19,.5) 0%, rgba(20,20,19,0) 22%, rgba(20,20,19,0) 70%, var(--ink) 100%); }
+
+  /* brand strip, kept inside the Reels safe area */
+  .brand { text-shadow: 0 1px 12px rgba(0,0,0,.45); position: absolute; left: 80px; top: 176px; display: flex; align-items: center; gap: 16px; font-weight: 700; font-size: 30px; letter-spacing: .24em; z-index: 5; }
+  .brand i { display: grid; grid-template-columns: repeat(2, 9px); gap: 6px; }
+  .brand i b { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); }
+  .bone .brand { color: var(--ink); }
+
+  /* text block: 80px left, 150px right to clear the Reels buttons, ends above the caption area */
+  .txt { position: absolute; left: 80px; right: 150px; bottom: 380px; display: flex; flex-direction: column; gap: 30px; z-index: 4; }
+  .txt.mid { top: 340px; bottom: 380px; justify-content: center; }
+  .txt.low { top: 1120px; bottom: 380px; justify-content: flex-start; }
+  .kicker { font-size: 34px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text); }
+  .violet .kicker { color: #f3b2aa; }
+  .bone .kicker { color: #b3392d; }
+  .h1 { font-size: 100px; line-height: 1.02; font-weight: 800; letter-spacing: -.025em; font-stretch: 104%; text-wrap: balance; }
+  .h2 { font-size: 70px; line-height: 1.06; font-weight: 750; letter-spacing: -.02em; text-wrap: balance; }
+  .p { font-size: 44px; line-height: 1.3; font-weight: 500; color: var(--bone); text-wrap: pretty; }
+  .p.dim { color: var(--dim); }
+  .violet .p.dim { color: var(--tint); }
+  .bone .p { color: var(--ink); }
+  .bone .p.dim { color: #5b5c57; }
+  .coral { color: var(--coral-text); }
+  .violet .coral { color: #ffb4ab; }
+  .big { font-size: 250px; line-height: .9; font-weight: 850; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  .pill { align-self: flex-start; background: var(--coral); color: #121211; font-weight: 800; font-size: 44px; padding: 26px 40px; border-radius: 6px; }
+  .note { font-size: 34px; line-height: 1.35; color: var(--dim); }
+  .rule { height: 2px; background: rgba(238,237,232,.25); }
+
+  /* numbered / checked lists */
+  .list { display: flex; flex-direction: column; gap: 34px; }
+  .row { display: grid; grid-template-columns: 76px 1fr; gap: 26px; align-items: start; }
+  .row .n { width: 76px; height: 76px; border-radius: 50%; background: var(--coral); color: #121211; display: grid; place-items: center; font-weight: 800; font-size: 40px; }
+  .row .n.ok { background: var(--bone); }
+  .row .n.no { background: var(--coral); }
+  .row b { display: block; font-size: 50px; line-height: 1.12; font-weight: 750; letter-spacing: -.01em; }
+  .row span { display: block; font-size: 36px; line-height: 1.3; color: var(--dim); margin-top: 8px; }
+  .bone .row span { color: #5b5c57; }
+  .bone .row .n.ok { background: var(--ink); color: var(--bone); }
+
+  /* horizontal bars */
+  .bars { display: flex; flex-direction: column; gap: 26px; }
+  .bar { display: grid; grid-template-columns: 1fr auto; gap: 8px 20px; }
+  .bar .l { font-size: 38px; font-weight: 600; }
+  .bar .v { font-size: 38px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .bar .t { grid-column: 1 / -1; height: 22px; background: rgba(238,237,232,.14); border-radius: 3px; overflow: hidden; }
+  .bar .t i { display: block; height: 100%; background: var(--coral); transform-origin: 0 50%; }
+  .bar.hi .t i { background: var(--coral); }
+  .bar.lo .t i { background: var(--bone); opacity: .7; }
+
+  /* month columns */
+  .months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; align-items: end; height: 520px; }
+  .months .c { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 12px; height: 100%; }
+  .months .c i { width: 100%; background: var(--bone); opacity: .35; border-radius: 3px 3px 0 0; transform-origin: 50% 100%; }
+  .months .c.hot i { background: var(--coral); opacity: 1; }
+  .months .c em { font-style: normal; font-size: 26px; font-weight: 700; color: var(--dim); }
+  .months .c.hot em { color: var(--bone); }
+  .months .c s { text-decoration: none; font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+  /* heatmap */
+  .heat { display: grid; grid-template-columns: 96px repeat(12, 1fr); gap: 7px; }
+  .heat .h { font-size: 24px; font-weight: 700; color: var(--dim); text-align: center; padding-bottom: 6px; }
+  .heat .s { font-size: 32px; font-weight: 800; align-self: center; }
+  .heat .cell { aspect-ratio: 1 / 1.2; border-radius: 4px; background: var(--coral); }
+  .heat .cell.ring { outline: 5px solid var(--bone); outline-offset: 2px; }
+
+  /* mail / phone cards */
+  .card { background: var(--bone); color: var(--ink); border-radius: 14px; padding: 44px 46px; font-size: 36px; line-height: 1.38; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .card .sub { font-weight: 800; font-size: 34px; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 2px solid #d6d4cc; }
+  .card .sub small { display: block; font-weight: 700; font-size: 24px; letter-spacing: .12em; text-transform: uppercase; color: #8a8a84; margin-bottom: 6px; }
+  .card .body { white-space: pre-wrap; min-height: 1em; }
+  .card mark { background: #f4d8d4; color: #9d2c21; border-radius: 4px; padding: 0 4px; }
+  .caret { display: inline-block; width: 4px; height: 1em; background: var(--coral); vertical-align: -0.14em; margin-left: 2px; }
+  .fr { font-size: 34px; line-height: 1.35; color: var(--dim); font-style: italic; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const IMG = (name, w = 1792) => `../../assets/img/${name}-${w}.webp`;
+const PH = {
+  aeroport: IMG('arrivee-aeroport-sydney'), argent: IMG('argent-fin-de-journee'), piste: IMG('australie-piste-outback'),
+  fraises: IMG('job-cueillette-fraises'), ferme: IMG('logement-maison-de-ferme'), manguier: IMG('portrait-verger-manguiers'),
+  ocean: IMG('pvt-great-ocean-road'),
+  bananes: IMG('bananeraie-vue-aerienne', 2400), hangar: IMG('hangar-conditionnement', 2400), ble: IMG('hero-ble-australie-occidentale', 2400),
+  champ: IMG('hero-champ-queensland', 2400), vigne: IMG('hero-vignoble-barossa', 2400),
+};
+const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+const MONTHS_LONG = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+const nb = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+// Calendrier tab of JOBS_AUSTRALIE_PVT.xlsx: direct employers hiring each month
+const CAL = {
+  QLD: [39, 38, 64, 77, 95, 98, 95, 80, 78, 91, 62, 38], NSW: [9, 17, 30, 25, 49, 78, 71, 71, 56, 48, 53, 35],
+  VIC: [39, 66, 57, 47, 37, 40, 29, 28, 19, 17, 13, 32], SA: [30, 41, 43, 40, 5, 5, 5, 6, 5, 4, 13, 12],
+  WA: [19, 23, 24, 23, 36, 23, 28, 33, 35, 31, 18, 21], TAS: [49, 69, 71, 35, 11, 9, 8, 8, 8, 9, 50, 48],
+  NT: [2, 1, 1, 3, 2, 2, 2, 2, 2, 2, 3, 2],
+};
+const VINE = [10, 52, 59, 52, 18, 2, 3, 6, 5, 5, 5, 9];
+
+const BRAND = '<div class="brand"><i><b></b><b></b><b></b><b></b></i>AUSSIEWAY</div>';
+
+// ---------- scene builders ----------
+// photo: { src, mode: 'full' | 'band', kb: [from, to], pos }
+function scene(d, html, { photo, cls = '' } = {}) { return { d, html, photo, cls }; }
+const full = (src, kb = [1.0, 1.08], pos = '50% 50%') => ({ src, mode: 'full', kb, pos });
+const band = (src, kb = [1.0, 1.06], pos = '50% 50%') => ({ src, mode: 'band', kb, pos });
+
+const listRows = (items, start = 0.4, step = 0.55, mark = (i) => i + 1, cls = '') => `<div class="list">${items.map(([b, s], i) =>
+  `<div class="row" data-in="${start + i * step}"><div class="n ${cls}">${mark(i)}</div><div><b>${b}</b>${s ? `<span>${s}</span>` : ''}</div></div>`).join('')}</div>`;
+
+const barsHtml = (items, max, start = 0.5, step = 0.22) => `<div class="bars">${items.map(([l, v, c = ''], i) =>
+  `<div class="bar ${c}" data-in="${start + i * step}"><div class="l">${l}</div><div class="v" data-count="${v}" data-at="${start + i * step}" data-dur="0.9">0</div><div class="t"><i data-grow="${v / max}" data-at="${start + i * step}" data-dur="1.0"></i></div></div>`).join('')}</div>`;
+
+const monthsHtml = (vals, hot, start = 0.4) => {
+  const max = Math.max(...vals);
+  return `<div class="months">${vals.map((v, i) =>
+    `<div class="c ${hot.includes(i) ? 'hot' : ''}"><s data-count="${v}" data-at="${start + i * 0.07}" data-dur="0.8">0</s><i style="height:${(v / max) * 100}%" data-growy="1" data-at="${start + i * 0.07}" data-dur="0.8"></i><em>${MONTHS[i]}</em></div>`).join('')}</div>`;
+};
+
+const heatHtml = (start = 0.3, ring = []) => {
+  const max = 98;
+  let h = '<div class="heat"><div></div>' + MONTHS.map((m) => `<div class="h">${m}</div>`).join('');
+  for (const [s, vals] of Object.entries(CAL)) {
+    h += `<div class="s">${s}</div>`;
+    vals.forEach((v, j) => {
+      const r = ring.some(([rs, rj]) => rs === s && rj === j) ? 'ring' : '';
+      h += `<div class="cell ${r}" data-heat="${0.08 + 0.92 * (v / max)}" data-at="${start + j * 0.11}"${r ? ` data-ringat="${start + 1.9}"` : ''}></div>`;
+    });
+  }
+  return h + '</div>';
+};
+
+const END = scene(3.4, `${BRAND}<div class="txt mid">
+  <div class="kicker" data-in="0.1">Le Guide Opérationnel</div>
+  <div class="big" data-count="2303" data-at="0.2" data-dur="1.2">0</div>
+  <div class="h2" data-in="0.45">contacts pour bosser en Australie en PVT</div>
+  <div class="p dim" data-in="0.75">Fermes, stations, usines, hôtels et agences. Téléphone, e-mail, saison, paie.</div>
+  <div class="pill" data-in="1.05" data-anim="pop">Lien en bio →</div>
+</div>`, { cls: 'violet' });
+
+// ---------- the videos ----------
+const VIDEOS = {
+  '01-2303-contacts': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">PVT Australie</div><div class="h1" data-in="0.35">Tu pars en PVT en Australie&nbsp;?</div></div>`, { photo: full(PH.aeroport, [1.0, 1.06], '50% 35%') }),
+    scene(3.4, `${BRAND}<div class="txt"><div class="h2" data-in="0.2">Le plus dur, ce n'est pas le visa.</div><div class="h2 coral" data-in="1.1">C'est de savoir qui appeler en arrivant.</div></div>`, { photo: full(PH.piste, [1.04, 1.1]) }),
+    scene(4.2, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">Dans un seul fichier</div><div class="big" data-count="2303" data-at="0.25" data-dur="1.6">0</div>
+      <div class="h2" data-in="0.6">employeurs et agences qui embauchent des backpackers</div>
+      <div class="rule" data-in="1.4"></div>
+      <div class="p dim" data-in="1.6"><b class="coral">${nb(2078)}</b> numéros de téléphone · <b class="coral">${nb(1540)}</b> e‑mails · 7 États</div></div>`),
+    END,
+  ],
+  '02-calendrier-embauches': [
+    scene(2.8, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Calendrier des embauches</div><div class="h1" data-in="0.35">Où bosser selon le mois de ton arrivée</div></div>`, { photo: full(PH.fraises, [1.0, 1.07], '50% 40%') }),
+    scene(6.4, `${BRAND}<div class="txt mid" style="gap:40px"><div class="kicker" data-in="0.1">Employeurs qui recrutent, par mois</div>${heatHtml(0.4, [['QLD', 5], ['TAS', 2]])}
+      <div class="p" data-in="2.6"><b class="coral">Juin</b> : le Queensland recrute le plus (98 employeurs).</div>
+      <div class="p" data-in="3.4"><b class="coral">Janvier → mars</b> : direction la Tasmanie et le Victoria.</div></div>`),
+    scene(3.0, `${BRAND}<div class="txt mid"><div class="h2" data-in="0.2">Arrive 2 à 3 semaines <span class="coral">avant</span> le pic de récolte.</div><div class="p dim" data-in="0.9">C'est là que les fermes cherchent encore du monde.</div></div>`, { cls: 'violet' }),
+    END,
+  ],
+  '03-les-88-jours': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">2e visa Working Holiday</div><div class="h1" data-in="0.35">Les 88 jours, c'est quoi&nbsp;?</div></div>`, { photo: full(PH.fraises, [1.02, 1.09], '50% 40%') }),
+    scene(4.4, `${BRAND}<div class="txt mid">${listRows([
+      ['3 mois de « specified work »', 'en zone régionale pendant ton 1er visa → 2e visa'],
+      ['6 mois pendant le 2e visa', '→ 3e visa'],
+    ], 0.3, 1.1)}</div>`),
+    scene(4.2, `${BRAND}<div class="txt low"><div class="kicker" data-in="0.1">Ce qui compte en général</div><div class="h2" data-in="0.35">Agriculture, élevage, pêche, foresterie, mines, construction.</div><div class="p dim" data-in="1.2">L'hôtellerie seulement en zone « remote » et en Australie du Nord.</div></div>`, { photo: band(PH.champ) }),
+    scene(3.8, `${BRAND}<div class="txt mid">${listRows([
+      ['Vérifie le code postal', 'sur immi.homeaffairs.gov.au, la seule source qui fait foi'],
+      ['Garde toutes tes fiches de paie', 'et fais remplir le formulaire 1263'],
+    ], 0.3, 1.0, () => '!', '')}</div>`, { cls: 'violet' }),
+    END,
+  ],
+  '04-tasmanie': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Tasmanie</div><div class="h1" data-in="0.35">Le bon plan de l'été australien</div></div>`, { photo: full(PH.manguier, [1.0, 1.07], '50% 30%') }),
+    scene(5.6, `${BRAND}<div class="txt mid" style="gap:44px"><div class="kicker" data-in="0.1">Employeurs qui recrutent en Tasmanie</div>${monthsHtml(CAL.TAS, [0, 1, 2, 10, 11], 0.4)}
+      <div class="p" data-in="1.8"><b class="coral">Novembre → mars</b> : 48 à 71 employeurs par mois.</div><div class="p dim" data-in="2.6">De mai à octobre : moins de 12.</div></div>`),
+    scene(2.8, `${BRAND}<div class="txt mid"><div class="h2" data-in="0.2">Cerises, pommes, petits fruits : vise la Tasmanie dès novembre.</div></div>`, { cls: 'violet' }),
+    END,
+  ],
+  '05-vendanges': [
+    scene(2.6, `${BRAND}<div class="txt low"><div class="kicker" data-in="0.15">Vignes & vin</div><div class="h1" data-in="0.35">Les vendanges, c'est quand&nbsp;?</div></div>`, { photo: band(PH.vigne) }),
+    scene(5.4, `${BRAND}<div class="txt mid" style="gap:44px"><div class="kicker" data-in="0.1">Employeurs du vin qui recrutent</div>${monthsHtml(VINE, [1, 2, 3], 0.4)}
+      <div class="p" data-in="1.8"><b class="coral">Février → avril</b> : 52 à 59 employeurs par mois.</div><div class="p dim" data-in="2.6">Barossa, Hunter Valley, Margaret River, Yarra Valley…</div></div>`),
+    END,
+  ],
+  '06-arnaques': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Jobs en ferme</div><div class="h1" data-in="0.35">3 signaux d'arnaque à connaître</div></div>`, { photo: full(PH.ferme, [1.0, 1.07]) }),
+    scene(6.8, `${BRAND}<div class="txt mid">${listRows([
+      ['On te demande de payer pour un job', 'Un vrai employeur ne fait jamais payer.'],
+      ['Des semaines de loyer d\'avance', 'dans un « working hostel », sans garantie de travail.'],
+      ['Payé « cash in hand »', 'Aucune preuve pour tes 88 jours, aucune protection.'],
+    ], 0.3, 1.5, () => '✕', 'no')}</div>`),
+    scene(2.8, `${BRAND}<div class="txt mid"><div class="h2" data-in="0.2">Tu as droit au salaire minimum et à des fiches de paie.</div><div class="p dim" data-in="0.9">Vérifie sur fairwork.gov.au (Pay Calculator).</div></div>`, { cls: 'violet' }),
+    END,
+  ],
+  '07-papiers-avant-de-postuler': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Avant de postuler</div><div class="h1" data-in="0.35">Les papiers à avoir prêts</div></div>`, { photo: full(PH.aeroport, [1.02, 1.08], '50% 35%') }),
+    scene(7.4, `${BRAND}<div class="txt mid">${listRows([
+      ['TFN', 'numéro fiscal, gratuit, sur le site de l\'ATO'],
+      ['Compte bancaire + numéro australiens', ''],
+      ['RSA', 'obligatoire pour servir de l\'alcool'],
+      ['White Card', 'obligatoire sur les chantiers'],
+      ['Permis cariste', 'un vrai plus en usine et en entrepôt'],
+      ['Une voiture', 'souvent ce qui fait la différence'],
+    ], 0.3, 0.8, () => '✓', 'ok')}</div>`, { cls: 'bone' }),
+    END,
+  ],
+  '08-email-en-anglais': [
+    scene(2.4, `${BRAND}<div class="txt low"><div class="kicker" data-in="0.15">Candidature</div><div class="h1" data-in="0.35">L'e-mail en anglais à envoyer aux fermes</div></div>`, { photo: band(PH.hangar) }),
+    scene(9.0, `${BRAND}<div class="txt mid" style="justify-content:flex-start;padding-top:140px"><div class="card" data-in="0.1"><div class="sub"><small>Objet</small><span data-type="Backpacker available for farm work – from [date]" data-at="0.3" data-cps="34"></span></div>
+      <div class="body" data-type="Hi [name],\n\nI'm a French backpacker on a Working Holiday visa (417), available from [date] for picking or packing work.\n\nI'm hard-working, reliable and I have my own car.\n\nDo you need any workers this season?" data-at="1.9" data-cps="40"></div></div>
+      <div class="p dim" data-in="7.6">Le modèle complet est dans le guide.</div></div>`),
+    END,
+  ],
+  '09-appel-telephone': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Astuce</div><div class="h1" data-in="0.35">Pour les fermes, appelle. Avant 9&nbsp;h.</div></div>`, { photo: full(PH.aeroport, [1.03, 1.09], '50% 30%') }),
+    scene(7.2, `${BRAND}<div class="txt mid" style="justify-content:flex-start;padding-top:180px"><div class="kicker" data-in="0.1">La phrase à dire</div><div class="card" data-in="0.2"><div class="body" data-type="“Hi, my name is [first name], I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from [date] and I have my own car.”" data-at="0.5" data-cps="36"></div></div>
+      <div class="fr" data-in="5.2">« Je cherche du travail en ferme. Vous avez besoin de cueilleurs ou d'emballeurs en ce moment&nbsp;? »</div></div>`),
+    END,
+  ],
+  '10-cv-australien': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">CV</div><div class="h1" data-in="0.35">Le CV « à l'australienne » en 4 règles</div></div>`, { photo: full(PH.argent, [1.0, 1.07]) }),
+    scene(7.0, `${BRAND}<div class="txt mid">${listRows([
+      ['1 page, 2 maximum', 'pas de photo en général'],
+      ['En haut : numéro australien, e-mail, visa, dates dispo', ''],
+      ['Mets en avant le physique et le manuel', 'même un job d\'été en France, permis, RSA, White Card'],
+      ['1 ou 2 « referees »', 'd\'anciens employeurs joignables : c\'est la norme'],
+    ], 0.3, 1.2)}</div>`),
+    END,
+  ],
+  '11-5-astuces': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Trouver un job plus vite</div><div class="h1" data-in="0.35">5 astuces de backpackers</div></div>`, { photo: full(PH.piste, [1.0, 1.07]) }),
+    scene(8.4, `${BRAND}<div class="txt mid">${listRows([
+      ['Appelle avant 9 h', 'c\'est là que les responsables répondent'],
+      ['Arrive 2 à 3 semaines avant le pic', ''],
+      ['Présente-toi en personne', 'stations d\'emballage, roadhouses'],
+      ['Relance après 3 ou 4 jours', 'les petites fermes sont débordées'],
+      ['Combine avec Gumtree et les groupes Facebook', ''],
+    ], 0.3, 1.2)}</div>`),
+    END,
+  ],
+  '12-pas-que-des-fermes': [
+    scene(2.6, `${BRAND}<div class="txt low"><div class="kicker" data-in="0.15">PVT Australie</div><div class="h1" data-in="0.35">Il n'y a pas que la cueillette</div></div>`, { photo: band(PH.hangar) }),
+    scene(6.6, `${BRAND}<div class="txt mid" style="gap:40px"><div class="kicker" data-in="0.1">Contacts du fichier, par secteur</div>${barsHtml([
+      ['Hôtellerie & restauration', 510, 'hi'], ['Fruits & cueillette', 469], ['Élevage & stations', 277], ['Emballage, usine & entrepôt', 197],
+      ['Légumes & maraîchage', 143], ['Construction & mines', 137], ['Roadhouses', 92],
+    ], 510, 0.4, 0.25)}</div>`),
+    END,
+  ],
+  '13-paye-au-rendement': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Paie</div><div class="h1" data-in="0.35">Payé « au rendement », ça veut dire quoi&nbsp;?</div></div>`, { photo: full(PH.argent, [1.02, 1.09]) }),
+    scene(4.0, `${BRAND}<div class="txt low"><div class="h2" data-in="0.2">Tu es payé à la quantité récoltée.</div><div class="p dim" data-in="0.9">Au bac, au kilo, à la caisse : c'est le « piece rate ».</div></div>`, { photo: band(PH.bananes) }),
+    scene(4.6, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">Depuis avril 2022</div><div class="h2" data-in="0.3">Un minimum horaire est garanti par la loi, même au rendement.</div><div class="p dim" data-in="1.4">Vérifie sur fairwork.gov.au (Pay Calculator).</div></div>`, { cls: 'violet' }),
+    END,
+  ],
+  '14-trouver-en-3-clics': [
+    scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">Le Guide Opérationnel</div><div class="h1" data-in="0.35">Trouver qui recrute en 3 clics</div></div>`, { photo: full(PH.manguier, [1.02, 1.08], '50% 30%') }),
+    scene(6.6, `${BRAND}<div class="txt mid">${listRows([
+      ['Filtre l\'État', 'par exemple QLD'],
+      ['Filtre ton mois de dispo', 'mars → seuls ceux qui recrutent en mars'],
+      ['Filtre le secteur, puis appelle', 'téléphone, e-mail et site web cliquables'],
+    ], 0.3, 1.4)}</div>`, { cls: 'bone' }),
+    scene(3.2, `${BRAND}<div class="txt mid"><div class="big" data-count="2078" data-at="0.2" data-dur="1.1">0</div><div class="h2" data-in="0.4">numéros de téléphone</div><div class="big" data-count="1540" data-at="0.9" data-dur="1.1" data-in="0.8">0</div><div class="h2" data-in="1.1">adresses e-mail</div></div>`),
+    END,
+  ],
+  '15-ou-sont-les-jobs': [
+    scene(2.6, `${BRAND}<div class="txt low"><div class="kicker" data-in="0.15">Carte des jobs</div><div class="h1" data-in="0.35">Dans quel État trouver du travail&nbsp;?</div></div>`, { photo: band(PH.ble) }),
+    scene(6.4, `${BRAND}<div class="txt mid" style="gap:40px"><div class="kicker" data-in="0.1">Contacts du fichier, par État</div>${barsHtml([
+      ['Queensland', 617, 'hi'], ['Nouvelle-Galles du Sud', 493], ['Australie-Occidentale', 289], ['Victoria', 236],
+      ['Australie-Méridionale', 212], ['Tasmanie', 152], ['Territoire du Nord', 143],
+    ], 617, 0.4, 0.25)}</div>`),
+    END,
+  ],
+};
+
+// ---------- deterministic timeline ----------
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const easeOut = (p) => 1 - Math.pow(1 - p, 3);
+const easeOutBack = (p) => { const c = 1.5; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
+const FADE = 0.28;
+
+const id = new URLSearchParams(location.search).get('v') || Object.keys(VIDEOS)[0];
+const scenes = VIDEOS[id];
+const stage = document.getElementById('stage');
+let t0 = 0;
+for (const s of scenes) {
+  const el = document.createElement('section');
+  el.className = `scene ${s.cls}`;
+  if (s.photo) el.innerHTML = `<div class="bg ${s.photo.mode}"><img src="${s.photo.src}" style="object-position:${s.photo.pos}" alt=""></div>`;
+  el.insertAdjacentHTML('beforeend', s.html);
+  stage.append(el);
+  s.el = el; s.start = t0; t0 += s.d;
+  s.anims = [...el.querySelectorAll('[data-in]')];
+  s.counts = [...el.querySelectorAll('[data-count]')];
+  s.grows = [...el.querySelectorAll('[data-grow]')];
+  s.growys = [...el.querySelectorAll('[data-growy]')];
+  s.heats = [...el.querySelectorAll('[data-heat]')];
+  s.types = [...el.querySelectorAll('[data-type]')];
+  s.img = el.querySelector('.bg img');
+}
+window.DURATION = t0;
+
+function draw(s, lt) {
+  if (s.img) {
+    const [a, b] = s.photo.kb;
+    s.img.style.transform = `scale(${a + (b - a) * clamp(lt / s.d)})`;
+  }
+  for (const e of s.anims) {
+    const p = clamp((lt - +e.dataset.in) / 0.55);
+    const k = easeOut(p);
+    if (e.dataset.anim === 'pop') e.style.transform = `scale(${0.6 + 0.4 * easeOutBack(p)})`;
+    else e.style.transform = `translateY(${(1 - k) * 46}px)`;
+    e.style.opacity = clamp(p * 1.6);
+  }
+  for (const e of s.counts) {
+    const p = easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur));
+    e.textContent = nb(Math.round(+e.dataset.count * p));
+  }
+  for (const e of s.grows) e.style.transform = `scaleX(${+e.dataset.grow * easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur))})`;
+  for (const e of s.growys) e.style.transform = `scaleY(${easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur))})`;
+  for (const e of s.heats) {
+    const p = clamp((lt - +e.dataset.at) / 0.4);
+    e.style.opacity = (+e.dataset.heat * p).toFixed(3);
+    if (e.dataset.ringat) e.style.outlineColor = lt > +e.dataset.ringat ? 'var(--bone)' : 'transparent';
+  }
+  for (const e of s.types) {
+    const txt = e.dataset.type;
+    const n = Math.floor(clamp((lt - +e.dataset.at) * +e.dataset.cps, 0, txt.length));
+    const shown = txt.slice(0, n).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\[([^\]]*)\]?/g, (m) => `<mark>${m}</mark>`);
+    const typing = lt >= +e.dataset.at && n < txt.length;
+    e.innerHTML = shown + (typing ? '<span class="caret"></span>' : '');
+  }
+}
+
+window.seek = (t) => {
+  let i = scenes.findIndex((s) => t < s.start + s.d);
+  if (i < 0) i = scenes.length - 1;
+  scenes.forEach((s, j) => { s.el.style.visibility = 'hidden'; s.el.style.zIndex = 0; });
+  const cur = scenes[i];
+  const lt = t - cur.start;
+  if (i > 0 && lt < FADE) {
+    const prev = scenes[i - 1];
+    prev.el.style.visibility = 'visible'; prev.el.style.zIndex = 1; prev.el.style.opacity = 1;
+    draw(prev, prev.d);
+  }
+  cur.el.style.visibility = 'visible'; cur.el.style.zIndex = 2;
+  cur.el.style.opacity = i > 0 ? easeOut(clamp(lt / FADE)) : 1;
+  draw(cur, lt);
+};
+
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((im) => im.decode().catch(() => {}))]).then(() => { seek(0); return true; });
+</script>
+</body>
+</html>
