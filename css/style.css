@@ -343,7 +343,7 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 .xl__table .sheet-n { width: 44px; background: #f1f3f4; color: #5f6368; font-weight: 400; font-size: .75rem; }
 .xl__table tbody tr:hover td { background: #f6faf7; }
 .xl__table .c-name { text-align: left; font-weight: 600; }
-.mask { filter: blur(3.5px); user-select: none; color: #5f6368; }
+.xl__mask { filter: blur(3.5px); user-select: none; color: #5f6368; }
 .xl__tabs { display: flex; gap: 2px; padding: 0 12px; background: #f1f3f4; border-top: 1px solid #dadce0; font-size: .75rem; color: #5f6368; overflow-x: auto; }
 .xl__tabs > * { padding: 8px 14px; white-space: nowrap; }
 .xl__tabs b { background: #fff; color: #1f6e43; font-weight: 700; border-bottom: 2px solid #1f6e43; }
