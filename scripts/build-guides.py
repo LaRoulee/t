@@ -282,7 +282,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
       {BRAND_SVG}
       <span>AUSSIEWAY</span>
     </a>
-    <a class="link" href="./#acheter">Le guide · 27&nbsp;€</a>
+    <a class="btn btn--sm" href="./#acheter" data-goatcounter-click="guide-bouton-haut">Acheter</a>
   </header>{main}
   <div class="gbar" aria-label="Le Guide Opérationnel">
     <span class="gbar__name">Le Guide Opérationnel <b>27&nbsp;€</b></span>
