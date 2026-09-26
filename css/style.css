@@ -568,6 +568,34 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
+/* ---------- guides (links to the SEO pages) ---------- */
+
+.guides { background: var(--bone); color: var(--ink); padding: clamp(96px, 14vh, 160px) var(--gutter); }
+.guides__head { max-width: 1200px; margin: 0 auto clamp(32px, 5vh, 56px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px 48px; align-items: end; }
+.guides__lede { color: var(--charcoal); max-width: 46ch; }
+.guides__list { list-style: none; margin: 0 auto; padding: 0; max-width: 1200px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px 24px; }
+.guides__item--lead { grid-column: span 2; grid-row: span 2; }
+.guides__item a { display: grid; gap: 10px; color: var(--ink); text-decoration: none; }
+.guides__item img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 2px; }
+.guides__item--lead img { aspect-ratio: 4 / 3.2; }
+.guides__title { font-size: var(--step-1); font-weight: 620; font-variation-settings: "wdth" 110; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.guides__item--lead .guides__title { font-size: var(--step-2); }
+.guides__desc { font-size: 0.9375rem; color: var(--charcoal); }
+.guides__more { font-size: 0.875rem; font-weight: 650; color: #b3392d; }
+.guides__item a:hover .guides__title { color: #b3392d; }
+.guides__item a:focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; }
+.guides__all { max-width: 1200px; margin: clamp(32px, 5vh, 48px) auto 0; }
+.guides .link { color: var(--ink); text-decoration-color: rgba(42, 43, 41, .4); }
+@media (max-width: 900px) {
+  .guides__head { grid-template-columns: 1fr; }
+  .guides__list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .guides__list { grid-template-columns: 1fr; }
+  .guides__item--lead { grid-column: auto; grid-row: auto; }
+  .guides__item--lead img { aspect-ratio: 16 / 10; }
+}
+
 /* ---------- legal pages ---------- */
 
 body.legal { background: var(--bone); color: var(--ink); }

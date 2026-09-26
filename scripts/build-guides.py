@@ -143,7 +143,7 @@ GUIDES = [
         'title': 'Travailler en Tasmanie en PVT : saisons, jobs et employeurs',
         'h1': 'Travailler en Tasmanie en PVT',
         'desc': "La Tasmanie recrute des backpackers de novembre à mars : cerises, petits fruits, vignes, hôtellerie. Saisons et nombre d'employeurs par mois.",
-        'photo': ('portrait-verger-manguiers', 'Travailleuse saisonnière dans un verger australien', 1792),
+        'photo': ('cerises-tasmanie', 'Backpackers en train de cueillir des cerises dans un verger de Tasmanie', 1792),
         'cta': "152 contacts en Tasmanie dans le guide AUSSIEWAY, à filtrer par mois et par secteur.",
         'body': f'''
 <section><h2>La meilleure période</h2>
