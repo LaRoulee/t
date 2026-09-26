@@ -21,7 +21,7 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 ## Structure
 
-Order on the page: hero → manifesto → preview → services → CTA (price) → FAQ → calendar → guides. The price comes early; the calendar and the free guides follow for readers who want more.
+Order on the page: hero → manifesto → preview (spreadsheet, contents cards, buy block) → about → CTA (price) → FAQ → calendar → guides. The price comes early; the calendar and the free guides follow for readers who want more.
 
 | Section | Effect |
 | --- | --- |
@@ -29,7 +29,6 @@ Order on the page: hero → manifesto → preview → services → CTA (price) �
 | Manifeste | Words light up as you scroll; departure checklist (visa ✓, billet ✓, 2 303 contacts) beside an arrival photo revealed from the bottom |
 | Aperçu | Centred spreadsheet (column letters, row numbers, gridlines) with 6 real rows, numbers masked |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
-| Services | Violet section, portrait revealed; key figures (employers, agencies, towns, numbers, e-mails) |
 | Guides | Photo tiles linking to the five guide pages |
 | FAQ | 5 questions in a centred accordion (one answer open at a time) + FAQPage JSON-LD |
 | CTA | Aerial photo, price, terms checkbox (withdrawal-right waiver), Payhip button, payment badges; on phones a sticky buy bar appears after the hero |
