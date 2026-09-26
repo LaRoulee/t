@@ -348,8 +348,12 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 .xl__tabs { display: flex; gap: 2px; padding: 0 12px; background: #f1f3f4; border-top: 1px solid #dadce0; font-size: .75rem; color: #5f6368; overflow-x: auto; }
 .xl__tabs > * { padding: 8px 14px; white-space: nowrap; }
 .xl__tabs b { background: #fff; color: #1f6e43; font-weight: 700; border-bottom: 2px solid #1f6e43; }
-.preview__more { display: grid; justify-items: center; gap: 16px; margin-top: 32px; }
-.preview__more p { color: var(--bone); font-weight: 600; }
+.preview__more { display: grid; justify-items: center; gap: 28px; margin-top: 32px; }
+.preview__count { color: var(--bone-dim); font-weight: 600; font-size: var(--step--1); letter-spacing: .02em; }
+.preview__cta { display: grid; justify-items: center; gap: 12px; max-width: 620px; padding: clamp(28px, 4vw, 40px) clamp(20px, 4vw, 48px); border: 1px solid rgba(222, 83, 70, .45); border-radius: 10px; background: rgba(222, 83, 70, .06); }
+.preview__ask { font-size: var(--step-2); font-weight: 620; font-variation-settings: "wdth" 115; letter-spacing: -0.02em; line-height: 1.1; color: var(--bone); text-wrap: balance; }
+.preview__sub { color: var(--bone-dim); max-width: 46ch; text-wrap: pretty; }
+.preview__cta .btn { margin-top: 8px; }
 
 /* ---------- FAQ: one centred column, answers unfold under the question ---------- */
 
