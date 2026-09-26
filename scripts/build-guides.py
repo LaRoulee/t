@@ -49,9 +49,9 @@ def heat_table(rows, caption):
 
 CTA = ('<aside class="gcta" aria-label="Le Guide Opérationnel">'
        '<p class="gcta__kicker">Le Guide Opérationnel</p>'
-       '<p class="gcta__title">2&nbsp;303 employeurs et agences qui embauchent des backpackers, dans un seul fichier.</p>'
+       '<p class="gcta__title">2&nbsp;303 employeurs et agences qui embauchent des backpackers, dans un seul guide.</p>'
        '<p>{line}</p>'
-       '<a class="btn" href="./#acheter" data-goatcounter-click="guide-{slug}-cta">Voir le fichier · 27&nbsp;€</a>'
+       '<a class="btn" href="./#acheter" data-goatcounter-click="guide-{slug}-cta">Voir le guide · 27&nbsp;€</a>'
        '</aside>')
 
 GUIDES = [
@@ -93,10 +93,10 @@ GUIDES = [
         'h1': 'Travail en ferme en Australie&nbsp;: le calendrier des embauches',
         'desc': "Quel État australien recrute des backpackers chaque mois ? Le calendrier des embauches en ferme, État par État, établi à partir de 2 303 contacts.",
         'photo': ('hero-champ-queensland', 'Champ agricole du Queensland au coucher du soleil', 2400),
-        'cta': "Dans le fichier, filtrez la colonne du mois où vous êtes disponible et obtenez la liste des employeurs qui recrutent, avec leur numéro.",
+        'cta': "Dans le guide AUSSIEWAY, filtrez la colonne du mois où vous êtes disponible et obtenez la liste des employeurs qui recrutent, avec leur numéro.",
         'body': f'''
 <section><h2>Le calendrier, État par État</h2>
-<p>Ce tableau compte les <strong>employeurs directs qui recrutent chaque mois</strong> (hors postes «&nbsp;toute l'année&nbsp;»), d'après le fichier AUSSIEWAY. Plus la case est foncée, plus il y a d'opportunités.</p>
+<p>Ce tableau compte les <strong>employeurs directs qui recrutent chaque mois</strong> (hors postes «&nbsp;toute l'année&nbsp;»), d'après le guide AUSSIEWAY. Plus la case est foncée, plus il y a d'opportunités.</p>
 {heat_table(CAL, "Employeurs qui recrutent, par État et par mois")}</section>
 <section><h2>Ce qu'il faut retenir</h2>
 <ul>
@@ -119,14 +119,14 @@ GUIDES = [
         'h1': 'Les vendanges en Australie en PVT',
         'desc': "Les vendanges australiennes ont lieu de février à avril. Régions, paie au rendement et contacts de vignobles qui embauchent des backpackers.",
         'photo': ('hero-vignoble-barossa', 'Vignoble de la Barossa Valley au lever du soleil', 2400),
-        'cta': "72 vignobles et employeurs du vin sont dans le fichier, avec leur ville, leur saison et leur type de paie.",
+        'cta': "72 vignobles et employeurs du vin sont dans le guide AUSSIEWAY, avec leur ville, leur saison et leur type de paie.",
         'body': f'''
 <section><h2>Quand ont lieu les vendanges&nbsp;?</h2>
-<p>En Australie, les saisons sont inversées&nbsp;: les vendanges ont lieu à la fin de l'été austral. Dans le fichier, les employeurs du vin recrutent surtout <strong>de février à avril</strong>, entre 52 et 59 par mois, contre moins de 10 le reste de l'année.</p>
+<p>En Australie, les saisons sont inversées&nbsp;: les vendanges ont lieu à la fin de l'été austral. D'après le guide AUSSIEWAY, les employeurs du vin recrutent surtout <strong>de février à avril</strong>, entre 52 et 59 par mois, contre moins de 10 le reste de l'année.</p>
 {heat_table({'Vignes & vin': VINE}, "Employeurs du vin qui recrutent, par mois")}</section>
 <section><h2>Où faire les vendanges</h2>
 <ul>
-<li><strong>Tasmanie</strong>&nbsp;: la région la mieux représentée dans le fichier (23 employeurs), autour de Pipers Brook ou Granton.</li>
+<li><strong>Tasmanie</strong>&nbsp;: la région la mieux représentée dans le guide AUSSIEWAY (23 employeurs), autour de Pipers Brook ou Granton.</li>
 <li><strong>Nouvelle-Galles du Sud</strong>&nbsp;: la Hunter Valley (Pokolbin).</li>
 <li><strong>Australie-Occidentale</strong>&nbsp;: Margaret River, Albany.</li>
 <li><strong>Victoria</strong>&nbsp;: Robinvale, Mildura.</li>
@@ -134,7 +134,7 @@ GUIDES = [
 </ul></section>
 {{CTA}}
 <section><h2>Comment on est payé</h2>
-<p>La grande majorité des postes du vin sont payés <strong>au rendement</strong> (61 sur 72 dans le fichier), c'est-à-dire à la quantité récoltée. Depuis avril 2022, les travailleurs agricoles payés au rendement ont un <strong>minimum horaire garanti</strong>. Vérifiez vos droits sur <a href="https://www.fairwork.gov.au/" rel="noopener">fairwork.gov.au</a> (Pay Calculator).</p>
+<p>La grande majorité des postes du vin sont payés <strong>au rendement</strong> (61 sur 72 d'après le guide AUSSIEWAY), c'est-à-dire à la quantité récoltée. Depuis avril 2022, les travailleurs agricoles payés au rendement ont un <strong>minimum horaire garanti</strong>. Vérifiez vos droits sur <a href="https://www.fairwork.gov.au/" rel="noopener">fairwork.gov.au</a> (Pay Calculator).</p>
 <p>Les vendanges en zone régionale peuvent compter pour vos <a href="guide-88-jours-pvt-australie.html">88 jours</a>&nbsp;: vérifiez le code postal avant d'accepter.</p></section>
 ''',
     },
@@ -144,10 +144,10 @@ GUIDES = [
         'h1': 'Travailler en Tasmanie en PVT',
         'desc': "La Tasmanie recrute des backpackers de novembre à mars : cerises, petits fruits, vignes, hôtellerie. Saisons et nombre d'employeurs par mois.",
         'photo': ('portrait-verger-manguiers', 'Travailleuse saisonnière dans un verger australien', 1792),
-        'cta': "152 contacts en Tasmanie dans le fichier, à filtrer par mois et par secteur.",
+        'cta': "152 contacts en Tasmanie dans le guide AUSSIEWAY, à filtrer par mois et par secteur.",
         'body': f'''
 <section><h2>La meilleure période</h2>
-<p>La Tasmanie est le bon plan de l'été austral. Dans le fichier, <strong>entre 48 et 71 employeurs par mois</strong> y recrutent de novembre à mars, contre moins de 12 de mai à octobre.</p>
+<p>La Tasmanie est le bon plan de l'été austral. D'après le guide AUSSIEWAY, <strong>entre 48 et 71 employeurs par mois</strong> y recrutent de novembre à mars, contre moins de 12 de mai à octobre.</p>
 {heat_table({'TAS': CAL['TAS']}, "Employeurs qui recrutent en Tasmanie, par mois")}</section>
 <section><h2>Quels jobs&nbsp;?</h2>
 <ul>
@@ -240,7 +240,7 @@ def page(g):
   <main class="legal__main guide">
     <p class="guide__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
     <h1 class="legal__title">{g["h1"]}</h1>
-    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du fichier AUSSIEWAY (2&nbsp;303 contacts)</p>
+    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (2&nbsp;303 contacts)</p>
     <figure class="guide__photo">{img(name, alt, w)}<figcaption>Photographie générée par IA, à titre d'illustration.</figcaption></figure>
     {body}
     {related(g["slug"])}
@@ -278,7 +278,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
       {BRAND_SVG}
       <span>AUSSIEWAY</span>
     </a>
-    <a class="link" href="./#acheter">Le fichier · 27&nbsp;€</a>
+    <a class="link" href="./#acheter">Le guide · 27&nbsp;€</a>
   </header>{main}
   <footer class="footer footer--guide">
     <nav class="footer__legal" aria-label="Informations légales">
@@ -308,7 +308,7 @@ def hub():
                  f'{SITE}guides.html', f'''
   <main class="legal__main guide">
     <h1 class="legal__title">Guides PVT Australie</h1>
-    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du fichier AUSSIEWAY (2&nbsp;303 contacts)</p>
+    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (2&nbsp;303 contacts)</p>
     <ul class="ghub">{cards}
     </ul>
   </main>''', ld)
