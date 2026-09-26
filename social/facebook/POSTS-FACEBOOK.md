@@ -153,3 +153,151 @@ Barista dans l'outback, quad au milieu du bétail, usine d'emballage, bar à Hob
 Vous visez quel type de job ? 👇
 
 👉 aussieway.fr
+
+---
+
+## P9 · Le guide, c'est quoi ?  (3 photos)
+
+📌 Bienvenue sur AUSSIEWAY !
+
+Ici, on aide les Français en PVT à trouver du travail en Australie plus vite.
+
+Notre guide, Le Guide Opérationnel, c'est :
+✅ Plus de 2 300 employeurs et agences qui embauchent des backpackers (fermes, stations, hôtels, roadhouses, usines)
+✅ Pour chaque contact : téléphone, e-mail, ville, saison et type de paie
+✅ Le calendrier des embauches : qui recrute, dans quel État, et quel mois
+✅ Les 88 jours, tes droits, un modèle d'e-mail en anglais et un CV australien
+
+Un fichier Excel que tu filtres en 3 clics : ton État, ton mois d'arrivée, ton secteur. Et tu appelles.
+
+27 €, paiement unique, envoyé par e-mail tout de suite.
+
+Des questions ? Posez-les en commentaire, on répond à tout 👇
+
+👉 aussieway.fr
+
+---
+
+## P10 · Où bosser en novembre ?  (3 photos)
+
+🗓️ Tu arrives en Australie en novembre ? Voilà où ça recrute, d'après le guide AUSSIEWAY :
+
+🌾 Queensland : 62 employeurs qui recrutent en novembre
+🌿 Nouvelle-Galles du Sud : 53
+🍒 Tasmanie : 50, et ça dure jusqu'en mars (jusqu'à 71 par mois)
+
+À l'inverse, le Victoria et l'Australie-Méridionale sont calmes en novembre (13 employeurs chacun). Ils repartent en janvier-février.
+
+Conseil : si tu vises la Tasmanie, arrive début novembre, avant le pic des cerises.
+
+Tu arrives quel mois ? Dis-le en commentaire, je te dis où ça recrute 👇
+
+👉 Le calendrier complet : aussieway.fr/guide-travail-ferme-australie-calendrier.html
+
+---
+
+## P11 · Payé « au rendement », ça veut dire quoi ?  (3 photos)
+
+💰 « Paid piece rate », « au rendement »… Tu vas voir ces mots partout dans les offres en ferme.
+
+Ça veut dire que tu es payé à la quantité récoltée : au bac, au kilo, à la caisse. Plus tu vas vite, plus tu gagnes.
+
+Ce qu'il faut savoir :
+✅ Depuis avril 2022, un minimum horaire est garanti par la loi, même au rendement
+✅ Tu as droit à des fiches de paie (indispensables pour tes 88 jours)
+✅ Les premiers jours, on est lent : c'est normal, ça vient avec la pratique
+
+Dans le guide AUSSIEWAY, chaque contact indique le type de paie : à l'heure, au rendement ou salaire.
+
+Vérifie tes droits sur fairwork.gov.au (Pay Calculator).
+
+Déjà payé au rendement ? Ça s'est passé comment ? 👇
+
+👉 aussieway.fr
+
+---
+
+## P12 · Le CV à l'australienne  (3 photos)
+
+📄 Ton CV français ne marchera pas tel quel en Australie. Voilà ce qu'il faut changer :
+
+1️⃣ 1 page, 2 maximum. Pas de photo en général.
+2️⃣ En haut : ton numéro australien, ton e-mail, ton type de visa et tes dates de disponibilité.
+3️⃣ Mets en avant tout ce qui est physique ou manuel, même un job d'été en France. Et le permis, le RSA, la White Card si tu les as.
+4️⃣ Ajoute 1 ou 2 « referees » : d'anciens employeurs joignables. C'est la norme là-bas.
+
+Et surtout : pour les fermes, le téléphone marche souvent mieux qu'un CV envoyé par mail.
+
+Tu as déjà ton CV en anglais ? 👇
+
+👉 Le modèle d'e-mail et les conseils CV : aussieway.fr/guide-trouver-job-pvt-australie.html
+
+---
+
+## P13 · Les vendanges en Australie  (3 photos)
+
+🍇 Les vendanges en Australie, c'est de février à avril, à la fin de l'été austral.
+
+D'après le guide AUSSIEWAY, les employeurs du vin passent de moins de 10 par mois à plus de 50 entre février et avril.
+
+Où aller :
+🏔️ Tasmanie (la région la plus représentée dans le guide)
+🍷 Hunter Valley (Nouvelle-Galles du Sud)
+🌊 Margaret River (Australie-Occidentale)
+🌿 Barossa et McLaren Vale (Australie-Méridionale)
+🍇 Mildura et Robinvale (Victoria)
+
+La plupart des postes sont payés au rendement. Et en zone régionale, ça peut compter pour tes 88 jours.
+
+Qui a déjà fait les vendanges là-bas ? 👇
+
+👉 Le guide des vendanges : aussieway.fr/guide-vendanges-australie-pvt.html
+
+---
+
+## P14 · Tu pars quand ?  (2 photos)
+
+✈️ Petite question pour ceux qui préparent leur PVT :
+
+Tu arrives en Australie quel mois ?
+
+Réponds en commentaire avec ton mois d'arrivée, et je te dis dans quels États ça recrute le plus à ce moment-là, d'après le calendrier des embauches du guide AUSSIEWAY 👇
+
+(Et si tu hésites encore entre plusieurs dates, dis-le aussi, on regarde ensemble.)
+
+---
+
+## P15 · 5 astuces pour trouver un job plus vite  (3 photos)
+
+⚡ 5 astuces de backpackers pour décrocher un job plus vite en Australie :
+
+1️⃣ Appelle avant 9 h. C'est là que les responsables de ferme décrochent.
+2️⃣ Arrive 2 à 3 semaines avant le pic de récolte. Au pic, les équipes sont déjà formées.
+3️⃣ Présente-toi en personne quand c'est possible, surtout dans les stations d'emballage et les roadhouses.
+4️⃣ Relance au bout de 3 ou 4 jours sans réponse. Les petites fermes sont débordées.
+5️⃣ Combine plusieurs sources : contacts directs, Gumtree, groupes Facebook de la région.
+
+Laquelle tu ne connaissais pas ? 👇
+
+👉 aussieway.fr
+
+---
+
+## P16 · Chercher seul ou savoir qui appeler  (3 photos)
+
+😩 Des dizaines de CV envoyés. Des annonces avec des dizaines de candidats. Des mails sans réponse.
+
+C'est le quotidien de beaucoup de backpackers pendant leurs premières semaines en Australie.
+
+Il y a une autre méthode : appeler directement les employeurs qui embauchent, au bon moment.
+
+C'est exactement ce que contient Le Guide Opérationnel :
+📋 Plus de 2 300 employeurs et agences, avec téléphone et e-mail
+📅 Le mois où chacun recrute
+🔎 Un tableau que tu filtres par État, par mois et par secteur
+
+Tu arrives, tu filtres, tu appelles.
+
+27 €, paiement unique, envoyé par e-mail tout de suite.
+
+👉 aussieway.fr
