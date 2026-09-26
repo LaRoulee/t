@@ -14,12 +14,18 @@
   .word svg { width: 72px; height: 72px; }
   .tag { font-size: 38px; font-weight: 600; }
   .url { font-size: 28px; font-weight: 700; letter-spacing: .06em; color: #f3b2aa; }
+  .logo2 { width: 1080px; height: 1080px; display: grid; place-items: center; align-content: center; gap: 10px; text-align: center; }
+  .logo2 svg { width: 300px; height: 300px; }
+  .logo2 .n { font-weight: 850; font-size: 250px; line-height: .9; letter-spacing: -.04em; font-stretch: 100%; }
+  .logo2 .l { font-weight: 800; font-size: 64px; letter-spacing: .06em; text-transform: uppercase; }
 </style></head><body>
 <script>
 const MARK = (c) => `<svg viewBox="2.5 2.5 27 28" aria-hidden="true"><g fill="${c}"><path d="M16 3.2l1.05 2.3 2.5.3-1.85 1.7.5 2.5L16 8.75 13.8 10l.5-2.5-1.85-1.7 2.5-.3z"/><path d="M8 13.2l.9 1.95 2.15.25-1.6 1.45.45 2.1L8 17.9l-1.9 1.05.45-2.1-1.6-1.45 2.15-.25z"/><path d="M24.4 11.6l.9 1.95 2.15.25-1.6 1.45.45 2.1-1.9-1.05-1.9 1.05.45-2.1-1.6-1.45 2.15-.25z"/><path d="M16 23.2l1.05 2.3 2.5.3-1.85 1.7.5 2.5L16 28.75 13.8 30l.5-2.5-1.85-1.7 2.5-.3z"/><circle cx="19.6" cy="18.6" r="1"/></g></svg>`;
 const v = new URLSearchParams(location.search).get('v');
 const L = { violet: ['#61398b', '#eeede8'], sombre: ['#2a2b29', '#de5346'], corail: ['#de5346', '#1e1f1d'] };
-if (L[v]) document.body.innerHTML = `<div class="logo" style="background:${L[v][0]}">${MARK(L[v][1])}</div>`;
+const L2 = { 'violet-2300': ['#61398b', '#eeede8', '#de5346'], 'sombre-2300': ['#2a2b29', '#eeede8', '#de5346'] };
+if (L2[v]) document.body.innerHTML = `<div class="logo2" style="background:${L2[v][0]};color:${L2[v][1]}">${MARK(L2[v][2])}<div class="n">+2&nbsp;300</div><div class="l">employeurs</div></div>`;
+else if (L[v]) document.body.innerHTML = `<div class="logo" style="background:${L[v][0]}">${MARK(L[v][1])}</div>`;
 else document.body.innerHTML = `<div class="cover"><img src="../../assets/img/bananeraie-vue-aerienne-2400.webp" alt=""><div class="in"><div class="word">${MARK('#de5346')}AUSSIEWAY</div><div class="tag">Trouver un job en PVT Australie · 2&nbsp;303 employeurs qui embauchent</div><div class="url">aussieway.fr</div></div></div>`;
 window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((i) => i.decode().catch(() => {}))]);
 </script></body></html>
