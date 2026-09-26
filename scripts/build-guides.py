@@ -240,7 +240,6 @@ def page(g):
   <header class="ghero">
     <img src="assets/img/{name}-1600.webp" srcset="assets/img/{name}-800.webp 800w, assets/img/{name}-1600.webp 1600w, assets/img/{name}-{w}.webp {w}w" sizes="100vw" alt="{alt}" width="1600" height="900" fetchpriority="high">
     <div class="ghero__in">
-      <p class="ghero__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
       <h1 class="ghero__title">{g["h1"]}</h1>
       <p class="ghero__meta">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
       <a class="ghero__cta" href="./#acheter" data-goatcounter-click="guide-{g["slug"]}-haut">Tous les contacts dans le guide · 27&nbsp;€ →</a>
