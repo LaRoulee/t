@@ -21,7 +21,7 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 ## Structure
 
-Order on the page: hero → manifesto → preview (spreadsheet, contents cards, buy block) → about → CTA (price) → FAQ → calendar → guides. The price comes early; the calendar and the free guides follow for readers who want more.
+Order on the page: hero → manifesto → preview (spreadsheet, contents cards, buy block) → CTA (price) → FAQ → calendar → guides. The price comes early; the calendar and the free guides follow for readers who want more.
 
 | Section | Effect |
 | --- | --- |
