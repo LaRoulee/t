@@ -273,7 +273,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260927e">
+  <link rel="stylesheet" href="css/style.css?v=20260927f">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="legal legal--guide">

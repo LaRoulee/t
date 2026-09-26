@@ -680,15 +680,12 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
 .ghub__desc { font-size: 0.9375rem; color: var(--charcoal); }
 .footer--guide { padding: 32px var(--gutter); }
 
-.ghero { position: relative; min-height: clamp(360px, 58vh, 560px); display: flex; align-items: flex-end; color: var(--bone); overflow: hidden; isolation: isolate; }
-.ghero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; z-index: -2; }
-.ghero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(22,22,21,.35) 0%, rgba(22,22,21,.1) 35%, rgba(22,22,21,.85) 100%); }
-.ghero__in { width: 100%; max-width: 72ch; margin: 0 auto; padding: clamp(32px, 6vh, 56px) var(--gutter); display: grid; gap: 14px; }
-.ghero__crumbs { font-size: var(--step--1); color: rgba(238,237,232,.8); }
-.ghero__crumbs a { color: inherit; }
+.ghero { background: var(--ink); color: var(--bone); }
+.ghero img { display: block; width: 100%; height: clamp(240px, 46vh, 480px); object-fit: cover; object-position: 50% 30%; }
+.ghero__in { max-width: 72ch; margin: 0 auto; padding: clamp(28px, 5vh, 44px) var(--gutter) clamp(32px, 6vh, 52px); display: grid; gap: 14px; }
 .ghero__title { font-size: var(--step-4); font-weight: 620; font-variation-settings: "wdth" 125; letter-spacing: -0.04em; line-height: .96; text-wrap: balance; }
-.ghero__meta { font-size: var(--step--1); color: rgba(238,237,232,.85); }
-.ghero__cta { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 4px; font-weight: 700; font-size: 0.9375rem; color: var(--on-coral); background: var(--coral); padding: 10px 16px; border-radius: 3px; text-decoration: none; }
+.ghero__meta { font-size: var(--step--1); color: var(--bone-dim); }
+.ghero__cta { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; font-weight: 700; font-size: 0.9375rem; color: var(--on-coral); background: var(--coral); padding: 12px 18px; border-radius: 3px; text-decoration: none; transition: background-color .3s; }
 .ghero__cta:hover { background: var(--bone); }
 .ghero__credit { font-size: var(--step--1); color: var(--charcoal); margin: 0 0 8px; }
 .legal--guide .legal__main { padding-top: clamp(28px, 5vh, 48px); }
