@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/hero-champ-queensland-1600.webp" imagesrcset="assets/img/hero-champ-queensland-800.webp 800w, assets/img/hero-champ-queensland-1600.webp 1600w, assets/img/hero-champ-queensland-2400.webp 2400w" imagesizes="(min-width: 901px) 125vw, 100vw">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260927">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qu'est-ce que j'achète exactement ?", "acceptedAnswer": {"@type": "Answer", "text": "Un fichier Excel (.xlsx) avec plus de 2 300 contacts d'employeurs et d'agences qui embauchent des backpackers en Australie, un calendrier des embauches par État et par mois, 19 sites d'emploi et un guide PVT : 88 jours, droits, papiers, modèle d'e-mail en anglais et CV."}}, {"@type": "Question", "name": "Est-ce que ça marche sur téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le fichier s'ouvre avec Excel, Google Sheets ou Numbers, y compris sur téléphone avec leurs applications gratuites. Pour filtrer par État, catégorie ou mois, un ordinateur reste plus confortable."}}, {"@type": "Question", "name": "Comment je paie et quand je reçois le guide ?", "acceptedAnswer": {"@type": "Answer", "text": "Paiement unique sur la page sécurisée Payhip, par carte bancaire, Apple Pay ou Google Pay selon votre appareil. Le lien de téléchargement s'affiche dès le paiement et vous est aussi envoyé par e-mail."}}, {"@type": "Question", "name": "Les contacts sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils proviennent de sources publiques et environ 90 % ont un numéro de téléphone. Les besoins de recrutement changent d'une saison à l'autre et certaines coordonnées ont pu évoluer : appelez toujours avant de vous déplacer."}}, {"@type": "Question", "name": "Est-ce que ça garantit un job ? Et si le fichier ne s'ouvre pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Personne ne peut honnêtement garantir un job : le guide vous fait gagner le temps de la recherche. Le droit de rétractation ne s'applique plus une fois le fichier téléchargé, mais s'il est illisible ou incomplet, écrivez-nous : nous le remplaçons ou vous remboursons."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AUSSIEWAY", "url": "https://aussieway.fr/", "email": "contactaussieway@gmail.com", "sameAs": ["https://www.instagram.com/aussieway1", "https://www.tiktok.com/@aussieway6"]}</script>
 </head>
@@ -311,52 +311,68 @@
     <!-- GUIDES : pages de conseils gratuites -->
     <section class="guides" id="guides-pvt" aria-labelledby="guides-title">
       <div class="guides__head">
-        <h2 id="guides-title" class="h2">Guides gratuits<br>pour préparer votre PVT.</h2>
-        <p class="guides__lede">Cinq pages de conseils, avec les chiffres du guide. À lire avant de partir, et à garder sous la main en arrivant.</p>
+        <p class="guides__kicker">Gratuit · 5 guides</p>
+        <h2 id="guides-title" class="h2">Préparez votre PVT<br>avant de partir.</h2>
+        <p class="guides__lede">Des conseils concrets, avec les chiffres du guide. À lire maintenant, à garder sous la main en arrivant.</p>
       </div>
       <ul class="guides__list">
-        <li class="guides__item guides__item--lead" data-reveal>
+        <li class="guides__item guides__item--lead">
           <a href="guide-travail-ferme-australie-calendrier.html">
             <img src="assets/img/hero-champ-queensland-800.webp" srcset="assets/img/hero-champ-queensland-800.webp 800w, assets/img/hero-champ-queensland-1600.webp 1600w" sizes="(min-width: 901px) 50vw, 100vw" alt="Champ agricole du Queensland au coucher du soleil" width="1600" height="1000" loading="lazy">
-            <span class="guides__title">Travail en ferme : le calendrier des embauches</span>
-            <span class="guides__desc">Quel État recrute chaque mois, du Queensland à la Tasmanie, avec le tableau complet.</span>
-            <span class="guides__more">Lire le guide →</span>
+            <span class="guides__chip">Calendrier</span>
+            <span class="guides__text">
+              <span class="guides__title">Travail en ferme&nbsp;: qui recrute, où, et quel mois</span>
+              <span class="guides__desc">Le calendrier des embauches État par État, du Queensland à la Tasmanie.</span>
+              <span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </li>
-        <li class="guides__item" data-reveal>
+        <li class="guides__item">
           <a href="guide-88-jours-pvt-australie.html">
-            <img src="assets/img/job-cueillette-fraises-800.webp" srcset="assets/img/job-cueillette-fraises-800.webp 800w, assets/img/job-cueillette-fraises-1600.webp 1600w" sizes="(min-width: 901px) 25vw, (min-width: 601px) 50vw, 100vw" alt="Backpackers en train de cueillir des fraises" width="1600" height="1000" loading="lazy">
-            <span class="guides__title">Les 88 jours pour le 2e visa</span>
-            <span class="guides__desc">Quels jobs comptent, où les faire et quelles preuves garder.</span>
-            <span class="guides__more">Lire le guide →</span>
+            <img src="assets/img/job-cueillette-fraises-800.webp" srcset="assets/img/job-cueillette-fraises-800.webp 800w, assets/img/job-cueillette-fraises-1600.webp 1600w" sizes="(min-width: 901px) 25vw, (min-width: 601px) 50vw, 100vw" alt="Backpackeuse en train de cueillir des fraises" width="1600" height="1000" loading="lazy">
+            <span class="guides__chip">2e visa</span>
+            <span class="guides__text">
+              <span class="guides__title">Les 88 jours expliqués</span>
+              <span class="guides__desc">Les jobs qui comptent et les preuves à garder.</span>
+              <span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </li>
-        <li class="guides__item" data-reveal>
+        <li class="guides__item">
           <a href="guide-travailler-tasmanie-pvt.html">
             <img src="assets/img/cerises-tasmanie-800.webp" srcset="assets/img/cerises-tasmanie-800.webp 800w, assets/img/cerises-tasmanie-1600.webp 1600w" sizes="(min-width: 901px) 25vw, (min-width: 601px) 50vw, 100vw" alt="Cueillette de cerises dans un verger de Tasmanie" width="1600" height="1000" loading="lazy">
-            <span class="guides__title">Travailler en Tasmanie</span>
-            <span class="guides__desc">Cerises, petits fruits, vignes : la saison de novembre à mars.</span>
-            <span class="guides__more">Lire le guide →</span>
+            <span class="guides__chip">Tasmanie</span>
+            <span class="guides__text">
+              <span class="guides__title">Travailler en Tasmanie</span>
+              <span class="guides__desc">Cerises et vignes, de novembre à mars.</span>
+              <span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </li>
-        <li class="guides__item" data-reveal>
+        <li class="guides__item">
           <a href="guide-vendanges-australie-pvt.html">
             <img src="assets/img/hero-vignoble-barossa-800.webp" srcset="assets/img/hero-vignoble-barossa-800.webp 800w, assets/img/hero-vignoble-barossa-1600.webp 1600w" sizes="(min-width: 901px) 25vw, (min-width: 601px) 50vw, 100vw" alt="Vignoble de la Barossa Valley" width="1600" height="1000" loading="lazy">
-            <span class="guides__title">Les vendanges en Australie</span>
-            <span class="guides__desc">Février à avril : les régions, la paie au rendement, les employeurs.</span>
-            <span class="guides__more">Lire le guide →</span>
+            <span class="guides__chip">Vendanges</span>
+            <span class="guides__text">
+              <span class="guides__title">Les vendanges en Australie</span>
+              <span class="guides__desc">Février à avril : où aller, comment on est payé.</span>
+              <span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </li>
-        <li class="guides__item" data-reveal>
+        <li class="guides__item">
           <a href="guide-trouver-job-pvt-australie.html">
             <img src="assets/img/arrivee-aeroport-sydney-800.webp" srcset="assets/img/arrivee-aeroport-sydney-800.webp 800w, assets/img/arrivee-aeroport-sydney-1600.webp 1600w" sizes="(min-width: 901px) 25vw, (min-width: 601px) 50vw, 100vw" alt="Backpackeuse au téléphone à l'aéroport de Sydney" width="1600" height="1000" loading="lazy">
-            <span class="guides__title">Trouver un job en PVT</span>
-            <span class="guides__desc">Les papiers, l'e-mail en anglais, la phrase au téléphone, le CV et les arnaques.</span>
-            <span class="guides__more">Lire le guide →</span>
+            <span class="guides__chip">Candidature</span>
+            <span class="guides__text">
+              <span class="guides__title">Trouver un job en PVT</span>
+              <span class="guides__desc">L'e-mail en anglais, la phrase au téléphone, le CV.</span>
+              <span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span>
+            </span>
           </a>
         </li>
       </ul>
-      <p class="guides__all"><a class="link" href="guides.html">Tous les guides</a></p>
+      <p class="guides__all"><a href="guides.html">Voir tous les guides <span aria-hidden="true">→</span></a></p>
     </section>
 
     <!-- FAQ -->
@@ -444,7 +460,7 @@
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/lenis.min.js"></script>
   <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=20260927"></script>
   <script data-goatcounter="https://aussieway.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

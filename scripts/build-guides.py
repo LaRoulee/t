@@ -237,11 +237,16 @@ def page(g):
     ]
     body = g['body'].replace('{CTA}', CTA.format(line=g['cta'], slug=g['slug']))
     return shell(g['title'], g['desc'], url, f'''
+  <header class="ghero">
+    <img src="assets/img/{name}-1600.webp" srcset="assets/img/{name}-800.webp 800w, assets/img/{name}-1600.webp 1600w, assets/img/{name}-{w}.webp {w}w" sizes="100vw" alt="{alt}" width="1600" height="900" fetchpriority="high">
+    <div class="ghero__in">
+      <p class="ghero__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
+      <h1 class="ghero__title">{g["h1"]}</h1>
+      <p class="ghero__meta">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
+    </div>
+  </header>
   <main class="legal__main guide">
-    <p class="guide__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
-    <h1 class="legal__title">{g["h1"]}</h1>
-    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
-    <figure class="guide__photo">{img(name, alt, w)}<figcaption>Photographie générée par IA, à titre d'illustration.</figcaption></figure>
+    <p class="ghero__credit">Photographie générée par IA, à titre d'illustration.</p>
     {body}
     {related(g["slug"])}
   </main>''', ld, og_image=f'{SITE}assets/img/{name}-1600.webp')
@@ -269,10 +274,10 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260927">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
-<body class="legal">
+<body class="legal legal--guide">
   <header class="legal__bar">
     <a class="brand" href="./" aria-label="AUSSIEWAY, retour à l'accueil">
       {BRAND_SVG}
@@ -280,6 +285,10 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
     </a>
     <a class="link" href="./#acheter">Le guide · 27&nbsp;€</a>
   </header>{main}
+  <div class="gbar" aria-label="Le Guide Opérationnel">
+    <span class="gbar__name">Le Guide Opérationnel <b>27&nbsp;€</b></span>
+    <a class="btn btn--sm" href="./#acheter" data-goatcounter-click="guide-barre-mobile">Voir le guide</a>
+  </div>
   <footer class="footer footer--guide">
     <nav class="footer__legal" aria-label="Informations légales">
       <a href="guides.html">Guides PVT</a>
@@ -298,11 +307,13 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
 
 
 def hub():
+    chips = {'88-jours-pvt-australie': '2e visa', 'travail-ferme-australie-calendrier': 'Calendrier', 'vendanges-australie-pvt': 'Vendanges',
+             'travailler-tasmanie-pvt': 'Tasmanie', 'trouver-job-pvt-australie': 'Candidature'}
     cards = ''.join(f'''
-      <li class="ghub__item"><a href="guide-{g["slug"]}.html">
-        <img src="assets/img/{g["photo"][0]}-800.webp" alt="" width="800" height="450" loading="lazy">
-        <span class="ghub__title">{g["h1"]}</span>
-        <span class="ghub__desc">{g["desc"]}</span></a></li>''' for g in GUIDES)
+      <li class="guides__item"><a href="guide-{g["slug"]}.html">
+        <img src="assets/img/{g["photo"][0]}-800.webp" srcset="assets/img/{g["photo"][0]}-800.webp 800w, assets/img/{g["photo"][0]}-1600.webp 1600w" sizes="(min-width: 700px) 36ch, 100vw" alt="" width="800" height="1000" loading="lazy">
+        <span class="guides__chip">{chips[g["slug"]]}</span>
+        <span class="guides__text"><span class="guides__title">{g["h1"]}</span><span class="guides__desc">{g["desc"]}</span><span class="guides__more">Lire le guide <span aria-hidden="true">→</span></span></span></a></li>''' for g in GUIDES)
     ld = [{'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Guides PVT Australie', 'url': f'{SITE}guides.html',
            'hasPart': [{'@type': 'Article', 'headline': g['title'], 'url': f'{SITE}guide-{g["slug"]}.html'} for g in GUIDES]}]
     return shell('Guides PVT Australie : jobs, 88 jours, saisons', "Guides gratuits pour trouver un job en PVT Australie : 88 jours, calendrier des embauches, vendanges, Tasmanie, candidature.",
@@ -310,7 +321,7 @@ def hub():
   <main class="legal__main guide">
     <h1 class="legal__title">Guides PVT Australie</h1>
     <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
-    <ul class="ghub">{cards}
+    <ul class="guides__list guides__list--hub">{cards}
     </ul>
   </main>''', ld)
 
