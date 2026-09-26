@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>AUSSIEWAY · posts</title>
+<style>
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; }
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-ext-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+  :root { --ink: #2a2b29; --bone: #eeede8; --dim: #b9b8b1; --twilight: #61398b; --tint: #ddd3ea; --coral: #de5346; --coral-text: #ef7a6e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: #000; }
+  body { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; color: var(--bone); -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--ink); }
+  .slide.violet { background: var(--twilight); }
+  .slide.bone { background: var(--bone); color: var(--ink); }
+
+  .bg { position: absolute; inset: 0; overflow: hidden; }
+  .bg img { width: 100%; height: 100%; object-fit: cover; }
+  .bg.band { bottom: auto; height: 760px; }
+  .bg.full::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,19,.55) 0%, rgba(20,20,19,0) 20%, rgba(20,20,19,0) 40%, rgba(20,20,19,.85) 70%, rgba(20,20,19,.95) 100%); }
+  .bg.band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,19,.45) 0%, rgba(20,20,19,0) 25%, rgba(20,20,19,0) 65%, var(--ink) 100%); }
+
+  .brand { position: absolute; left: 72px; top: 64px; display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 26px; letter-spacing: .24em; z-index: 5; text-shadow: 0 1px 12px rgba(0,0,0,.4); }
+  .brand i { display: grid; grid-template-columns: repeat(2, 8px); gap: 5px; }
+  .brand i b { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+  .bone .brand { color: var(--ink); text-shadow: none; }
+  .count { position: absolute; right: 72px; top: 64px; font-size: 26px; font-weight: 700; letter-spacing: .08em; z-index: 5; font-variant-numeric: tabular-nums; opacity: .85; }
+  .swipe { position: absolute; right: 72px; bottom: 64px; font-size: 30px; font-weight: 700; z-index: 5; color: var(--bone); }
+  .url { position: absolute; left: 72px; bottom: 64px; font-size: 28px; font-weight: 700; letter-spacing: .04em; z-index: 5; }
+  .bone .url, .bone .swipe { color: var(--ink); }
+
+  .txt { position: absolute; left: 72px; right: 72px; bottom: 150px; display: flex; flex-direction: column; gap: 26px; z-index: 4; }
+  .txt.mid { top: 150px; bottom: 150px; justify-content: center; }
+  .txt.low { top: 800px; bottom: 150px; justify-content: flex-start; }
+  .kicker { font-size: 30px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text); }
+  .violet .kicker { color: #f3b2aa; }
+  .bone .kicker { color: #b3392d; }
+  .h1 { font-size: 96px; line-height: 1.0; font-weight: 800; letter-spacing: -.025em; font-stretch: 104%; text-wrap: balance; }
+  .h1.s { font-size: 82px; }
+  .h2 { font-size: 64px; line-height: 1.06; font-weight: 750; letter-spacing: -.02em; text-wrap: balance; }
+  .p { font-size: 40px; line-height: 1.3; font-weight: 500; text-wrap: pretty; }
+  .p.dim { color: var(--dim); }
+  .violet .p.dim { color: var(--tint); }
+  .bone .p.dim { color: #5b5c57; }
+  .coral { color: var(--coral-text); }
+  .violet .coral { color: #ffb4ab; }
+  .bone .coral { color: #b3392d; }
+  .big { font-size: 230px; line-height: .88; font-weight: 850; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  .pill { align-self: flex-start; background: var(--coral); color: #121211; font-weight: 800; font-size: 40px; padding: 24px 36px; border-radius: 6px; }
+  .rule { height: 2px; background: rgba(238,237,232,.25); }
+  .bone .rule { background: rgba(42,43,41,.2); }
+
+  .list { display: flex; flex-direction: column; gap: 30px; }
+  .row { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; }
+  .row .n { width: 72px; height: 72px; border-radius: 50%; background: var(--coral); color: #121211; display: grid; place-items: center; font-weight: 800; font-size: 38px; }
+  .bone .row .n.ok { background: var(--ink); color: var(--bone); }
+  .row b { display: block; font-size: 46px; line-height: 1.12; font-weight: 750; }
+  .row span { display: block; font-size: 34px; line-height: 1.3; color: var(--dim); margin-top: 6px; }
+  .bone .row span { color: #5b5c57; }
+
+  .stat { display: grid; grid-template-columns: auto 1fr; gap: 10px 28px; align-items: baseline; }
+  .stat b { font-size: 96px; font-weight: 850; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 38px; font-weight: 600; }
+
+  .heat { display: grid; grid-template-columns: 90px repeat(12, 1fr); gap: 7px; }
+  .heat .h { font-size: 24px; font-weight: 700; color: var(--dim); text-align: center; padding-bottom: 4px; }
+  .heat .s { font-size: 30px; font-weight: 800; align-self: center; }
+  .heat .cell { aspect-ratio: 1 / 1.15; border-radius: 4px; background: var(--coral); }
+
+  .months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; align-items: end; height: 380px; }
+  .months .c { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 10px; height: 100%; }
+  .months .c i { width: 100%; background: var(--bone); opacity: .3; border-radius: 3px 3px 0 0; }
+  .months .c.hot i { background: var(--coral); opacity: 1; }
+  .months .c em { font-style: normal; font-size: 24px; font-weight: 700; color: var(--dim); }
+  .months .c s { text-decoration: none; font-size: 24px; font-weight: 800; }
+  .months .c.hot em, .months .c.hot s { color: var(--bone); }
+
+  .sheet { background: #fff; color: #202124; border-radius: 10px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.35); font-size: 24px; }
+  .sheet table { width: 100%; border-collapse: collapse; }
+  .sheet th, .sheet td { border: 1px solid #e2e3e3; padding: 14px 12px; text-align: left; white-space: nowrap; }
+  .sheet thead th { background: #f1f3f4; font-weight: 700; color: #3c4043; }
+  .sheet .mask { filter: blur(6px); color: #5f6368; }
+  .sheet .n { background: #f8f9fa; color: #80868b; text-align: center; width: 44px; }
+
+  .card { background: var(--bone); color: var(--ink); border-radius: 14px; padding: 40px 44px; font-size: 34px; line-height: 1.4; box-shadow: 0 30px 80px rgba(0,0,0,.35); white-space: pre-wrap; }
+  .card small { display: block; font-weight: 700; font-size: 22px; letter-spacing: .12em; text-transform: uppercase; color: #8a8a84; margin-bottom: 6px; white-space: normal; }
+  .card .sub { font-weight: 800; padding-bottom: 20px; margin-bottom: 22px; border-bottom: 2px solid #d6d4cc; white-space: normal; }
+  .card mark { background: #f4d8d4; color: #9d2c21; border-radius: 4px; padding: 0 4px; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const IMG = (name, w = 1792) => `../../assets/img/${name}-${w}.webp`;
+const PH = {
+  aeroport: IMG('arrivee-aeroport-sydney'), argent: IMG('argent-fin-de-journee'), piste: IMG('australie-piste-outback'),
+  fraises: IMG('job-cueillette-fraises'), ferme: IMG('logement-maison-de-ferme'), manguier: IMG('portrait-verger-manguiers'),
+  ocean: IMG('pvt-great-ocean-road'),
+  bananes: IMG('bananeraie-vue-aerienne', 2400), hangar: IMG('hangar-conditionnement', 2400), ble: IMG('hero-ble-australie-occidentale', 2400),
+  champ: IMG('hero-champ-queensland', 2400), vigne: IMG('hero-vignoble-barossa', 2400),
+};
+const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+// Calendrier tab of JOBS_AUSTRALIE_PVT.xlsx
+const CAL = {
+  QLD: [39, 38, 64, 77, 95, 98, 95, 80, 78, 91, 62, 38], NSW: [9, 17, 30, 25, 49, 78, 71, 71, 56, 48, 53, 35],
+  VIC: [39, 66, 57, 47, 37, 40, 29, 28, 19, 17, 13, 32], SA: [30, 41, 43, 40, 5, 5, 5, 6, 5, 4, 13, 12],
+  WA: [19, 23, 24, 23, 36, 23, 28, 33, 35, 31, 18, 21], TAS: [49, 69, 71, 35, 11, 9, 8, 8, 8, 9, 50, 48],
+  NT: [2, 1, 1, 3, 2, 2, 2, 2, 2, 2, 3, 2],
+};
+const BRAND = '<div class="brand"><i><b></b><b></b><b></b><b></b></i>AUSSIEWAY</div>';
+const URL = '<div class="url">aussieway.fr</div>';
+const SWIPE = '<div class="swipe">Glisse →</div>';
+
+const full = (src, pos = '50% 40%') => `<div class="bg full"><img src="${src}" style="object-position:${pos}" alt=""></div>`;
+const band = (src, pos = '50% 50%') => `<div class="bg band"><img src="${src}" style="object-position:${pos}" alt=""></div>`;
+const rows = (items, mark = (i) => i + 1, cls = '') => `<div class="list">${items.map(([b, s], i) =>
+  `<div class="row"><div class="n ${cls}">${mark(i)}</div><div><b>${b}</b>${s ? `<span>${s}</span>` : ''}</div></div>`).join('')}</div>`;
+const heat = () => {
+  let h = '<div class="heat"><div></div>' + MONTHS.map((m) => `<div class="h">${m}</div>`).join('');
+  for (const [s, vals] of Object.entries(CAL)) h += `<div class="s">${s}</div>` + vals.map((v) => `<div class="cell" style="opacity:${(0.08 + 0.92 * v / 98).toFixed(2)}"></div>`).join('');
+  return h + '</div>';
+};
+const months = (vals, hot) => {
+  const mx = Math.max(...vals);
+  return `<div class="months">${vals.map((v, i) => `<div class="c ${hot.includes(i) ? 'hot' : ''}"><s>${v}</s><i style="height:${v / mx * 100}%"></i><em>${MONTHS[i]}</em></div>`).join('')}</div>`;
+};
+const SHEET = (n = 5) => {
+  const r = [['888 Citrus', 'Citrus', 'QLD', 'Gayndah', "Toute l'année"], ['Grand Burg Vineyard', 'Vineyard', 'SA', 'Tanunda', 'Fév → Avr'],
+    ['Alexandria Station', 'Cattle', 'NT', 'Camoweal', "Toute l'année"], ['Croc Cafe &amp; Bakery', 'Shop Assistant', 'WA', 'Wyndham', "Toute l'année"],
+    ['Packsaddle Roadhouse', 'Roadhouse', 'NSW', 'Broken Hill', "Toute l'année"]].slice(0, n);
+  return `<div class="sheet"><table><thead><tr><th class="n"></th><th>Nom</th><th>Poste</th><th>État</th><th>Saison</th><th>Téléphone</th></tr></thead><tbody>${
+    r.map((x, i) => `<tr><td class="n">${i + 2}</td><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${x[4]}</td><td class="mask">04•• ••• •••</td></tr>`).join('')}</tbody></table></div>`;
+};
+const CTA = (title, line) => ({ cls: 'violet', html: `${BRAND}<div class="txt mid">
+  <div class="kicker">Le Guide Opérationnel</div>
+  <div class="h2">${title}</div>
+  <div class="p dim">${line}</div>
+  <div class="pill">aussieway.fr →</div></div>` });
+
+// ---------- posts: id → slides ----------
+const POSTS = {
+  // A. carrousels
+  'A1-calendrier-par-mois': [
+    { html: `${full(PH.champ, '50% 50%')}${BRAND}<div class="txt"><div class="kicker">PVT Australie</div><div class="h1">Où bosser selon ton mois d'arrivée</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid" style="gap:40px"><div class="kicker">Employeurs qui recrutent, par mois</div>${heat()}<div class="p dim">Plus la case est foncée, plus il y a d'employeurs qui embauchent.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Janvier → mars</div><div class="h1 s">Tasmanie et Victoria</div><div class="rule"></div><div class="p">Tasmanie : <b class="coral">49 à 71</b> employeurs par mois.</div><div class="p">Victoria : pic en février (<b class="coral">66</b>).</div><div class="p dim">Et les vendanges en Australie-Méridionale.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Avril → juin</div><div class="h1 s">Le Queensland décolle</div><div class="rule"></div><div class="p">Queensland : <b class="coral">77 → 98</b> employeurs, pic en juin.</div><div class="p">Nouvelle-Galles du Sud : jusqu'à <b class="coral">78</b> en juin.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Juillet → octobre</div><div class="h1 s">Queensland et NSW</div><div class="rule"></div><div class="p">Queensland : <b class="coral">78 à 95</b> employeurs par mois.</div><div class="p">Nouvelle-Galles du Sud : <b class="coral">48 à 71</b>.</div><div class="p dim">Australie-Occidentale : régulière, 28 à 35.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Novembre → décembre</div><div class="h1 s">Retour en Tasmanie</div><div class="rule"></div><div class="p">Tasmanie : <b class="coral">50</b> puis <b class="coral">48</b> employeurs.</div><div class="p dim">Arrive 2 à 3 semaines avant le pic : c'est là que les fermes cherchent encore du monde.</div></div>${SWIPE}` },
+    CTA('Le calendrier complet + 2&nbsp;303 contacts', 'Filtre ton mois de dispo et obtiens la liste des employeurs qui recrutent, avec leur numéro.'),
+  ],
+  'A2-88-jours': [
+    { html: `${full(PH.fraises, '50% 35%')}${BRAND}<div class="txt"><div class="kicker">2e visa Working Holiday</div><div class="h1">Les 88 jours expliqués en 6 slides</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">C'est quoi ?</div>${rows([['3 mois de « specified work »', 'en zone régionale pendant ton 1er visa → 2e visa'], ['6 mois pendant le 2e visa', '→ 3e visa']])}</div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Ce qui compte en général</div><div class="h2">Agriculture, élevage, pêche, foresterie, mines, construction.</div><div class="p dim">L'hôtellerie seulement en zone « remote » et en Australie du Nord.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Avant d'accepter un job</div><div class="h2">Vérifie que le code postal est éligible.</div><div class="p">Sur <b class="coral">immi.homeaffairs.gov.au</b> : c'est la seule source qui fait foi.</div></div>${SWIPE}`, cls: 'violet' },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Garde tes preuves</div>${rows([['Toutes tes fiches de paie', ''], ['Le formulaire 1263', "rempli par l'employeur"], ['Jamais de « cash in hand »', 'aucune preuve pour tes jours']], () => '✓', 'ok')}</div>${SWIPE}`, cls: 'bone' },
+    CTA('Trouve les fermes qui recrutent pour tes 88 jours', 'Filtre par État et par mois, puis appelle directement les employeurs.'),
+  ],
+  'A3-arnaques': [
+    { html: `${full(PH.ferme, '50% 50%')}${BRAND}<div class="txt"><div class="kicker">Jobs en ferme</div><div class="h1">3 arnaques qui piègent les backpackers</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="big coral">1</div><div class="h2">On te demande de payer pour un job.</div><div class="p dim">Un vrai employeur ne fait jamais payer pour travailler.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="big coral">2</div><div class="h2">Des semaines de loyer d'avance.</div><div class="p dim">Certains « working hostels » l'exigent, sans aucune garantie de travail.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="big coral">3</div><div class="h2">Payé « cash in hand ».</div><div class="p dim">Aucune preuve pour tes 88 jours, aucune protection. Tu as droit au salaire minimum et à des fiches de paie.</div></div>${SWIPE}` },
+    CTA('Contacte les employeurs en direct', '1&nbsp;970 employeurs directs et 333 agences, avec téléphone et e-mail.'),
+  ],
+  'A4-mail-en-anglais': [
+    { html: `${band(PH.hangar)}${BRAND}<div class="txt low"><div class="kicker">Candidature</div><div class="h1 s">Le mail en anglais à envoyer aux fermes</div><div class="p dim">Copie-le 👇</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="card"><div class="sub"><small>Objet</small>Backpacker available for farm work – from <mark>[date]</mark></div>Hi <mark>[name]</mark>,
+
+I'm a French backpacker on a Working Holiday visa (417), available from <mark>[date]</mark> for picking or packing work.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="card">I'm hard-working, reliable and I have <mark>[my own car]</mark>.
+
+Could you let me know if you need any workers this season?
+
+Kind regards,
+<mark>[First name Last name]</mark></div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Encore mieux : appelle avant 9 h</div><div class="card">“Hi, I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from <mark>[date]</mark>.”</div><div class="p dim">Relance après 3 ou 4 jours sans réponse.</div></div>${SWIPE}` },
+    CTA('2&nbsp;078 numéros et 1&nbsp;540 e-mails d\'employeurs', 'Le modèle complet est dans le guide, avec la liste de qui appeler.'),
+  ],
+  'A5-dans-le-guide': [
+    { html: `${full(PH.aeroport, '50% 30%')}${BRAND}<div class="txt"><div class="kicker">Le Guide Opérationnel</div><div class="h1">Ce qu'il y a dans le guide</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="big">2&nbsp;303</div><div class="h2">contacts qui embauchent des backpackers</div><div class="rule"></div><div class="stat"><b class="coral">1&nbsp;970</b><span>employeurs directs</span><b class="coral">333</b><span>agences et recruteurs</span></div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid" style="gap:36px"><div class="kicker">Pour chaque contact</div><div class="h2">Nom, poste, ville, saison, paie, téléphone, e-mail.</div>${SHEET(5)}<div class="p dim">Extrait réel, numéros masqués.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid" style="gap:36px"><div class="kicker">Le calendrier des embauches</div><div class="h2">Qui recrute, où, et quel mois.</div>${heat()}</div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Et les conseils PVT</div>${rows([['Les 88 jours', 'ce qui compte, les preuves à garder'], ['Tes droits et les arnaques', ''], ["Modèle d'e-mail et CV australien", ''], ["19 sites d'emploi utiles", '']], () => '✓', 'ok')}</div>${SWIPE}`, cls: 'bone' },
+    CTA('27&nbsp;€, paiement unique', 'Fichier Excel envoyé par e-mail juste après le paiement. Carte, Apple Pay, Google Pay.'),
+  ],
+  // B. images simples
+  'B06-2303-employeurs': [{ html: `${band(PH.champ)}${BRAND}<div class="txt low"><div class="h1 s"><span class="coral">2&nbsp;303</span> employeurs qui embauchent des backpackers.</div><div class="p dim">Dans un seul guide.</div></div>${URL}` }],
+  'B07-mars-queensland': [{ html: `${BRAND}<div class="txt mid" style="gap:40px"><div class="h1 s">Tu arrives en mars&nbsp;?</div><div class="h2"><span class="coral">64 employeurs</span> recrutent au Queensland.</div>${months(CAL.QLD, [2])}<div class="p dim">Employeurs du Queensland qui recrutent, par mois.</div></div>${URL}` }],
+  'B08-cv-dans-le-vide': [{ html: `${full(PH.piste, '50% 50%')}${BRAND}<div class="txt"><div class="h1">Arrête d'envoyer des CV dans le vide.</div><div class="p">Appelle directement les employeurs qui embauchent des backpackers.</div></div>${URL}` }],
+  'B09-coup-de-fil': [{ html: `${full(PH.aeroport, '50% 30%')}${BRAND}<div class="txt"><div class="h1">Ton 2e visa commence par un coup de fil.</div><div class="p">2&nbsp;078 numéros d'employeurs pour tes 88 jours.</div></div>${URL}` }],
+  'B10-pour-chaque-employeur': [{ cls: 'bone', html: `${BRAND}<div class="txt mid" style="gap:40px"><div class="h1 s">Numéro, e-mail, saison, paie.</div><div class="h2 coral">Pour chaque employeur.</div>${SHEET(5)}<div class="p dim">Extrait réel du guide, numéros masqués.</div></div>${URL}` }],
+  'B11-avant-d-atterrir': [{ html: `${full(PH.ocean, '50% 45%')}${BRAND}<div class="txt"><div class="h1">Prépare ton premier job avant même d'atterrir.</div><div class="p">Qui recrute, où, et quel mois. Tout est dans le guide.</div></div>${URL}` }],
+  'B12-ou-aller-et-quand': [{ html: `${band(PH.vigne)}${BRAND}<div class="txt low"><div class="h1 s">Tasmanie, Queensland, vendanges.</div><div class="h2 coral">Sache où aller, et quand.</div></div>${URL}` }],
+};
+
+const id = new URLSearchParams(location.search).get('p');
+const n = +(new URLSearchParams(location.search).get('n') || 0);
+const slides = POSTS[id] || [];
+const s = slides[n];
+if (s) {
+const el = document.createElement('section');
+el.className = `slide ${s.cls || ''}`;
+el.innerHTML = s.html + (slides.length > 1 ? `<div class="count">${n + 1}/${slides.length}</div>` : '');
+document.getElementById('stage').append(el);
+}
+window.POSTS = POSTS;
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((im) => im.decode().catch(() => {}))]);
+</script>
+</body>
+</html>

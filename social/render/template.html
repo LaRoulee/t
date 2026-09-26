@@ -161,6 +161,13 @@ const END = scene(3.4, `${BRAND}<div class="txt mid">
   <div class="pill" data-in="1.05" data-anim="pop">Lien en bio →</div>
 </div>`, { cls: 'violet' });
 
+const END_URL = scene(3.6, `${BRAND}<div class="txt mid">
+  <div class="kicker" data-in="0.1">Le Guide Opérationnel · 27&nbsp;€</div>
+  <div class="h1" data-in="0.3">aussieway.fr</div>
+  <div class="p dim" data-in="0.6">2&nbsp;303 contacts, le calendrier des embauches et les conseils PVT.</div>
+  <div class="pill" data-in="0.9" data-anim="pop">Voir le guide →</div>
+</div>`, { cls: 'violet' });
+
 // ---------- the videos ----------
 const VIDEOS = {
   '01-2303-contacts': [
@@ -293,6 +300,23 @@ const VIDEOS = {
       ['Australie-Méridionale', 212], ['Tasmanie', 152], ['Territoire du Nord', 143],
     ], 617, 0.4, 0.25)}</div>`),
     END,
+  ],
+  // Stories publicitaires (9:16, ~8 s), à utiliser dans Meta Ads
+  'pub-S1-2303-employeurs': [
+    scene(3.4, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">PVT Australie</div><div class="big" data-count="2303" data-at="0.2" data-dur="1.3">0</div><div class="h2" data-in="0.5">employeurs qui embauchent des backpackers</div><div class="p dim" data-in="1.3">Dans un seul guide.</div></div>`),
+    END_URL,
+  ],
+  'pub-S2-mars-queensland': [
+    scene(4.4, `${BRAND}<div class="txt mid" style="gap:40px"><div class="h1" data-in="0.1">Tu arrives en mars&nbsp;?</div><div class="h2" data-in="0.6"><span class="coral">64 employeurs</span> recrutent au Queensland.</div>${monthsHtml(CAL.QLD, [2], 0.9)}</div>`),
+    END_URL,
+  ],
+  'pub-S3-cv-dans-le-vide': [
+    scene(3.6, `${BRAND}<div class="txt"><div class="h1" data-in="0.2">Arrête d'envoyer des CV dans le vide.</div><div class="p" data-in="1.2">Appelle directement les employeurs qui embauchent des backpackers.</div></div>`, { photo: full(PH.piste, [1.0, 1.06]) }),
+    END_URL,
+  ],
+  'pub-S4-ou-bosser-par-mois': [
+    scene(4.6, `${BRAND}<div class="txt mid" style="gap:40px"><div class="h1" data-in="0.1">Où bosser selon ton mois d'arrivée&nbsp;?</div>${heatHtml(0.6)}</div>`),
+    END_URL,
   ],
 };
 
