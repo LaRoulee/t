@@ -464,7 +464,8 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   padding: 0 var(--gutter) clamp(40px, 9vh, 96px);
 }
 .cta__title { font-size: var(--step-4); font-weight: 620; line-height: .94; letter-spacing: -0.04em; font-variation-settings: "wdth" 125; }
-.offer { display: grid; gap: 14px; max-width: 460px; justify-self: end; width: 100%; }
+.offer { display: grid; gap: 14px; max-width: 480px; justify-self: end; width: 100%; padding: clamp(20px, 3vw, 32px); background: rgba(22, 22, 21, .78); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(238, 237, 232, .14); border-radius: 12px; }
+.offer__detail, .offer__note { color: #d6d5cf; }
 .offer__row {
   display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
   padding: 16px 0; border-top: 1px solid rgba(238, 237, 232, .4); border-bottom: 1px solid rgba(238, 237, 232, .4);
@@ -565,7 +566,8 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   .services__img { position: relative; top: 0; max-width: 520px; }
   .services__list li { grid-template-columns: 1fr; }
 
-  .cta__panel { grid-template-columns: 1fr; gap: 32px; }
+  .cta { min-height: 0; }
+  .cta__panel { grid-template-columns: 1fr; gap: 28px; padding-top: clamp(96px, 16vh, 140px); }
   .offer { justify-self: stretch; max-width: none; }
 }
 
