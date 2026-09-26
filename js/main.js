@@ -142,7 +142,7 @@ if (!reduceMotion) {
 
   /* manifesto: words light up as they are read */
   const words = splitWords($('[data-words]'));
-  gsap.fromTo(words, { opacity: 0.35 }, {
+  gsap.fromTo(words, { opacity: 0.55 }, {
     opacity: 1, ease: 'none', stagger: 0.05,
     scrollTrigger: { trigger: '.manifesto__text', start: 'top 85%', end: 'bottom 55%', scrub: true },
   });

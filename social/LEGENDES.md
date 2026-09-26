@@ -11,7 +11,7 @@ Tous les chiffres viennent du fichier `JOBS_AUSTRALIE_PVT.xlsx`. Aucun faux tém
 > Plus de 2 300 employeurs et agences qui embauchent des backpackers
 > 👇 Le Guide Opérationnel
 
-Lien en bio : https://aussieway.fr/
+Lien en bio : https://aussieway.fr/ig (Instagram) · https://aussieway.fr/tt (TikTok)
 
 ---
 

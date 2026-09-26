@@ -19,7 +19,7 @@
 📅 Qui recrute, où, et quel mois
 👇 Le Guide Opérationnel
 ```
-**Lien** : `https://aussieway.fr`
+**Lien** : `https://aussieway.fr/ig`
 **Catégorie** (compte pro) : « Service de voyage » ou « Éducation »
 
 ## TikTok (@aussieway6)
@@ -30,7 +30,7 @@
 🇦🇺 Job en PVT Australie
 +2 300 employeurs qui embauchent 👇
 ```
-**Lien** : `https://aussieway.fr` (champ « Site web » ; il apparaît avec un compte Entreprise ou à partir d'un certain nombre d'abonnés)
+**Lien** : `https://aussieway.fr/tt` (champ « Site web » ; il apparaît avec un compte Entreprise ou à partir d'un certain nombre d'abonnés)
 
 ## Facebook (page AUSSIEWAY)
 **Nom** : `AUSSIEWAY`
@@ -39,5 +39,5 @@
 ```
 Trouver un job en PVT Australie · plus de 2 300 employeurs qui embauchent des backpackers
 ```
-**Site web** : `https://aussieway.fr`
+**Site web** : `https://aussieway.fr/fb`
 **E-mail** : `contactaussieway@gmail.com`

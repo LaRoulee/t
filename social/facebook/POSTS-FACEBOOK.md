@@ -97,7 +97,7 @@ Bon à savoir : même payé au rendement (à la quantité récoltée), un minimu
 
 La meilleure protection : contacter les employeurs en direct.
 
-👉 aussieway.fr
+👉 aussieway.fr/fb
 
 ---
 
@@ -152,7 +152,7 @@ Barista dans l'outback, quad au milieu du bétail, usine d'emballage, bar à Hob
 
 Vous visez quel type de job ? 👇
 
-👉 aussieway.fr
+👉 aussieway.fr/fb
 
 ---
 
@@ -174,7 +174,7 @@ Un fichier Excel que tu filtres en 3 clics : ton État, ton mois d'arrivée, ton
 
 Des questions ? Posez-les en commentaire, on répond à tout 👇
 
-👉 aussieway.fr
+👉 aussieway.fr/fb
 
 ---
 
@@ -213,7 +213,7 @@ Vérifie tes droits sur fairwork.gov.au (Pay Calculator).
 
 Déjà payé au rendement ? Ça s'est passé comment ? 👇
 
-👉 aussieway.fr
+👉 aussieway.fr/fb
 
 ---
 
@@ -279,7 +279,7 @@ Réponds en commentaire avec ton mois d'arrivée, et je te dis dans quels États
 
 Laquelle tu ne connaissais pas ? 👇
 
-👉 aussieway.fr
+👉 aussieway.fr/fb
 
 ---
 
@@ -300,4 +300,4 @@ Tu arrives, tu filtres, tu appelles.
 
 27 €, paiement unique, envoyé par e-mail tout de suite.
 
-👉 aussieway.fr
+👉 aussieway.fr/fb

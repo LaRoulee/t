@@ -339,7 +339,7 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 .xl__scroll { overflow-x: auto; }
 .xl__table { width: 100%; border-collapse: collapse; font-size: .875rem; font-variant-numeric: tabular-nums; }
 .xl__table th, .xl__table td { border: 1px solid #dadce0; padding: 10px 12px; text-align: center; white-space: nowrap; }
-.xl__letters td { background: #f1f3f4; color: #5f6368; font-size: .75rem; padding: 4px 12px; }
+.xl__letters td, .xl__letters th { background: #f1f3f4; color: #5f6368; font-size: .75rem; font-weight: 400; padding: 4px 12px; }
 .xl__cols th { background: #e6f2eb; color: #14532d; font-weight: 700; }
 .xl__table .sheet-n { width: 44px; background: #f1f3f4; color: #5f6368; font-weight: 400; font-size: .75rem; }
 .xl__table tbody tr:hover td { background: #f6faf7; }
@@ -582,6 +582,16 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
+/* ---------- about ---------- */
+
+.about { background: var(--bone); color: var(--ink); padding: clamp(64px, 10vh, 112px) var(--gutter); }
+.about__in { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px 64px; align-items: start; }
+.about__title { font-size: var(--step-3); font-weight: 620; font-variation-settings: "wdth" 125; letter-spacing: -0.035em; line-height: 1; text-wrap: balance; }
+.about__body { display: grid; gap: 14px; font-size: var(--step-1); line-height: 1.5; color: var(--charcoal); max-width: 56ch; }
+.about__body p:first-child { color: var(--ink); font-weight: 600; }
+.about__mail { color: var(--ink); font-weight: 650; user-select: all; }
+@media (max-width: 900px) { .about__in { grid-template-columns: 1fr; } }
+
 /* ---------- guides (links to the SEO pages) ---------- */
 
 .calendar + .guides { border-top: 1px solid rgba(42, 43, 41, .14); }
@@ -647,6 +657,7 @@ body.legal { background: var(--bone); color: var(--ink); }
 .legal__main ul { list-style: disc; padding-left: 1.2em; margin-top: 10px; display: grid; gap: 6px; }
 .legal__main a { color: var(--ink); text-underline-offset: 3px; }
 .legal__main a:hover { color: #b8392d; }
+.legal__main .btn, .legal__main .btn:hover { color: var(--on-coral); text-decoration: none; }
 mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 2px; }
 
 /* ---------- guides (SEO pages, built by scripts/build-guides.py) ---------- */
