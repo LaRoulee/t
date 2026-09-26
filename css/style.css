@@ -489,9 +489,10 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 .footer__legal { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .footer__legal a { color: var(--bone-dim); text-decoration: none; }
 .footer__legal a:hover { color: var(--bone); text-decoration: underline; text-underline-offset: 4px; }
-.footer__socials { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-.footer__social { color: var(--bone-dim); text-decoration: none; }
-.footer__social:hover { color: var(--bone); text-decoration: underline; text-underline-offset: 4px; }
+.footer__socials { display: flex; gap: 12px; }
+.footer__social { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(238, 237, 232, .22); color: var(--bone); transition: background-color .25s, color .25s, border-color .25s; }
+.footer__social svg { width: 18px; height: 18px; fill: currentColor; }
+.footer__social:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
 
 /* ---------- footer ---------- */
 
