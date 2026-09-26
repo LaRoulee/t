@@ -552,7 +552,10 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
   .buybar__label b { color: var(--coral-text); font-weight: 700; margin-left: 6px; }
   .manifesto__grid { grid-template-columns: 1fr; }
   .manifesto__photo { order: -1; max-width: 560px; }
-  .manifesto__photo > img, .manifesto__photo .mask { aspect-ratio: 4 / 4.2; }
+  .manifesto__photo > img, .manifesto__photo .mask { aspect-ratio: 16 / 10; }
+  .manifesto__photo figcaption, .services__img figcaption { display: none; }
+  .services__img .mask { aspect-ratio: 16 / 10; }
+  .services__img .mask img, .services__img > img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 22%; }
   .calendar__head { grid-template-columns: 1fr; }
   .services__grid { grid-template-columns: 1fr; }
   .services__img { position: relative; top: 0; max-width: 520px; }
@@ -685,6 +688,8 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
 .ghero__crumbs a { color: inherit; }
 .ghero__title { font-size: var(--step-4); font-weight: 620; font-variation-settings: "wdth" 125; letter-spacing: -0.04em; line-height: .96; text-wrap: balance; }
 .ghero__meta { font-size: var(--step--1); color: rgba(238,237,232,.85); }
+.ghero__cta { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 4px; font-weight: 700; font-size: 0.9375rem; color: var(--on-coral); background: var(--coral); padding: 10px 16px; border-radius: 3px; text-decoration: none; }
+.ghero__cta:hover { background: var(--bone); }
 .ghero__credit { font-size: var(--step--1); color: var(--charcoal); margin: 0 0 8px; }
 .legal--guide .legal__main { padding-top: clamp(28px, 5vh, 48px); }
 .gbar { display: none; }

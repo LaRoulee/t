@@ -243,6 +243,7 @@ def page(g):
       <p class="ghero__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
       <h1 class="ghero__title">{g["h1"]}</h1>
       <p class="ghero__meta">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
+      <a class="ghero__cta" href="./#acheter" data-goatcounter-click="guide-{g["slug"]}-haut">Tous les contacts dans le guide · 27&nbsp;€ →</a>
     </div>
   </header>
   <main class="legal__main guide">
@@ -273,7 +274,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260927">
+  <link rel="stylesheet" href="css/style.css?v=20260927e">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="legal legal--guide">
