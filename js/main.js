@@ -165,12 +165,6 @@ if (!reduceMotion) {
     .from(items, { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.15, ease: 'expo.out' })
     .to($$('[data-checklist] .checklist__tick'), { strokeDashoffset: 0, duration: 0.5, stagger: 0.2, ease: 'power2.out' }, 0.3);
 
-  /* horizon: the photograph is there from the start and the line arrives */
-  gsap.from('[data-horizon-line]', {
-    autoAlpha: 0, y: 40, duration: 1.3, ease: 'expo.out',
-    scrollTrigger: { trigger: '[data-horizon]', start: 'top 60%' },
-  });
-
   /* services: portrait unveiled */
   const portrait = $('[data-parallax-mask] img');
   const mask = document.createElement('div');

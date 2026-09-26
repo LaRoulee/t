@@ -21,12 +21,13 @@ Open the address it prints. ES modules require a server; opening `index.html` di
 
 ## Structure
 
+Order on the page: hero → manifesto → preview → services → CTA (price) → FAQ → calendar → guides. The price comes early; the calendar and the free guides follow for readers who want more.
+
 | Section | Effect |
 | --- | --- |
 | Hero | WebGL slow sequence (3 photos, organic displacement wipe, drift); full-bleed, loads the 2400 px version on desktop |
 | Manifeste | Words light up as you scroll; departure checklist (visa ✓, billet ✓, 2 303 contacts) beside an arrival photo revealed from the bottom |
 | Aperçu | Centred spreadsheet (column letters, row numbers, gridlines) with 6 real rows, numbers masked |
-| Horizon | Full-bleed photo shown at once, the line fades in |
 | Qui recrute, et quand | Real data from the file's Calendrier tab (employers hiring per state and month), heatmap sweeping in from January to December, hover tooltip |
 | Services | Violet section, portrait revealed; key figures (employers, agencies, towns, numbers, e-mails) |
 | Guides | Photo tiles linking to the five guide pages |

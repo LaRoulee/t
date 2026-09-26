@@ -581,6 +581,10 @@ html { scrollbar-color: var(--charcoal) var(--ink-2); scrollbar-width: thin; }
 
 /* ---------- guides (links to the SEO pages) ---------- */
 
+.calendar + .guides { border-top: 1px solid rgba(42, 43, 41, .14); }
+.calendar__guide { color: var(--ink); font-weight: 600; text-underline-offset: 4px; }
+.calendar__foot .btn { justify-self: start; }
+
 .guides { background: var(--bone); color: var(--ink); padding: clamp(96px, 14vh, 160px) var(--gutter); }
 .guides__head { max-width: 1200px; margin: 0 auto clamp(32px, 5vh, 56px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px 48px; align-items: end; }
 .guides__kicker { grid-column: 1 / -1; font-size: var(--step--1); font-weight: 650; letter-spacing: .14em; text-transform: uppercase; color: #b3392d; }
