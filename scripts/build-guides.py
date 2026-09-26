@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://aussieway.fr/'
 # Brevo form endpoint ("https://xxxx.sibforms.com/serve/..."). Empty = the e-mail gate is off
 # and the templates stay readable. BREVO_FORM_URL in the environment overrides it (previews).
-BREVO_FORM_URL = os.environ.get('BREVO_FORM_URL', '')
+BREVO_FORM_URL = os.environ.get('BREVO_FORM_URL', 'https://ed5886ce.sibforms.com/serve/MUIFAK7oGg_TVsDyOGXkaedIVlXyj5VaWmsTyZHjUSLmUCJd6TJlRTmBNegLqUtTyozC9XdfayafxMGXAZrIKM-YBdLCsZEfz04Fm9XlNeDfr5BKUqtEPpV5rwdwZq6iU-wR6MEvBpVVF75ScEeug3PJCcMKR3cH3z8r1VsTN_JUTbhMbkt6zPpR1Rgj0Q9EhhMfgnBrvXZsS8nZGA==')
 UPDATED = '2026-09-26'
 UPDATED_FR = '26 septembre 2026'
 BRAND_SVG = ('<svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor">'

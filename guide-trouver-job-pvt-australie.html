@@ -50,7 +50,7 @@
 <li><strong>Permis cariste</strong>&nbsp;: un vrai plus en usine et en entrepôt.</li>
 <li><strong>Une voiture</strong>&nbsp;: souvent ce qui fait la différence.</li>
 </ul></section>
-<section><h2>L'e-mail de candidature en anglais</h2>
+<div class="lock is-locked" data-endpoint="https://ed5886ce.sibforms.com/serve/MUIFAK7oGg_TVsDyOGXkaedIVlXyj5VaWmsTyZHjUSLmUCJd6TJlRTmBNegLqUtTyozC9XdfayafxMGXAZrIKM-YBdLCsZEfz04Fm9XlNeDfr5BKUqtEPpV5rwdwZq6iU-wR6MEvBpVVF75ScEeug3PJCcMKR3cH3z8r1VsTN_JUTbhMbkt6zPpR1Rgj0Q9EhhMfgnBrvXZsS8nZGA=="><div class="lock__content" aria-hidden="true"><section><h2>L'e-mail de candidature en anglais</h2>
 <pre class="gmail">Subject: Backpacker available for farm work – from [date]
 
 Hi [name],
@@ -67,7 +67,17 @@ Kind regards,
 [Australian phone number]</pre></section>
 <section><h2>Au téléphone, souvent plus efficace</h2>
 <p>Appelez <strong>avant 9&nbsp;h</strong>&nbsp;: c'est là que les responsables de ferme décrochent.</p>
-<pre class="gmail">"Hi, my name is [first name], I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from [date] and I have my own car."</pre></section>
+<pre class="gmail">"Hi, my name is [first name], I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from [date] and I have my own car."</pre></section></div><form class="lock__gate" novalidate>
+  <p class="lock__kicker">Gratuit</p>
+  <p class="lock__title">Débloquez le modèle d'e-mail et la phrase à dire au téléphone</p>
+  <div class="lock__row">
+    <label class="sr-only" for="lock-email">Votre adresse e-mail</label>
+    <input id="lock-email" name="EMAIL" type="email" required autocomplete="email" placeholder="votre@email.com">
+    <button class="btn" type="submit">Débloquer</button>
+  </div>
+  <p class="lock__error" role="alert" hidden>Entrez une adresse e-mail valide.</p>
+  <p class="lock__legal">En continuant, vous acceptez de recevoir les conseils PVT d'AUSSIEWAY par e-mail. Désinscription en un clic. <a href="confidentialite.html">Confidentialité</a></p>
+</form></div>
 <aside class="gcta" aria-label="Le Guide Opérationnel"><p class="gcta__kicker">Le Guide Opérationnel</p><p class="gcta__title">Plus de 2&nbsp;300 employeurs et agences qui embauchent des backpackers, dans un seul guide.</p><p>2 078 numéros de téléphone et 1 540 e-mails d'employeurs, pour appeler dès votre arrivée.</p><a class="btn" href="./#acheter" data-goatcounter-click="guide-trouver-job-pvt-australie-cta">Voir le guide · 27&nbsp;€</a></aside>
 <section><h2>Le CV «&nbsp;à l'australienne&nbsp;»</h2>
 <ul>
@@ -85,7 +95,26 @@ Kind regards,
 </ul></section>
 
     <nav class="grelated" aria-label="Autres guides"><h2>Autres guides</h2><ul><li><a href="guide-88-jours-pvt-australie.html">Les 88 jours en PVT Australie</a></li><li><a href="guide-travail-ferme-australie-calendrier.html">Travail en ferme en Australie&nbsp;: le calendrier des embauches</a></li><li><a href="guide-vendanges-australie-pvt.html">Les vendanges en Australie en PVT</a></li><li><a href="guide-travailler-tasmanie-pvt.html">Travailler en Tasmanie en PVT</a></li></ul></nav>
-    
+    <script>
+(() => {
+  const box = document.querySelector('.lock'); if (!box) return;
+  const unlock = () => { box.classList.remove('is-locked'); box.querySelector('.lock__content').removeAttribute('aria-hidden'); };
+  try { if (localStorage.getItem('aw-unlocked') === '1') unlock(); } catch {}
+  const form = box.querySelector('.lock__gate');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input'); const err = form.querySelector('.lock__error');
+    if (!/^[^@ ]+@[^@ ]+[.][^@ ]+$/.test(input.value.trim())) { err.hidden = false; input.focus(); return; }
+    err.hidden = true;
+    const body = new URLSearchParams({ EMAIL: input.value.trim(), email_address_check: '', locale: 'fr' });
+    fetch(box.dataset.endpoint, { method: 'POST', mode: 'no-cors', body }).catch(() => {}).finally(() => {
+      try { localStorage.setItem('aw-unlocked', '1'); } catch {}
+      window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: 'lead-debloquer', event: true });
+      unlock();
+    });
+  });
+})();
+</script>
   </main>
   <div class="gbar" aria-label="Le Guide Opérationnel">
     <span class="gbar__name">Le Guide Opérationnel <b>27&nbsp;€</b></span>
