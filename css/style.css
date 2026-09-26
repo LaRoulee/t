@@ -729,6 +729,24 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
   .legal--guide { padding-bottom: 72px; }
 }
 
+/* e-mail gate on the job-hunting guide (active only when a Brevo form is configured) */
+.lock { position: relative; }
+.lock.is-locked .lock__content { filter: blur(7px); user-select: none; pointer-events: none; max-height: 760px; overflow: hidden; }
+.lock__gate { display: none; }
+.lock.is-locked .lock__gate {
+  display: grid; gap: 12px; position: absolute; left: 0; right: 0; top: 120px; margin: 0 auto; width: min(100%, 480px);
+  background: var(--ink); color: var(--bone); padding: 26px 24px; border-radius: 12px; box-shadow: 0 24px 60px rgba(0,0,0,.25);
+}
+.lock__kicker { font-size: var(--step--1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text) !important; }
+.lock__title { font-size: var(--step-1); font-weight: 650; line-height: 1.25; color: var(--bone) !important; }
+.lock__row { display: flex; gap: 8px; flex-wrap: wrap; }
+.lock__row input { flex: 1 1 200px; min-width: 0; height: 52px; padding: 0 14px; border-radius: 4px; border: 1px solid rgba(238,237,232,.3); background: #fff; color: var(--ink); font: 16px var(--font); }
+.lock__row .btn { flex: 0 0 auto; }
+@media (max-width: 520px) { .lock__row .btn { width: 100%; justify-content: center; } .lock.is-locked .lock__gate { top: 80px; } }
+.lock__error { color: #ffb4ab !important; font-size: var(--step--1); }
+.lock__legal { font-size: 12px; line-height: 1.45; color: var(--bone-dim) !important; }
+.lock__legal a { color: var(--bone-dim) !important; }
+
 /* ---------- 404 ---------- */
 
 .notfound { min-height: 100vh; min-height: 100svh; display: grid; align-content: end; gap: 24px; padding: 0 var(--gutter) clamp(40px, 10vh, 96px); position: relative; overflow: hidden; }

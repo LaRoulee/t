@@ -5,10 +5,14 @@ Every figure comes from JOBS_AUSTRALIE_PVT.xlsx (Contacts and Calendrier tabs).
 Run from the repo root:  python3 scripts/build-guides.py
 """
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://aussieway.fr/'
+# Brevo form endpoint ("https://xxxx.sibforms.com/serve/..."). Empty = the e-mail gate is off
+# and the templates stay readable. BREVO_FORM_URL in the environment overrides it (previews).
+BREVO_FORM_URL = os.environ.get('BREVO_FORM_URL', '')
 UPDATED = '2026-09-26'
 UPDATED_FR = '26 septembre 2026'
 BRAND_SVG = ('<svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor">'
@@ -179,7 +183,7 @@ GUIDES = [
 <li><strong>Permis cariste</strong>&nbsp;: un vrai plus en usine et en entrepôt.</li>
 <li><strong>Une voiture</strong>&nbsp;: souvent ce qui fait la différence.</li>
 </ul></section>
-<section><h2>L'e-mail de candidature en anglais</h2>
+<!--LOCK--><section><h2>L'e-mail de candidature en anglais</h2>
 <pre class="gmail">Subject: Backpacker available for farm work – from [date]
 
 Hi [name],
@@ -196,7 +200,7 @@ Kind regards,
 [Australian phone number]</pre></section>
 <section><h2>Au téléphone, souvent plus efficace</h2>
 <p>Appelez <strong>avant 9&nbsp;h</strong>&nbsp;: c'est là que les responsables de ferme décrochent.</p>
-<pre class="gmail">"Hi, my name is [first name], I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from [date] and I have my own car."</pre></section>
+<pre class="gmail">"Hi, my name is [first name], I'm a backpacker looking for farm work. Do you need any pickers or packers at the moment? I'm available from [date] and I have my own car."</pre></section><!--/LOCK-->
 {{CTA}}
 <section><h2>Le CV «&nbsp;à l'australienne&nbsp;»</h2>
 <ul>
@@ -217,6 +221,49 @@ Kind regards,
 ]
 
 
+
+LOCK_GATE = """<form class="lock__gate" novalidate>
+  <p class="lock__kicker">Gratuit</p>
+  <p class="lock__title">Débloquez le modèle d'e-mail et la phrase à dire au téléphone</p>
+  <div class="lock__row">
+    <label class="sr-only" for="lock-email">Votre adresse e-mail</label>
+    <input id="lock-email" name="EMAIL" type="email" required autocomplete="email" placeholder="votre@email.com">
+    <button class="btn" type="submit">Débloquer</button>
+  </div>
+  <p class="lock__error" role="alert" hidden>Entrez une adresse e-mail valide.</p>
+  <p class="lock__legal">En continuant, vous acceptez de recevoir les conseils PVT d'AUSSIEWAY par e-mail. Désinscription en un clic. <a href="confidentialite.html">Confidentialité</a></p>
+</form>"""
+LOCK_JS = """<script>
+(() => {
+  const box = document.querySelector('.lock'); if (!box) return;
+  const unlock = () => { box.classList.remove('is-locked'); box.querySelector('.lock__content').removeAttribute('aria-hidden'); };
+  try { if (localStorage.getItem('aw-unlocked') === '1') unlock(); } catch {}
+  const form = box.querySelector('.lock__gate');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input'); const err = form.querySelector('.lock__error');
+    if (!/^[^@ ]+@[^@ ]+[.][^@ ]+$/.test(input.value.trim())) { err.hidden = false; input.focus(); return; }
+    err.hidden = true;
+    const body = new URLSearchParams({ EMAIL: input.value.trim(), email_address_check: '', locale: 'fr' });
+    fetch(box.dataset.endpoint, { method: 'POST', mode: 'no-cors', body }).catch(() => {}).finally(() => {
+      try { localStorage.setItem('aw-unlocked', '1'); } catch {}
+      window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: 'lead-debloquer', event: true });
+      unlock();
+    });
+  });
+})();
+</script>"""
+
+
+def apply_lock(body):
+    if '<!--LOCK-->' not in body:
+        return body, ''
+    if not BREVO_FORM_URL:
+        return body.replace('<!--LOCK-->', '').replace('<!--/LOCK-->', ''), ''
+    body = body.replace('<!--LOCK-->', f'<div class="lock is-locked" data-endpoint="{BREVO_FORM_URL}"><div class="lock__content" aria-hidden="true">')
+    body = body.replace('<!--/LOCK-->', '</div>' + LOCK_GATE + '</div>')
+    return body, LOCK_JS
+
 def related(slug):
     items = ''.join(f'<li><a href="guide-{g["slug"]}.html">{g["h1"]}</a></li>' for g in GUIDES if g['slug'] != slug)
     return f'<nav class="grelated" aria-label="Autres guides"><h2>Autres guides</h2><ul>{items}</ul></nav>'
@@ -236,6 +283,7 @@ def page(g):
             {'@type': 'ListItem', 'position': 3, 'name': g['h1'].replace('&nbsp;', ' '), 'item': url}]},
     ]
     body = g['body'].replace('{CTA}', CTA.format(line=g['cta'], slug=g['slug']))
+    body, lock_js = apply_lock(body)
     return shell(g['title'], g['desc'], url, f'''
   <header class="ghero">
     <img src="assets/img/{name}-1600.webp" srcset="assets/img/{name}-800.webp 800w, assets/img/{name}-1600.webp 1600w, assets/img/{name}-{w}.webp {w}w" sizes="100vw" alt="{alt}" width="1600" height="900" fetchpriority="high">
@@ -248,6 +296,7 @@ def page(g):
   <main class="legal__main guide">
     {body}
     {related(g["slug"])}
+    {lock_js}
   </main>''', ld, og_image=f'{SITE}assets/img/{name}-1600.webp')
 
 
@@ -273,7 +322,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260927i">
+  <link rel="stylesheet" href="css/style.css?v=20260927n">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="legal legal--guide">
