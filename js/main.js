@@ -119,7 +119,6 @@ function splitWords(el) {
 
 /* ---------- motion ---------- */
 
-const frames = $$('[data-frame]');
 
 if (!reduceMotion) {
   /* hero intro */
@@ -165,33 +164,6 @@ if (!reduceMotion) {
   gsap.timeline({ scrollTrigger: { trigger: '[data-checklist]', start: 'top 85%' } })
     .from(items, { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.15, ease: 'expo.out' })
     .to($$('[data-checklist] .checklist__tick'), { strokeDashoffset: 0, duration: 0.5, stagger: 0.2, ease: 'power2.out' }, 0.3);
-
-  /* the contact sheet: every print stays visible; scrolling runs the counter and the marker */
-  const counter = $('[data-counter]');
-  const steps = $$('[data-steps] li');
-  const stepLabel = $('[data-step-label]');
-  const marks = frames.map((f) => $('.frame__mark', f));
-  let marked = -1;
-  // the china-marker: a coral loop drawn around the frame being read, as on a real contact sheet
-  const markFrame = (i) => {
-    if (i === marked) return;
-    if (marked >= 0) gsap.to(marks[marked], { strokeDashoffset: -1, duration: 0.5, ease: 'power2.in', overwrite: true, onComplete() { gsap.set(this.targets(), { autoAlpha: 0 }); } });
-    marked = i;
-    gsap.fromTo(marks[i], { strokeDashoffset: 1, autoAlpha: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', delay: 0.15, overwrite: true });
-  };
-  const setStep = (p) => {
-    counter.textContent = String(Math.round(1 + p * 2302)).padStart(4, '0');
-    const active = Math.min(steps.length - 1, Math.floor(p * steps.length));
-    steps.forEach((s, i) => s.classList.toggle('is-active', i === active));
-    stepLabel.textContent = steps[active].textContent.trim();
-    if (p > 0.001) markFrame(active);
-  };
-  setStep(0);
-  ScrollTrigger.create({
-    trigger: '[data-sheet-track]', start: 'top 75%', end: 'bottom 45%',
-    onUpdate: (st) => setStep(st.progress),
-  });
-
 
   /* horizon: the photograph is there from the start and the line arrives */
   gsap.from('[data-horizon-line]', {
