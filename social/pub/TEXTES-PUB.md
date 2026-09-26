@@ -130,6 +130,74 @@ Les vidéos sont muettes : ajoutez une musique dans Meta (« Ajouter de la musiq
 
 ---
 
+## D. Nouvelles photos (septembre 2026) — 12 pubs de plus
+
+Photos générées pour la pub (Higgsfield), originaux en 2K dans `social/photos/`. Les visuels avec des personnes marchent en général mieux en pub : **testez-les en priorité**.
+
+**Nouvel ordre de test conseillé (semaine 1)** : D1 (carrousel problème → solution), C01, C03, C09, A5, S5.
+
+### D1 · Carrousel « Problème → solution »  *(5 images)*
+**Texte principal**
+Tu cherches un job en PVT et personne ne répond ? Annonces saturées, e-mails sans réponse, arrivée après le pic de récolte…
+La solution : appeler les employeurs en direct, au bon moment. Le guide AUSSIEWAY te dit qui appeler, où, et quel mois : 2 303 contacts avec téléphone et e-mail.
+**Titre** : Qui appeler, où, et quel mois
+**Description** : Le Guide Opérationnel · 27 €
+
+### C01 · Des dizaines de CV, zéro réponse
+**Texte principal** : Des dizaines de CV envoyés, zéro réponse ? Le problème, ce n'est pas toi, c'est la méthode. Les fermes australiennes répondent souvent mieux au téléphone : 2 078 numéros d'employeurs dans le guide.
+**Titre** : Arrête de postuler dans le vide
+**Description** : 2 303 contacts d'employeurs
+
+### C02 · Tout dans le guide
+**Texte principal** : 2 303 employeurs qui embauchent des backpackers en Australie. Filtre par État, par mois de dispo et par secteur, puis appelle.
+**Titre** : Le Guide Opérationnel · 27 €
+**Description** : Fichier Excel envoyé tout de suite
+
+### C03 · Appelle avant 9 h
+**Texte principal** : Astuce PVT : appelle les fermes avant 9 h, c'est là que les responsables décrochent. Il te faut juste les numéros : 2 078 dans le guide AUSSIEWAY.
+**Titre** : 2 078 numéros d'employeurs
+**Description** : Fermes, stations, hôtels, roadhouses
+
+### C04 · Cerises en Tasmanie
+**Texte principal** : La saison des cerises en Tasmanie, c'est de novembre à mars. Le guide AUSSIEWAY liste 152 contacts en Tasmanie, dont 20 pour les cerises, avec leur saison et leur numéro.
+**Titre** : Prépare ta saison en Tasmanie
+**Description** : Calendrier + contacts
+
+### C05 · Stations et élevages
+**Texte principal** : Envie d'outback ? 277 stations et élevages qui embauchent des backpackers sont dans le guide. En zone régionale, ce travail peut compter pour tes 88 jours (vérifie le code postal sur immi.homeaffairs.gov.au).
+**Titre** : 277 stations qui embauchent
+**Description** : Le Guide Opérationnel
+
+### C06 · Pas envie de cueillir ?
+**Texte principal** : Pas envie de cueillir ? Le guide AUSSIEWAY compte aussi 510 contacts en hôtellerie-restauration et 92 roadhouses, partout en Australie.
+**Titre** : Pas que des fermes
+**Description** : 2 303 contacts au total
+
+### C07 · Road trip
+**Texte principal** : Ton road trip australien commence par un premier job. Qui recrute, où, et quel mois : tout est dans le guide AUSSIEWAY.
+**Titre** : Finance ton road trip
+**Description** : 2 303 employeurs et agences
+
+### C08 · Trouve ta ferme
+**Texte principal** : Trouve ta ferme, le reste suit. 1 970 employeurs directs à contacter, État par État, avec le mois où ils recrutent.
+**Titre** : 1 970 employeurs directs
+**Description** : Le Guide Opérationnel · 27 €
+
+### C09 · Qui appeler en arrivant ?
+**Texte principal** : Visa ✓ Billet ✓ Et maintenant : qui appeler en arrivant ? 2 303 contacts d'employeurs et d'agences qui embauchent des backpackers, avec téléphone et e-mail.
+**Titre** : Qui appeler en arrivant
+**Description** : 2 303 contacts · 27 €
+
+### C10 · La Tasmanie en été
+**Texte principal** : De novembre à mars, jusqu'à 71 employeurs par mois recrutent en Tasmanie. Le calendrier complet est dans le guide AUSSIEWAY.
+**Titre** : Où bosser cet été austral
+**Description** : Calendrier des embauches
+
+### S5 · Story « Appelle avant 9 h »  (`stories/pub-S5-appelle-avant-9h.mp4`)
+Mêmes textes que **C03**.
+
+---
+
 ## Refaire ou modifier un visuel
 
 ```bash

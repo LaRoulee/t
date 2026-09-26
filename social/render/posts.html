@@ -99,6 +99,12 @@ const PH = {
   bananes: IMG('bananeraie-vue-aerienne', 2400), hangar: IMG('hangar-conditionnement', 2400), ble: IMG('hero-ble-australie-occidentale', 2400),
   champ: IMG('hero-champ-queensland', 2400), vigne: IMG('hero-vignoble-barossa', 2400),
 };
+const NP = (n) => `../photos/${n}.png`;
+const PH2 = {
+  cvKo: NP('hostel-cv-decourage'), guide: NP('hostel-guide-ordinateur'), appel: NP('appel-aube-ferme'), cerises: NP('cerises-tasmanie'),
+  station: NP('station-betail-quad'), roadhouse: NP('roadhouse-barista'), van: NP('van-road-trip'), bbq: NP('veranda-bbq-backpackers'),
+  flatlay: NP('flatlay-preparation'), cradle: NP('cradle-mountain'),
+};
 const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
 // Calendrier tab of JOBS_AUSTRALIE_PVT.xlsx
 const CAL = {
@@ -194,7 +200,25 @@ Kind regards,
   'B10-pour-chaque-employeur': [{ cls: 'bone', html: `${BRAND}<div class="txt mid" style="gap:40px"><div class="h1 s">Numéro, e-mail, saison, paie.</div><div class="h2 coral">Pour chaque employeur.</div>${SHEET(5)}<div class="p dim">Extrait réel du guide, numéros masqués.</div></div>${URL}` }],
   'B11-avant-d-atterrir': [{ html: `${full(PH.ocean, '50% 45%')}${BRAND}<div class="txt"><div class="h1">Prépare ton premier job avant même d'atterrir.</div><div class="p">Qui recrute, où, et quel mois. Tout est dans le guide.</div></div>${URL}` }],
   'B12-ou-aller-et-quand': [{ html: `${band(PH.vigne)}${BRAND}<div class="txt low"><div class="h1 s">Tasmanie, Queensland, vendanges.</div><div class="h2 coral">Sache où aller, et quand.</div></div>${URL}` }],
-};
+
+  // C. nouvelles photos (Higgsfield, septembre 2026)
+  'C01-cv-sans-reponse': [{ html: `${full(PH2.cvKo, '50% 35%')}${BRAND}<div class="txt"><div class="h1">Des dizaines de CV. Zéro réponse&nbsp;?</div><div class="p">Le problème, ce n'est pas toi. C'est la méthode : appelle les employeurs en direct.</div></div>${URL}` }],
+  'C02-tout-dans-le-guide': [{ html: `${full(PH2.guide, '50% 40%')}${BRAND}<div class="txt"><div class="h1 s"><span class="coral">2&nbsp;303</span> employeurs qui embauchent des backpackers.</div><div class="p">Filtre ton État, ton mois, ton secteur. Et appelle.</div></div>${URL}` }],
+  'C03-appelle-avant-9h': [{ html: `${full(PH2.appel, '50% 35%')}${BRAND}<div class="txt"><div class="h1">Appelle avant 9&nbsp;h.</div><div class="p">C'est là que les responsables de ferme décrochent. <b class="coral">2&nbsp;078 numéros</b> dans le guide.</div></div>${URL}` }],
+  'C04-cerises-tasmanie': [{ html: `${full(PH2.cerises, '50% 40%')}${BRAND}<div class="txt"><div class="kicker">Tasmanie · novembre → mars</div><div class="h1 s">La saison des cerises t'attend.</div><div class="p">20 contacts pour les cerises et 152 en tout en Tasmanie dans le guide.</div></div>${URL}` }],
+  'C05-stations-elevage': [{ html: `${full(PH2.station, '50% 45%')}${BRAND}<div class="txt"><div class="kicker">Outback</div><div class="h1 s"><span class="coral">277</span> stations et élevages qui embauchent.</div><div class="p">Et ça peut compter pour tes 88 jours.</div></div>${URL}` }],
+  'C06-pas-que-des-fermes': [{ html: `${full(PH2.roadhouse, '50% 40%')}${BRAND}<div class="txt"><div class="h1 s">Pas envie de cueillir&nbsp;?</div><div class="p"><b class="coral">510</b> contacts en hôtellerie-restauration et <b class="coral">92</b> roadhouses dans le guide.</div></div>${URL}` }],
+  'C07-road-trip': [{ html: `${full(PH2.van, '50% 45%')}${BRAND}<div class="txt"><div class="h1">Ton road trip commence par un premier job.</div><div class="p">Qui recrute, où, et quel mois. Tout est dans le guide.</div></div>${URL}` }],
+  'C08-apres-la-journee': [{ html: `${full(PH2.bbq, '50% 45%')}${BRAND}<div class="txt"><div class="h1 s">Trouve ta ferme. Le reste suit.</div><div class="p">1&nbsp;970 employeurs directs à contacter, État par État.</div></div>${URL}` }],
+  'C09-qui-appeler': [{ html: `${full(PH2.flatlay, '50% 50%')}${BRAND}<div class="txt"><div class="h2">Visa ✓ &nbsp;Billet ✓</div><div class="h1 s coral">Qui appeler en arrivant&nbsp;?</div><div class="p">2&nbsp;303 contacts, avec téléphone et e-mail.</div></div>${URL}` }],
+  'C10-tasmanie-ete': [{ html: `${full(PH2.cradle, '50% 45%')}${BRAND}<div class="txt"><div class="kicker">Tasmanie</div><div class="h1 s">De novembre à mars, jusqu'à 71 employeurs par mois.</div></div>${URL}` }],
+  'D1-probleme-solution': [
+    { html: `${full(PH2.cvKo, '50% 35%')}${BRAND}<div class="txt"><div class="kicker">PVT Australie</div><div class="h1">Tu cherches un job et personne ne répond&nbsp;?</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid"><div class="kicker">Le problème</div>${rows([['Les annonces sont saturées', 'beaucoup de backpackers sur la même offre'], ['Les e-mails restent sans réponse', 'les petites fermes sont débordées'], ["Tu arrives au mauvais moment", 'après le pic de récolte']], () => '✕')}</div>${SWIPE}` },
+    { html: `${full(PH2.appel, '50% 35%')}${BRAND}<div class="txt"><div class="kicker">La solution</div><div class="h1 s">Appeler les employeurs en direct, au bon moment.</div></div>${SWIPE}` },
+    { html: `${BRAND}<div class="txt mid" style="gap:36px"><div class="kicker">Avec le guide</div><div class="h2">Qui appeler, où, et quel mois.</div>${SHEET(5)}<div class="p dim">Extrait réel, numéros masqués.</div></div>${SWIPE}` },
+    CTA('2&nbsp;303 contacts + le calendrier des embauches', '27&nbsp;€, paiement unique, fichier envoyé par e-mail tout de suite.'),
+  ],};
 
 const id = new URLSearchParams(location.search).get('p');
 const n = +(new URLSearchParams(location.search).get('n') || 0);
