@@ -1,9 +1,7 @@
 # Profils AUSSIEWAY · logo et bios
 
 ## Logo (photo de profil)
-- `logo-violet-2300.png` : logo avec « +2 300 employeurs » (conseillé)
-- `logo-sombre-2300.png` : la même version sur fond sombre
-- `logo-violet.png` : sans texte, conseillé pour Instagram, TikTok et Facebook (se voit bien en petit, couleur de la marque)
+- `logo-violet.png` : conseillé, sans texte pour Instagram, TikTok et Facebook (se voit bien en petit, couleur de la marque)
 - `logo-sombre.png` et `logo-corail.png` : variantes
 - Même logo partout, pour qu'on vous reconnaisse d'une appli à l'autre.
 
