@@ -49,7 +49,7 @@ def heat_table(rows, caption):
 
 CTA = ('<aside class="gcta" aria-label="Le Guide Opérationnel">'
        '<p class="gcta__kicker">Le Guide Opérationnel</p>'
-       '<p class="gcta__title">2&nbsp;303 employeurs et agences qui embauchent des backpackers, dans un seul guide.</p>'
+       '<p class="gcta__title">Plus de 2&nbsp;300 employeurs et agences qui embauchent des backpackers, dans un seul guide.</p>'
        '<p>{line}</p>'
        '<a class="btn" href="./#acheter" data-goatcounter-click="guide-{slug}-cta">Voir le guide · 27&nbsp;€</a>'
        '</aside>')
@@ -91,7 +91,7 @@ GUIDES = [
         'slug': 'travail-ferme-australie-calendrier',
         'title': 'Travail en ferme en Australie : quel État recrute selon le mois',
         'h1': 'Travail en ferme en Australie&nbsp;: le calendrier des embauches',
-        'desc': "Quel État australien recrute des backpackers chaque mois ? Le calendrier des embauches en ferme, État par État, établi à partir de 2 303 contacts.",
+        'desc': "Quel État australien recrute des backpackers chaque mois ? Le calendrier des embauches en ferme, État par État, établi à partir de plus de 2 300 contacts.",
         'photo': ('hero-champ-queensland', 'Champ agricole du Queensland au coucher du soleil', 2400),
         'cta': "Dans le guide AUSSIEWAY, filtrez la colonne du mois où vous êtes disponible et obtenez la liste des employeurs qui recrutent, avec leur numéro.",
         'body': f'''
@@ -240,7 +240,7 @@ def page(g):
   <main class="legal__main guide">
     <p class="guide__crumbs"><a href="./">Accueil</a> / <a href="guides.html">Guides PVT</a></p>
     <h1 class="legal__title">{g["h1"]}</h1>
-    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (2&nbsp;303 contacts)</p>
+    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
     <figure class="guide__photo">{img(name, alt, w)}<figcaption>Photographie générée par IA, à titre d'illustration.</figcaption></figure>
     {body}
     {related(g["slug"])}
@@ -309,7 +309,7 @@ def hub():
                  f'{SITE}guides.html', f'''
   <main class="legal__main guide">
     <h1 class="legal__title">Guides PVT Australie</h1>
-    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (2&nbsp;303 contacts)</p>
+    <p class="legal__updated">Mis à jour le {UPDATED_FR} · chiffres tirés du guide AUSSIEWAY (plus de 2&nbsp;300 contacts)</p>
     <ul class="ghub">{cards}
     </ul>
   </main>''', ld)

@@ -5,7 +5,7 @@ Visuels dans ce dossier :
 - `B06…B12` : images simples, format 4:5.
 - `stories/` : 4 vidéos 9:16 pour les emplacements Stories et Reels.
 
-Tous les chiffres viennent du guide (2 303 contacts, onglet Calendrier). Pas de promo, pas de faux avis.
+Tous les chiffres viennent du guide (plus de 2 300 contacts, onglet Calendrier). Pas de promo, pas de faux avis.
 
 Pour chaque pub, dans le Gestionnaire de publicités Meta :
 - **Texte principal** : le texte au-dessus du visuel.
@@ -41,9 +41,9 @@ Pour chaque pub, dans le Gestionnaire de publicités Meta :
 **Texte principal**
 Tu pars en PVT en Australie ? Le mois de ton arrivée change tout.
 Janvier → mars : Tasmanie et Victoria. Avril → octobre : Queensland et Nouvelle-Galles du Sud. Novembre : retour en Tasmanie.
-Le guide AUSSIEWAY te donne le calendrier complet et les 2 303 employeurs qui embauchent des backpackers, avec leur numéro.
+Le guide AUSSIEWAY te donne le calendrier complet et les plus de 2 300 employeurs qui embauchent des backpackers, avec leur numéro.
 **Titre** : Où bosser selon ton mois d'arrivée
-**Description** : 2 303 contacts · calendrier des embauches
+**Description** : Plus de 2 300 contacts · calendrier des embauches
 
 ### A2 · Les 88 jours expliqués
 **Texte principal**
@@ -64,12 +64,12 @@ La meilleure protection : contacter les employeurs en direct. Le guide AUSSIEWAY
 Le mail en anglais à envoyer aux fermes, prêt à copier. Et la phrase à dire au téléphone, encore plus efficace (appelle avant 9 h).
 Il ne te manque plus que les contacts : 2 078 numéros et 1 540 e-mails dans le guide AUSSIEWAY.
 **Titre** : Le mail à envoyer aux fermes
-**Description** : Modèle + 2 303 contacts
+**Description** : Modèle et plus de 2 300 contacts
 
 ### A5 · Ce qu'il y a dans le guide  *(la pub qui vend le plus directement)*
 **Texte principal**
 Ce que tu reçois avec Le Guide Opérationnel AUSSIEWAY :
-✅ 2 303 employeurs et agences qui embauchent des backpackers
+✅ Plus de 2 300 employeurs et agences qui embauchent des backpackers
 ✅ Téléphone, e-mail, saison et paie pour chaque contact
 ✅ Le calendrier des embauches État par État
 ✅ Les 88 jours, tes droits, un modèle d'e-mail et un CV australien
@@ -81,20 +81,20 @@ Ce que tu reçois avec Le Guide Opérationnel AUSSIEWAY :
 
 ## B. Images simples
 
-### B06 · 2 303 employeurs
-**Texte principal** : Tu pars en PVT en Australie ? 2 303 fermes, stations, hôtels, roadhouses et agences qui embauchent des backpackers, réunis dans un seul guide. Avec le numéro, l'e-mail, la saison et la paie.
-**Titre** : 2 303 employeurs qui embauchent
+### B06 · Plus de 2 300 employeurs
+**Texte principal** : Tu pars en PVT en Australie ? Plus de 2 300 fermes, stations, hôtels, roadhouses et agences qui embauchent des backpackers, réunis dans un seul guide. Avec le numéro, l'e-mail, la saison et la paie.
+**Titre** : Plus de 2 300 employeurs qui embauchent
 **Description** : Le Guide Opérationnel AUSSIEWAY
 
 ### B07 · Tu arrives en mars ?
 **Texte principal** : Tu arrives en mars ? 64 employeurs recrutent au Queensland ce mois-là, et le pic arrive en juin (98). Le guide AUSSIEWAY te donne la liste, mois par mois et État par État.
 **Titre** : Qui recrute le mois de ton arrivée
-**Description** : Calendrier + 2 303 contacts
+**Description** : Calendrier et plus de 2 300 contacts
 
 ### B08 · CV dans le vide
 **Texte principal** : Des dizaines de CV envoyés, zéro réponse ? Pour les fermes australiennes, le téléphone marche souvent mieux que l'e-mail. Appelle directement les employeurs qui embauchent des backpackers : 2 078 numéros dans le guide.
 **Titre** : Appelle, ne postule plus dans le vide
-**Description** : 2 303 contacts d'employeurs
+**Description** : Plus de 2 300 contacts d'employeurs
 
 ### B09 · Ton 2e visa
 **Texte principal** : Ton 2e visa commence par un coup de fil. Trouve les fermes qui recrutent pour tes 88 jours, filtre par État et par mois, et appelle.
@@ -102,14 +102,14 @@ Ce que tu reçois avec Le Guide Opérationnel AUSSIEWAY :
 **Description** : 2 078 numéros d'employeurs
 
 ### B10 · Pour chaque employeur
-**Texte principal** : Nom, poste, ville, saison, paie, téléphone, e-mail. Pour chacun des 2 303 contacts. Voici à quoi ressemble le guide AUSSIEWAY (extrait réel, numéros masqués).
+**Texte principal** : Nom, poste, ville, saison, paie, téléphone, e-mail. Pour chaque contact du guide. Voici à quoi ressemble le guide AUSSIEWAY (extrait réel, numéros masqués).
 **Titre** : Tout ce qu'il faut pour appeler
 **Description** : Fichier Excel · 27 €
 
 ### B11 · Avant d'atterrir
 **Texte principal** : Prépare ton premier job avant même d'atterrir. Qui recrute, où, et quel mois : tout est dans le guide AUSSIEWAY.
 **Titre** : Arrive avec une liste de contacts
-**Description** : 2 303 employeurs et agences
+**Description** : Plus de 2 300 employeurs et agences
 
 ### B12 · Où aller et quand
 **Texte principal** : Tasmanie de novembre à mars, Queensland d'avril à octobre, vendanges de février à avril. Le guide AUSSIEWAY te dit où aller et quand, avec les employeurs à appeler.
@@ -139,17 +139,17 @@ Photos générées pour la pub (Higgsfield), originaux en 2K dans `social/photos
 ### D1 · Carrousel « Problème → solution »  *(5 images)*
 **Texte principal**
 Tu cherches un job en PVT et personne ne répond ? Annonces saturées, e-mails sans réponse, arrivée après le pic de récolte…
-La solution : appeler les employeurs en direct, au bon moment. Le guide AUSSIEWAY te dit qui appeler, où, et quel mois : 2 303 contacts avec téléphone et e-mail.
+La solution : appeler les employeurs en direct, au bon moment. Le guide AUSSIEWAY te dit qui appeler, où, et quel mois : plus de 2 300 contacts avec téléphone et e-mail.
 **Titre** : Qui appeler, où, et quel mois
 **Description** : Le Guide Opérationnel · 27 €
 
 ### C01 · Des dizaines de CV, zéro réponse
 **Texte principal** : Des dizaines de CV envoyés, zéro réponse ? Le problème, ce n'est pas toi, c'est la méthode. Les fermes australiennes répondent souvent mieux au téléphone : 2 078 numéros d'employeurs dans le guide.
 **Titre** : Arrête de postuler dans le vide
-**Description** : 2 303 contacts d'employeurs
+**Description** : Plus de 2 300 contacts d'employeurs
 
 ### C02 · Tout dans le guide
-**Texte principal** : 2 303 employeurs qui embauchent des backpackers en Australie. Filtre par État, par mois de dispo et par secteur, puis appelle.
+**Texte principal** : Plus de 2 300 employeurs qui embauchent des backpackers en Australie. Filtre par État, par mois de dispo et par secteur, puis appelle.
 **Titre** : Le Guide Opérationnel · 27 €
 **Description** : Fichier Excel envoyé tout de suite
 
@@ -171,12 +171,12 @@ La solution : appeler les employeurs en direct, au bon moment. Le guide AUSSIEWA
 ### C06 · Pas envie de cueillir ?
 **Texte principal** : Pas envie de cueillir ? Le guide AUSSIEWAY compte aussi 510 contacts en hôtellerie-restauration et 92 roadhouses, partout en Australie.
 **Titre** : Pas que des fermes
-**Description** : 2 303 contacts au total
+**Description** : Plus de 2 300 contacts au total
 
 ### C07 · Road trip
 **Texte principal** : Ton road trip australien commence par un premier job. Qui recrute, où, et quel mois : tout est dans le guide AUSSIEWAY.
 **Titre** : Finance ton road trip
-**Description** : 2 303 employeurs et agences
+**Description** : Plus de 2 300 employeurs et agences
 
 ### C08 · Trouve ta ferme
 **Texte principal** : Trouve ta ferme, le reste suit. 1 970 employeurs directs à contacter, État par État, avec le mois où ils recrutent.
@@ -184,9 +184,9 @@ La solution : appeler les employeurs en direct, au bon moment. Le guide AUSSIEWA
 **Description** : Le Guide Opérationnel · 27 €
 
 ### C09 · Qui appeler en arrivant ?
-**Texte principal** : Visa ✓ Billet ✓ Et maintenant : qui appeler en arrivant ? 2 303 contacts d'employeurs et d'agences qui embauchent des backpackers, avec téléphone et e-mail.
+**Texte principal** : Visa ✓ Billet ✓ Et maintenant : qui appeler en arrivant ? Plus de 2 300 contacts d'employeurs et d'agences qui embauchent des backpackers, avec téléphone et e-mail.
 **Titre** : Qui appeler en arrivant
-**Description** : 2 303 contacts · 27 €
+**Description** : Plus de 2 300 contacts · 27 €
 
 ### C10 · La Tasmanie en été
 **Texte principal** : De novembre à mars, jusqu'à 71 employeurs par mois recrutent en Tasmanie. Le calendrier complet est dans le guide AUSSIEWAY.

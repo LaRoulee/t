@@ -155,7 +155,7 @@ const heatHtml = (start = 0.3, ring = []) => {
 
 const END = scene(3.4, `${BRAND}<div class="txt mid">
   <div class="kicker" data-in="0.1">Le Guide Opérationnel</div>
-  <div class="big" data-count="2303" data-at="0.2" data-dur="1.2">0</div>
+  <div class="big" data-count="2300" data-prefix="+" data-at="0.2" data-dur="1.2">0</div>
   <div class="h2" data-in="0.45">contacts pour bosser en Australie en PVT</div>
   <div class="p dim" data-in="0.75">Fermes, stations, usines, hôtels et agences. Téléphone, e-mail, saison, paie.</div>
   <div class="pill" data-in="1.05" data-anim="pop">Lien en bio →</div>
@@ -164,7 +164,7 @@ const END = scene(3.4, `${BRAND}<div class="txt mid">
 const END_URL = scene(3.6, `${BRAND}<div class="txt mid">
   <div class="kicker" data-in="0.1">Le Guide Opérationnel · 27&nbsp;€</div>
   <div class="h1" data-in="0.3">aussieway.fr</div>
-  <div class="p dim" data-in="0.6">2&nbsp;303 contacts, le calendrier des embauches et les conseils PVT.</div>
+  <div class="p dim" data-in="0.6">Plus de 2&nbsp;300 contacts, le calendrier des embauches et les conseils PVT.</div>
   <div class="pill" data-in="0.9" data-anim="pop">Voir le guide →</div>
 </div>`, { cls: 'violet' });
 
@@ -173,7 +173,7 @@ const VIDEOS = {
   '01-2303-contacts': [
     scene(2.6, `${BRAND}<div class="txt"><div class="kicker" data-in="0.15">PVT Australie</div><div class="h1" data-in="0.35">Tu pars en PVT en Australie&nbsp;?</div></div>`, { photo: full(PH.aeroport, [1.0, 1.06], '50% 35%') }),
     scene(3.4, `${BRAND}<div class="txt"><div class="h2" data-in="0.2">Le plus dur, ce n'est pas le visa.</div><div class="h2 coral" data-in="1.1">C'est de savoir qui appeler en arrivant.</div></div>`, { photo: full(PH.piste, [1.04, 1.1]) }),
-    scene(4.2, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">Dans un seul fichier</div><div class="big" data-count="2303" data-at="0.25" data-dur="1.6">0</div>
+    scene(4.2, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">Dans un seul guide</div><div class="big" data-count="2300" data-prefix="+" data-at="0.25" data-dur="1.6">0</div>
       <div class="h2" data-in="0.6">employeurs et agences qui embauchent des backpackers</div>
       <div class="rule" data-in="1.4"></div>
       <div class="p dim" data-in="1.6"><b class="coral">${nb(2078)}</b> numéros de téléphone · <b class="coral">${nb(1540)}</b> e‑mails · 7 États</div></div>`),
@@ -303,7 +303,7 @@ const VIDEOS = {
   ],
   // Stories publicitaires (9:16, ~8 s), à utiliser dans Meta Ads
   'pub-S1-2303-employeurs': [
-    scene(3.4, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">PVT Australie</div><div class="big" data-count="2303" data-at="0.2" data-dur="1.3">0</div><div class="h2" data-in="0.5">employeurs qui embauchent des backpackers</div><div class="p dim" data-in="1.3">Dans un seul guide.</div></div>`),
+    scene(3.4, `${BRAND}<div class="txt mid"><div class="kicker" data-in="0.1">PVT Australie</div><div class="big" data-count="2300" data-prefix="+" data-at="0.2" data-dur="1.3">0</div><div class="h2" data-in="0.5">employeurs qui embauchent des backpackers</div><div class="p dim" data-in="1.3">Dans un seul guide.</div></div>`),
     END_URL,
   ],
   'pub-S2-mars-queensland': [
@@ -365,7 +365,7 @@ function draw(s, lt) {
   }
   for (const e of s.counts) {
     const p = easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur));
-    e.textContent = nb(Math.round(+e.dataset.count * p));
+    e.textContent = (e.dataset.prefix || '') + nb(Math.round(+e.dataset.count * p));
   }
   for (const e of s.grows) e.style.transform = `scaleX(${+e.dataset.grow * easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur))})`;
   for (const e of s.growys) e.style.transform = `scaleY(${easeOut(clamp((lt - +e.dataset.at) / +e.dataset.dur))})`;

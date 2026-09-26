@@ -26,6 +26,6 @@ const L = { violet: ['#61398b', '#eeede8'], sombre: ['#2a2b29', '#de5346'], cora
 const L2 = { 'violet-2300': ['#61398b', '#eeede8', '#de5346'], 'sombre-2300': ['#2a2b29', '#eeede8', '#de5346'] };
 if (L2[v]) document.body.innerHTML = `<div class="logo2" style="background:${L2[v][0]};color:${L2[v][1]}">${MARK(L2[v][2])}<div class="n">+2&nbsp;300</div><div class="l">employeurs</div></div>`;
 else if (L[v]) document.body.innerHTML = `<div class="logo" style="background:${L[v][0]}">${MARK(L[v][1])}</div>`;
-else document.body.innerHTML = `<div class="cover"><img src="../../assets/img/bananeraie-vue-aerienne-2400.webp" alt=""><div class="in"><div class="word">${MARK('#de5346')}AUSSIEWAY</div><div class="tag">Trouver un job en PVT Australie · 2&nbsp;303 employeurs qui embauchent</div><div class="url">aussieway.fr</div></div></div>`;
+else document.body.innerHTML = `<div class="cover"><img src="../../assets/img/bananeraie-vue-aerienne-2400.webp" alt=""><div class="in"><div class="word">${MARK('#de5346')}AUSSIEWAY</div><div class="tag">Trouver un job en PVT Australie · plus de 2&nbsp;300 employeurs qui embauchent</div><div class="url">aussieway.fr</div></div></div>`;
 window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((i) => i.decode().catch(() => {}))]);
 </script></body></html>

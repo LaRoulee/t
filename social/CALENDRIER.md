@@ -19,7 +19,7 @@ Fichiers :
 
 | Date | Heure | Type | Fichier | Sujet |
 |---|---|---|---|---|
-| **lun. 28/09** | 12 h 30 | Reel | `01-2303-contacts.mp4` | 2 303 contacts |
+| **lun. 28/09** | 12 h 30 | Reel | `01-2303-contacts.mp4` | Plus de 2 300 contacts |
 | lun. 28/09 | 18 h | Carrousel | `A5-dans-le-guide/` | Ce qu'il y a dans le guide |
 | lun. 28/09 | 20 h | Reel | `03-les-88-jours.mp4` | Les 88 jours |
 | **mar. 29/09** | 12 h 30 | Image | `C09-qui-appeler.png` | Visa ✓ Billet ✓ Qui appeler ? |
@@ -56,16 +56,16 @@ Fichiers :
 
 Copiez le texte tel quel. Les hashtags vont à la fin de la légende.
 
-### Lundi 28 septembre · 12 h 30 · Reel 01 · 2 303 contacts
+### Lundi 28 septembre · 12 h 30 · Reel 01 · Plus de 2 300 contacts
 Tu pars en PVT en Australie ? 🇦🇺
 Le plus dur, ce n'est pas le visa : c'est de savoir qui appeler en arrivant.
-Le guide AUSSIEWAY réunit 2 303 employeurs et agences qui embauchent des backpackers, avec téléphone, e-mail, saison et paie.
+Le guide AUSSIEWAY réunit plus de 2 300 employeurs et agences qui embauchent des backpackers, avec téléphone, e-mail, saison et paie.
 🔗 Lien en bio
 #pvtaustralie #whv #workingholidayaustralia #backpackeraustralie #pvt
 
 ### Lundi 28 septembre · 18 h · Carrousel A5 · Ce qu'il y a dans le guide
 Tout ce qu'il y a dans Le Guide Opérationnel 👉 glisse
-✅ 2 303 employeurs et agences
+✅ Plus de 2 300 employeurs et agences
 ✅ Téléphone, e-mail, saison et paie pour chaque contact
 ✅ Le calendrier des embauches État par État
 ✅ Les 88 jours, tes droits, un modèle d'e-mail et un CV australien
@@ -82,7 +82,7 @@ Vérifie toujours le code postal sur immi.homeaffairs.gov.au avant d'accepter un
 ### Mardi 29 septembre · 12 h 30 · Image C09 · Qui appeler en arrivant ?
 Visa ✓ Billet ✓
 Et maintenant : qui appeler en arrivant ? 🤔
-2 303 contacts d'employeurs et d'agences qui embauchent des backpackers, avec téléphone et e-mail.
+Plus de 2 300 contacts d'employeurs et d'agences qui embauchent des backpackers, avec téléphone et e-mail.
 🔗 Lien en bio
 #pvtaustralie #whv #depart #australie #backpackeraustralie
 

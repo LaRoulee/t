@@ -132,7 +132,7 @@ La checklist avant de postuler en Australie :
 
 Il vous manque quoi dans la liste ? 👇
 
-👉 2 303 employeurs et agences qui embauchent des backpackers : aussieway.fr
+👉 Plus de 2 300 employeurs et agences qui embauchent des backpackers : aussieway.fr
 
 ---
 
@@ -140,7 +140,7 @@ Il vous manque quoi dans la liste ? 👇
 
 🤠 PVT en Australie ne veut pas dire forcément cueillir des fraises pendant 3 mois.
 
-Dans le guide AUSSIEWAY, parmi les 2 303 contacts :
+Dans le guide AUSSIEWAY, parmi les plus de 2 300 contacts :
 🍽️ 510 en hôtellerie et restauration
 🍓 469 en fruits et cueillette
 🐄 277 stations et élevages

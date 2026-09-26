@@ -8,7 +8,7 @@ Tous les chiffres viennent du fichier `JOBS_AUSTRALIE_PVT.xlsx`. Aucun faux tém
 
 **Bio Instagram :**
 > 🇦🇺 Trouver un job en PVT Australie
-> 2 303 employeurs et agences qui embauchent des backpackers
+> Plus de 2 300 employeurs et agences qui embauchent des backpackers
 > 👇 Le Guide Opérationnel
 
 Lien en bio : https://aussieway.fr/
@@ -17,9 +17,9 @@ Lien en bio : https://aussieway.fr/
 
 ## Semaine 1
 
-### 01 · 2 303 contacts
+### 01 · Plus de 2 300 contacts
 Tu pars en PVT en Australie ? Le plus dur, ce n'est pas le visa : c'est de savoir qui appeler en arrivant.
-2 303 employeurs et agences qui embauchent des backpackers, dans un seul fichier. Téléphone, e-mail, saison, paie. 🔗 Lien en bio
+Plus de 2 300 employeurs et agences qui embauchent des backpackers, dans un seul guide. Téléphone, e-mail, saison, paie. 🔗 Lien en bio
 #pvtaustralie #whv #workingholidayaustralia #backpackeraustralie #pvt
 
 ### 03 · Les 88 jours
