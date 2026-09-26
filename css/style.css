@@ -678,7 +678,7 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
 .gtable caption { text-align: left; font-size: var(--step--1); color: var(--charcoal); padding-bottom: 8px; }
 .gtable th { font-weight: 650; color: var(--ink); padding: 4px 6px; text-align: center; }
 .gtable tbody th { text-align: left; }
-.gtable td { text-align: center; padding: 8px 4px; border-radius: 2px; background: rgb(222 83 70 / var(--a)); color: var(--ink); }
+.gtable td { text-align: center; padding: 8px 4px; border-radius: 2px; background: rgb(222 83 70 / var(--a)); color: #121211; font-weight: 600; }
 .gmail { margin-top: 12px; padding: 18px 20px; background: #fff; border: 1px solid #d9d7cf; border-radius: 2px; font: 0.9375rem/1.5 var(--font); color: var(--ink); white-space: pre-wrap; }
 .grelated { margin-top: clamp(48px, 8vh, 72px); padding-top: 28px; border-top: 1px solid #d0cec6; }
 .legal__main .grelated ul { list-style: none; padding: 0; }
