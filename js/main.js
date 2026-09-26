@@ -165,23 +165,6 @@ if (!reduceMotion) {
     .from(items, { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.15, ease: 'expo.out' })
     .to($$('[data-checklist] .checklist__tick'), { strokeDashoffset: 0, duration: 0.5, stagger: 0.2, ease: 'power2.out' }, 0.3);
 
-  /* services: portrait unveiled */
-  const portrait = $('[data-parallax-mask] img');
-  const mask = document.createElement('div');
-  mask.className = 'mask';
-  portrait.before(mask);
-  mask.append(portrait);
-  gsap.fromTo(mask, { clipPath: 'inset(100% 0 0 0)' }, {
-    clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'expo.inOut',
-    scrollTrigger: { trigger: '.services', start: 'top 70%' },
-  });
-  $$('.services__list [data-reveal]').forEach((li) => {
-    gsap.from(li.children, {
-      y: 22, autoAlpha: 0, duration: 1.1, stagger: 0.08, ease: 'expo.out',
-      scrollTrigger: { trigger: li, start: 'top 85%' },
-    });
-  });
-
   /* CTA: a quiet arrival */
   const ctaLines = $$('.cta__title .line > span');
   gsap.from(ctaLines, {
