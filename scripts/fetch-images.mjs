@@ -11,9 +11,9 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = path.join(root, 'assets', 'img');
-const SITE_URL = 'https://laroulee.github.io/t/';
+const SITE_URL = 'https://aussieway.fr/';
 // page → prefix used to reach assets/img from that page
-const PAGES = { 'index.html': 'assets/img/', '404.html': '/t/assets/img/' };
+const PAGES = { 'index.html': 'assets/img/', '404.html': '/assets/img/' };
 const WIDTHS = [800, 1600, 2400];
 const REMOTE = /https:\/\/d8j0ntlcm91z4\.cloudfront\.net\/[^"'\s)]+\.png/g;
 

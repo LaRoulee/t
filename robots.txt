@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://laroulee.github.io/t/sitemap.xml
+Sitemap: https://aussieway.fr/sitemap.xml
