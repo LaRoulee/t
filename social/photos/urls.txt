@@ -1,0 +1,12 @@
+# name url — the "Fetch social photos" workflow downloads each file into social/photos/<name>.png
+hostel-guide-ordinateur https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211658_76ed3470-53e2-4f93-818c-7cf8e21a9da5.png
+appel-aube-ferme https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_ddd12b30-5c0a-45ef-9743-3ad825fd50b2.png
+hostel-cv-decourage https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_19a71bcf-a816-4278-9210-748596951b28.png
+cerises-tasmanie https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_bfc63b09-2157-4fdf-b149-6aa8831eda58.png
+station-betail-quad https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211658_71af5543-2688-4663-af85-39102ceb70c0.png
+roadhouse-barista https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_c9dda44b-ff20-43c9-b35e-8a28f4d2b570.png
+van-road-trip https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211658_739c651e-75ed-4f5d-b764-eca5dded7c5d.png
+veranda-bbq-backpackers https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_155c75b7-51c3-42f8-a8a0-5e9900a84feb.png
+flatlay-preparation https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_f407d7d0-4797-403f-b60f-1b2e4688f43e.png
+cradle-mountain https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211737_dbd0b5ac-a57e-41f2-9738-b4aa05bcda11.png
+appel-fraises-vertical https://d8j0ntlcm91z4.cloudfront.net/user_3BhsTMu0IozBHJypbKswD1reIuZ/hf_20260926_211659_38f25944-e245-4152-89ad-7bd24bb48bf0.png

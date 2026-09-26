@@ -1,0 +1,40 @@
+# Downloads the social/ad photos listed in social/photos/urls.txt from the Higgsfield CDN
+# (unreachable from the editing sandbox) and commits them next to the list.
+name: Fetch social photos
+
+on:
+  push:
+    paths:
+      - 'social/photos/urls.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-social-photos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download missing photos
+        run: |
+          grep -vE '^\s*(#|$)' social/photos/urls.txt | while read -r name url; do
+            out="social/photos/$name.png"
+            [ -f "$out" ] && continue
+            curl -fsSL --retry 3 -o "$out" "$url"
+            echo "✓ $name"
+          done
+
+      - name: Commit photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898900+github-actions[bot]@users.noreply.github.com"
+          git add social/photos
+          git diff --cached --quiet && { echo "Nothing new."; exit 0; }
+          git commit -m "Add social photos from the Higgsfield CDN"
+          git push
