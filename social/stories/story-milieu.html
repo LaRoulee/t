@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; }
+  @font-face { font-family: "Archivo"; src: url("../../assets/fonts/archivo-latin-ext-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; unicode-range: U+0100-024F, U+1E00-1EFF, U+2C60-2C7F, U+A720-A7FF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body { font-family: "Archivo", Arial, sans-serif; color: #eeede8; background: #141413; position: relative; -webkit-font-smoothing: antialiased; }
+  .bg { position: absolute; left: -120px; top: 320px; width: 1320px; height: 2334px; object-fit: cover; }
+  .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,19,1) 0%, rgba(20,20,19,1) 18%, rgba(20,20,19,.9) 38%, rgba(20,20,19,.6) 58%, rgba(20,20,19,.15) 70%, rgba(20,20,19,.2) 88%, rgba(20,20,19,.5) 100%); }
+  .brand { position: absolute; left: 80px; top: 220px; display: flex; align-items: center; gap: 16px; font-weight: 700; font-size: 32px; letter-spacing: .24em; }
+  .brand i { display: grid; grid-template-columns: repeat(2, 10px); gap: 6px; }
+  .brand i b { width: 10px; height: 10px; border-radius: 50%; background: #de5346; }
+  .top { position: absolute; left: 80px; right: 80px; top: 320px; display: flex; flex-direction: column; gap: 28px; }
+  .kicker { font-size: 36px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #ef7a6e; }
+  h1 { font-size: 104px; line-height: .96; font-weight: 800; font-stretch: 110%; letter-spacing: -.02em; }
+  p { font-size: 42px; line-height: 1.3; color: #d9d8d1; }
+  p b { color: #eeede8; }
+  .tap { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font-size: 46px; font-weight: 800; color: #eeede8; }
+  .arrow { display: block; font-size: 64px; line-height: 1; margin-top: 10px; color: #de5346; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 280px; text-align: center; font-size: 36px; font-weight: 700; color: #eeede8; text-shadow: 0 1px 14px rgba(0,0,0,.6); }
+</style></head>
+<body>
+  <img class="bg" src="../photos/appel-fraises-vertical.png" alt="">
+  <div class="shade"></div>
+  <div class="brand"><i><b></b><b></b><b></b><b></b></i>AUSSIEWAY</div>
+  <div class="top">
+    <div class="kicker">PVT Australie</div>
+    <h1>Qui appeler en arrivant ?</h1>
+    <p><b>Plus de 2 300 employeurs</b> qui embauchent des backpackers, avec leur numéro.</p>
+  </div>
+  <div class="tap">Appuie sur le lien<span class="arrow">↓</span></div>
+</body></html>
