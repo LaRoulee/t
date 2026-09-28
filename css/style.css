@@ -697,11 +697,18 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
 .ghub__desc { font-size: 0.9375rem; color: var(--charcoal); }
 .footer--guide { padding: 32px var(--gutter); }
 
-.ghero { background: var(--ink); color: var(--bone); }
-.ghero img { display: block; width: 100%; height: clamp(240px, 46vh, 480px); object-fit: cover; object-position: 50% 30%; }
-.ghero__in { max-width: 72ch; margin: 0 auto; padding: clamp(28px, 5vh, 44px) var(--gutter) clamp(32px, 6vh, 52px); display: grid; gap: 14px; }
-.ghero__title { font-size: var(--step-4); font-weight: 620; font-variation-settings: "wdth" 125; letter-spacing: -0.04em; line-height: .96; text-wrap: balance; }
-.ghero__meta { font-size: var(--step--1); color: var(--bone-dim); }
+.ghero {
+  position: relative; overflow: hidden; background: var(--ink-2); color: var(--bone);
+  height: calc(100vh - 76px); height: calc(100svh - 76px); min-height: 520px; max-height: 980px;
+}
+.ghero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 40%); }
+.ghero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(22, 22, 21, .82) 0%, rgba(22, 22, 21, .4) 38%, rgba(22, 22, 21, 0) 64%);
+}
+.ghero__in { position: absolute; z-index: 1; left: var(--gutter); right: var(--gutter); bottom: clamp(28px, 6vh, 64px); max-width: 980px; display: grid; gap: 16px; }
+.ghero__title { font-size: var(--step-4); font-weight: 620; font-variation-settings: "wdth" 125; letter-spacing: -0.04em; line-height: .94; text-wrap: balance; text-shadow: 0 2px 24px rgba(0,0,0,.25); }
+.ghero__meta { font-size: var(--step--1); color: var(--bone); opacity: .85; }
 .ghero__cta { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; font-weight: 700; font-size: 0.9375rem; color: var(--on-coral); background: var(--coral); padding: 12px 18px; border-radius: 3px; text-decoration: none; transition: background-color .3s; }
 .ghero__cta:hover { background: var(--bone); }
 .ghero__credit { font-size: var(--step--1); color: var(--charcoal); margin: 0 0 8px; }
@@ -717,6 +724,8 @@ mark.todo { background: #f7d9d4; color: #8a2a20; padding: 0 4px; border-radius: 
   .gbar__name { font-size: 0.9375rem; }
   .gbar__name b { color: var(--coral-text); margin-left: 6px; }
   .legal--guide { padding-bottom: 72px; }
+  .ghero { height: calc(100vh - 148px); height: calc(100svh - 148px); min-height: 480px; }
+  .ghero__in { gap: 12px; }
 }
 
 /* e-mail gate on the job-hunting guide (active only when a Brevo form is configured) */

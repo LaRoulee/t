@@ -64,6 +64,7 @@ GUIDES = [
         'title': 'Les 88 jours en PVT Australie : le guide pour obtenir votre 2e visa',
         'h1': 'Les 88 jours en PVT Australie',
         'desc': "Tout comprendre aux 88 jours de « specified work » : quels jobs comptent, où les faire, quels papiers garder et comment trouver un employeur.",
+        'pos': '50% 12%',
         'photo': ('job-cueillette-fraises', 'Backpackers en train de cueillir des fraises dans une ferme australienne', 1792),
         'cta': "Filtrez par État et par mois, et appelez directement les fermes qui recrutent pour vos 88 jours.",
         'body': f'''
@@ -147,6 +148,7 @@ GUIDES = [
         'title': 'Travailler en Tasmanie en PVT : saisons, jobs et employeurs',
         'h1': 'Travailler en Tasmanie en PVT',
         'desc': "La Tasmanie recrute des backpackers de novembre à mars : cerises, petits fruits, vignes, hôtellerie. Saisons et nombre d'employeurs par mois.",
+        'pos': '50% 18%',
         'photo': ('cerises-tasmanie', 'Backpackers en train de cueillir des cerises dans un verger de Tasmanie', 1792),
         'cta': "152 contacts en Tasmanie dans le guide AUSSIEWAY, à filtrer par mois et par secteur.",
         'body': f'''
@@ -272,6 +274,7 @@ def related(slug):
 def page(g):
     url = f'{SITE}guide-{g["slug"]}.html'
     name, alt, w = g['photo']
+    pos = f' style="--pos: {g["pos"]}"' if g.get('pos') else ''
     ld = [
         {'@context': 'https://schema.org', '@type': 'Article', 'headline': g['title'], 'description': g['desc'],
          'image': f'{SITE}assets/img/{name}-1600.webp', 'datePublished': UPDATED, 'dateModified': UPDATED,
@@ -285,7 +288,7 @@ def page(g):
     body = g['body'].replace('{CTA}', CTA.format(line=g['cta'], slug=g['slug']))
     body, lock_js = apply_lock(body)
     return shell(g['title'], g['desc'], url, f'''
-  <header class="ghero">
+  <header class="ghero"{pos}>
     <img src="assets/img/{name}-1600.webp" srcset="assets/img/{name}-800.webp 800w, assets/img/{name}-1600.webp 1600w, assets/img/{name}-{w}.webp {w}w" sizes="100vw" alt="{alt}" width="1600" height="900" fetchpriority="high">
     <div class="ghero__in">
       <h1 class="ghero__title">{g["h1"]}</h1>
@@ -322,7 +325,7 @@ def shell(title, desc, url, main, ld, og_image=f'{SITE}assets/img/hero-champ-que
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260927n">
+  <link rel="stylesheet" href="css/style.css?v=20260928a">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="legal legal--guide">
